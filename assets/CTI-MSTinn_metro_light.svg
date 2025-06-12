@@ -4,190 +4,275 @@
   <defs>
     <style>
       .st0 {
-        fill: #ff8820;
-      }
-
-      .st1 {
-        fill: #002296;
-      }
-
-      .st2 {
         stroke: #ff8820;
       }
 
-      .st2, .st3, .st4, .st5, .st6, .st7, .st8, .st9, .st10, .st11, .st12, .st13, .st14 {
+      .st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st8, .st9, .st10, .st11, .st12, .st13 {
         stroke-miterlimit: 28.4;
       }
 
-      .st2, .st3, .st5, .st6, .st7, .st8, .st9, .st10, .st11, .st12, .st13, .st14 {
+      .st0, .st2, .st3, .st4, .st5, .st6, .st7, .st8, .st9, .st10, .st11, .st12, .st13 {
         fill: none;
       }
 
-      .st2, .st3, .st5, .st6, .st9, .st10, .st11, .st12, .st13, .st14 {
+      .st0, .st2, .st3, .st4, .st7, .st8, .st9, .st10, .st11, .st12, .st13 {
         stroke-width: 4.5px;
       }
 
+      .st14 {
+        fill: url(#linear-gradient2);
+      }
+
       .st15 {
-        fill: url(#linear-gradient3);
+        fill: url(#linear-gradient1);
       }
 
       .st16 {
+        fill: url(#linear-gradient3);
+      }
+
+      .st17 {
+        fill: url(#linear-gradient6);
+      }
+
+      .st18 {
+        fill: url(#linear-gradient5);
+      }
+
+      .st19 {
+        fill: url(#linear-gradient4);
+      }
+
+      .st20 {
         font-size: 8px;
       }
 
-      .st16, .st17, .st18, .st19, .st20, .st21, .st22, .st23, .st24, .st25 {
+      .st20, .st21, .st22, .st23, .st24, .st25, .st26, .st27, .st28, .st29 {
         isolation: isolate;
       }
 
-      .st16, .st20, .st22, .st23, .st24, .st25 {
+      .st20, .st24, .st26, .st27, .st28, .st29 {
         font-family: MavenPro-Bold, 'Maven Pro';
         font-weight: 700;
       }
 
-      .st3 {
-        stroke: #82008f;
+      .st30 {
+        fill: url(#linear-gradient16);
       }
 
-      .st26, .st20 {
+      .st31 {
+        fill: url(#linear-gradient17);
+      }
+
+      .st32, .st24 {
         fill: #001b78;
       }
 
-      .st17 {
+      .st21 {
         font-family: MavenPro-Regular, 'Maven Pro';
       }
 
-      .st17, .st18, .st21, .st24 {
+      .st21, .st22, .st25, .st28 {
         font-size: 9px;
       }
 
-      .st17, .st21, .st24 {
+      .st21, .st25, .st28 {
         fill: #040404;
       }
 
-      .st4 {
+      .st1 {
         stroke: #1f1d1d;
       }
 
-      .st4, .st8, .st27, .st28, .st29 {
+      .st1, .st6, .st33, .st34, .st35 {
         stroke-width: .8px;
       }
 
-      .st4, .st27, .st18 {
+      .st1, .st33, .st22 {
         fill: #fff;
       }
 
+      .st2 {
+        stroke: url(#linear-gradient7);
+      }
+
+      .st3 {
+        stroke: url(#linear-gradient9);
+      }
+
+      .st4 {
+        stroke: url(#linear-gradient8);
+      }
+
+      .st36 {
+        fill: url(#linear-gradient);
+      }
+
       .st5 {
-        stroke: url(#linear-gradient2);
-      }
-
-      .st6 {
-        stroke: url(#linear-gradient1);
-      }
-
-      .st30 {
-        fill: #c0007a;
-      }
-
-      .st7 {
         stroke-width: .7px;
       }
 
-      .st7, .st8 {
+      .st5, .st6 {
         stroke: #469e4f;
       }
 
-      .st27, .st28, .st29 {
+      .st33, .st34, .st35 {
         stroke: #040404;
         stroke-miterlimit: 3;
       }
 
-      .st18 {
+      .st22 {
         font-family: Helvetica, Helvetica;
       }
 
-      .st31 {
-        fill: #f6ba00;
-      }
-
-      .st9 {
-        stroke: #b8327c;
-      }
-
-      .st10 {
+      .st7 {
         stroke: #001b78;
       }
 
-      .st20, .st22, .st23 {
+      .st24, .st26, .st27 {
         font-size: 30px;
       }
 
-      .st32 {
-        fill: #82008f;
-      }
-
-      .st21 {
+      .st25 {
         font-family: MavenPro-SemiBold, 'Maven Pro';
         font-weight: 600;
       }
 
-      .st22 {
+      .st26 {
         fill: #f26724;
       }
 
-      .st33 {
-        fill: #ff5341;
+      .st8 {
+        stroke: url(#linear-gradient10);
+      }
+
+      .st9 {
+        stroke: url(#linear-gradient15);
+      }
+
+      .st10 {
+        stroke: url(#linear-gradient13);
       }
 
       .st11 {
-        stroke: #ea0c5f;
-      }
-
-      .st23 {
-        fill: #001b7b;
+        stroke: url(#linear-gradient12);
       }
 
       .st12 {
-        stroke: #ff5341;
-      }
-
-      .st25 {
-        font-size: 6px;
-      }
-
-      .st28 {
-        fill: #1f1d1d;
+        stroke: url(#linear-gradient11);
       }
 
       .st13 {
-        stroke: #002296;
+        stroke: url(#linear-gradient14);
       }
 
-      .st14 {
-        stroke: url(#linear-gradient);
-      }
-
-      .st34 {
-        fill: #ea0c5f;
+      .st27 {
+        fill: #001b7b;
       }
 
       .st29 {
+        font-size: 6px;
+      }
+
+      .st34 {
+        fill: #1f1d1d;
+      }
+
+      .st35 {
         fill: #3a393b;
       }
     </style>
-    <linearGradient id="linear-gradient" x1="446.3" y1="50.9" x2="471.7" y2="50.9" gradientTransform="translate(0 144) scale(1 -1)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f6ba00"/>
-      <stop offset="1" stop-color="#fbe588"/>
+    <linearGradient id="linear-gradient" x1="21" y1="71.1" x2="21" y2="78.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#82008f"/>
+      <stop offset=".5" stop-color="#83018e"/>
+      <stop offset=".7" stop-color="#8a088b"/>
+      <stop offset=".8" stop-color="#961287"/>
+      <stop offset=".9" stop-color="#a72281"/>
+      <stop offset="1" stop-color="#b8327c"/>
     </linearGradient>
-    <linearGradient id="linear-gradient1" x1="412.5" y1="50.8" x2="448.6" y2="50.8" gradientTransform="translate(0 144) scale(1 -1)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ff8820"/>
-      <stop offset=".5" stop-color="#ff8820"/>
-      <stop offset="1" stop-color="#f6ba00"/>
+    <linearGradient id="linear-gradient1" x1="21" y1="66.9" x2="21" y2="59.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#82008f"/>
+      <stop offset="1" stop-color="#002296"/>
     </linearGradient>
-    <linearGradient id="linear-gradient2" x1="356.9" y1="50.8" x2="393" y2="50.8" gradientTransform="translate(0 144) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient2" x1="21" y1="82.5" x2="21" y2="89.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b8327c"/>
+      <stop offset=".4" stop-color="#ba307a"/>
+      <stop offset=".6" stop-color="#c22975"/>
+      <stop offset=".8" stop-color="#d01f6d"/>
+      <stop offset="1" stop-color="#e41062"/>
+      <stop offset="1" stop-color="#ea0c5f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient3" x1="21" y1="93.9" x2="21" y2="101.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ea0c5f"/>
+      <stop offset=".3" stop-color="#ea0f5d"/>
+      <stop offset=".5" stop-color="#ed1959"/>
+      <stop offset=".7" stop-color="#f22a52"/>
+      <stop offset=".9" stop-color="#f94148"/>
+      <stop offset="1" stop-color="#ff5341"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient4" x1="21" y1="105.3" x2="21" y2="112.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ea0c5f"/>
+      <stop offset="1" stop-color="#ff5341"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient5" x1="21" y1="116.7" x2="21" y2="123.9" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ff5341"/>
       <stop offset="1" stop-color="#ff8820"/>
     </linearGradient>
-    <linearGradient id="linear-gradient3" x1="55.1" y1="-219.2" x2="70.5" y2="-219.2" gradientTransform="translate(0 240)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient6" x1="21" y1="128.2" x2="21" y2="135.4" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff8820"/>
+      <stop offset="1" stop-color="#f6ba00"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient7" x1="193.6" y1="93.1" x2="223.4" y2="93.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#002296"/>
+      <stop offset=".4" stop-color="#361393"/>
+      <stop offset=".8" stop-color="#6c0590"/>
+      <stop offset="1" stop-color="#82008f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient8" x1="294" y1="93.1" x2="329.4" y2="93.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ea0c5f"/>
+      <stop offset=".3" stop-color="#ea0f5d"/>
+      <stop offset=".5" stop-color="#ed1959"/>
+      <stop offset=".7" stop-color="#f22a52"/>
+      <stop offset=".9" stop-color="#f94148"/>
+      <stop offset="1" stop-color="#ff5341"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient9" x1="329.4" y1="93.1" x2="359.2" y2="93.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ea0c5f"/>
+      <stop offset="1" stop-color="#ff5341"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient10" x1="223.4" y1="93.1" x2="258.8" y2="93.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#82008f"/>
+      <stop offset=".4" stop-color="#84028e"/>
+      <stop offset=".6" stop-color="#8c0a8b"/>
+      <stop offset=".8" stop-color="#9b1786"/>
+      <stop offset=".9" stop-color="#af297f"/>
+      <stop offset="1" stop-color="#b8327c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient11" x1="159.8" y1="93.2" x2="195.9" y2="93.2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#001b78"/>
+      <stop offset="1" stop-color="#002296"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient12" x1="446.3" y1="-163.1" x2="471.7" y2="-163.1" gradientTransform="translate(0 -70) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6ba00"/>
+      <stop offset="1" stop-color="#fbe588"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient13" x1="412.5" y1="-163.2" x2="448.6" y2="-163.2" gradientTransform="translate(0 -70) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff8820"/>
+      <stop offset="1" stop-color="#f6ba00"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient14" x1="356.9" y1="-163.2" x2="393" y2="-163.2" gradientTransform="translate(0 -70) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff5341"/>
+      <stop offset="1" stop-color="#ff8820"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient15" x1="258.9" y1="93.1" x2="294.1" y2="93.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b8327c"/>
+      <stop offset=".4" stop-color="#ba307a"/>
+      <stop offset=".6" stop-color="#c22975"/>
+      <stop offset=".8" stop-color="#d01f6d"/>
+      <stop offset="1" stop-color="#e41062"/>
+      <stop offset="1" stop-color="#ea0c5f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient16" x1="55.1" y1="-5.2" x2="70.5" y2="-5.2" gradientTransform="translate(0 26)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
       <stop offset="0" stop-color="#fbe588"/>
       <stop offset=".2" stop-color="#ffcc25"/>
@@ -200,122 +285,35 @@
       <stop offset=".7" stop-color="#683186"/>
       <stop offset="1" stop-color="#001b78"/>
     </linearGradient>
+    <linearGradient id="linear-gradient17" x1="489.6" y1="108.4" x2="489.6" y2="144.4" gradientTransform="translate(0 148) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0" stop-color="#fbe588"/>
+      <stop offset="0" stop-color="#ffcc25"/>
+      <stop offset=".2" stop-color="#f26724"/>
+      <stop offset=".4" stop-color="#ea0c5f"/>
+      <stop offset=".4" stop-color="#d01366"/>
+      <stop offset=".5" stop-color="#ab1d71"/>
+      <stop offset=".5" stop-color="#8d267a"/>
+      <stop offset=".6" stop-color="#782c80"/>
+      <stop offset=".6" stop-color="#6c2f84"/>
+      <stop offset=".7" stop-color="#683186"/>
+      <stop offset=".8" stop-color="#643085"/>
+      <stop offset=".8" stop-color="#592d84"/>
+      <stop offset=".9" stop-color="#472a81"/>
+      <stop offset=".9" stop-color="#2d247e"/>
+      <stop offset="1" stop-color="#0c1d79"/>
+      <stop offset="1" stop-color="#001b78"/>
+    </linearGradient>
   </defs>
-  <path id="rect1" class="st32" d="M21,71.1h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
-  <g id="text1" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st25" transform="translate(27.6 76.3)"><tspan x="0" y="0">BWA ( Meth / mem2 )</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <path id="rect2" class="st1" d="M21,59.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
-  <g id="text2" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st25" transform="translate(27.6 64.9)"><tspan x="0" y="0">FastQC &amp; cat</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <path id="rect3" class="st26" d="M16,44.8h0c3,0,5.4,2.4,5.4,5.4h0c0,3-2.4,5.4-5.4,5.4h0c-3,0-5.4-2.4-5.4-5.4h0c0-3,2.4-5.4,5.4-5.4Z"/>
-  <g id="text3" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st16" transform="translate(23.7 52.8)"><tspan x="0" y="0">cfDNA TAPS-Methylated Analysis</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <path id="rect4" class="st30" d="M21,82.5h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
-  <g id="text4" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st25" transform="translate(27.6 133.7)"><tspan x="0" y="0">asTair</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <path id="rect5" class="st34" d="M21,93.9h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
-  <g id="text5" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st25" transform="translate(27.6 122.2)"><tspan x="0" y="0">rasTair</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <path id="rect6" class="st33" d="M21,105.3h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
-  <path id="rect7" class="st0" d="M21,116.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
-  <path id="rect8" class="st31" d="M21,128.2h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6h0Z"/>
-  <g id="text8" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st25" transform="translate(27.6 110.7)"><tspan x="0" y="0">PyMbias</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <g id="text9" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st25" transform="translate(27.6 99.3)"><tspan x="0" y="0">BedTools Intersect</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <g id="text10" class="st19">
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st25" transform="translate(27.6 87.8)"><tspan x="0" y="0">GATK4 MarkDuplicates</tspan></text>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <path id="path1-5" class="st7" d="M470.5,92.6h-24v14.6h-31.6v-14.7h-24.1v14.8h-31.6v-14.8h-165.5v14.7h-31.6s0-14.8,0-14.7h-23.8"/>
-  <path id="path1" class="st8" d="M470.5,92.6h-24v-15.5h-31.6v15.5h-24.1v-15.6h-31.6v15.5h-165.5v-15.5h-31.6s0,15.7,0,15.5h-23.8"/>
-  <path id="path2" class="st13" d="M223.4,93.1h-29.8,29.8Z"/>
-  <path id="path3" class="st11" d="M329.4,93.1h-35.4,35.4Z"/>
-  <path id="path4" class="st12" d="M359.2,93.1h-29.8,29.8Z"/>
-  <path id="path5" class="st2" d="M414.8,93.1h-24.1,24.1Z"/>
-  <path id="path6" class="st10" d="M162.2,93.3h-25.9,25.9Z"/>
-  <path id="path7" class="st3" d="M258.8,93.1h-35.4,35.4Z"/>
-  <path id="path8" class="st13" d="M162.7,77.4h30.4c.3,0,.6.3.6.6v30.3c0,.3-.3.6-.6.6h-30.4c-.3,0-.6-.3-.6-.6v-30.3c0-.3.3-.6.6-.6Z"/>
-  <path id="path9" class="st14" d="M471.7,93.1h-25.4,25.4Z"/>
-  <path id="path10" class="st6" d="M415.4,77.4h30.4c.3,0,.6.3.6.6v30.3c0,.3-.3.6-.6.6h-30.4c-.3,0-.6-.3-.6-.6v-30.3c0-.3.3-.6.6-.6h0Z"/>
-  <g id="text10-2" class="st19">
-    <g id="g2" class="st19">
-      <g id="text1-3" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(162.8 65.6)"><tspan x="0" y="0">FastQC</tspan></text>
+  <path id="rect1" class="st36" d="M21,71.1h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <g id="text1" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st29" transform="translate(27.6 76.3)"><tspan x="0" y="0">BWA ( Meth / mem2 )</tspan></text>
               </g>
             </g>
           </g>
@@ -323,27 +321,15 @@
       </g>
     </g>
   </g>
-  <g id="text14" class="st19">
-    <g id="g3" class="st19">
-      <g id="text2-9" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(274.7 69.8)"><tspan x="0" y="0">BedTools</tspan></text>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <g id="g4" class="st19">
-      <g id="text3-0" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st17" transform="translate(276.3 80.6)"><tspan x="0" y="0">intersect</tspan></text>
+  <path id="rect2" class="st15" d="M21,59.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <g id="text2" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st29" transform="translate(27.6 64.9)"><tspan x="0" y="0">FastQC &amp; cat</tspan></text>
               </g>
             </g>
           </g>
@@ -351,14 +337,15 @@
       </g>
     </g>
   </g>
-  <g id="text19" class="st19">
-    <g id="g7" class="st19">
-      <g id="text6" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(360.1 65.6)"><tspan x="0" y="0">rasTair</tspan></text>
+  <path id="rect3" class="st32" d="M16,44.8h0c3,0,5.4,2.4,5.4,5.4h0c0,3-2.4,5.4-5.4,5.4h0c-3,0-5.4-2.4-5.4-5.4h0c0-3,2.4-5.4,5.4-5.4Z"/>
+  <g id="text3" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st20" transform="translate(23.7 52.8)"><tspan x="0" y="0">cfDNA TAPS-Methylated Analysis</tspan></text>
               </g>
             </g>
           </g>
@@ -366,14 +353,183 @@
       </g>
     </g>
   </g>
-  <g id="text20" class="st19">
-    <g id="g8" class="st19">
-      <g id="text7" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(171.3 125.4)"><tspan x="0" y="0">cat</tspan></text>
+  <path id="rect4" class="st14" d="M21,82.5h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <g id="text4" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st29" transform="translate(27.6 133.7)"><tspan x="0" y="0">asTair</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path id="rect5" class="st16" d="M21,93.9h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <g id="text5" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st29" transform="translate(27.6 122.2)"><tspan x="0" y="0">rasTair</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path id="rect6" class="st19" d="M21,105.3h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <path id="rect7" class="st18" d="M21,116.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <path id="rect8" class="st17" d="M21,128.2h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6h0Z"/>
+  <g id="text8" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st29" transform="translate(27.6 110.7)"><tspan x="0" y="0">PyMbias</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="text9" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st29" transform="translate(27.6 99.3)"><tspan x="0" y="0">BedTools Intersect</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="text10" class="st23">
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st29" transform="translate(27.6 87.8)"><tspan x="0" y="0">GATK4 MarkDuplicates</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path id="path1-5" class="st5" d="M470.5,92.6h-24v14.6h-31.6v-14.7h-24.1v14.8h-31.6v-14.8h-165.5v14.7h-31.6s0-14.8,0-14.7h-23.8"/>
+  <path id="path1" class="st6" d="M470.5,92.6h-24v-15.5h-31.6v15.5h-24.1v-15.6h-31.6v15.5h-165.5v-15.5h-31.6s0,15.7,0,15.5h-23.8"/>
+  <path id="path2" class="st2" d="M223.4,93.1h-29.8,29.8Z"/>
+  <path id="path3" class="st4" d="M329.4,93.1h-35.4,35.4Z"/>
+  <path id="path4" class="st3" d="M359.2,93.1h-29.8,29.8Z"/>
+  <path id="path5" class="st0" d="M414.8,93.1h-24.1,24.1Z"/>
+  <path id="path6" class="st7" d="M162.2,93.3h-25.9,25.9Z"/>
+  <path id="path7" class="st8" d="M258.8,93.1h-35.4,35.4Z"/>
+  <path id="path8" class="st12" d="M162.7,77.4h30.4c.3,0,.6.3.6.6v30.3c0,.3-.3.6-.6.6h-30.4c-.3,0-.6-.3-.6-.6v-30.3c0-.3.3-.6.6-.6Z"/>
+  <path id="path9" class="st11" d="M471.7,93.1h-25.4,25.4Z"/>
+  <path id="path10" class="st10" d="M415.4,77.4h30.4c.3,0,.6.3.6.6v30.3c0,.3-.3.6-.6.6h-30.4c-.3,0-.6-.3-.6-.6v-30.3c0-.3.3-.6.6-.6h0Z"/>
+  <g id="text10-2" class="st23">
+    <g id="g2" class="st23">
+      <g id="text1-3" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(162.8 65.6)"><tspan x="0" y="0">FastQC</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="text14" class="st23">
+    <g id="g3" class="st23">
+      <g id="text2-9" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(274.7 69.8)"><tspan x="0" y="0">BedTools</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="g4" class="st23">
+      <g id="text3-0" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st21" transform="translate(276.3 80.6)"><tspan x="0" y="0">intersect</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="text19" class="st23">
+    <g id="g7" class="st23">
+      <g id="text6" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(360.1 65.6)"><tspan x="0" y="0">rasTair</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="text20" class="st23">
+    <g id="g8" class="st23">
+      <g id="text7" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(171.3 125.4)"><tspan x="0" y="0">cat</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
@@ -383,19 +539,23 @@
   </g>
   <g id="g24">
     <g id="g23">
-      <rect id="rect20" class="st27" x="105.9" y="74.4" width="28.6" height="35.7"/>
-      <rect id="rect21" class="st29" x="104.1" y="88.7" width="32.2" height="14.3"/>
-      <rect id="rect22" class="st27" x="107.7" y="76.2" width="28.6" height="35.7"/>
-      <rect id="rect23" class="st28" x="105.9" y="90.5" width="32.1" height="14.3"/>
+      <rect id="rect20" class="st33" x="105.9" y="74.4" width="28.6" height="35.7"/>
+      <rect id="rect21" class="st35" x="104.1" y="88.7" width="32.2" height="14.3"/>
+      <rect id="rect22" class="st33" x="107.7" y="76.2" width="28.6" height="35.7"/>
+      <rect id="rect23" class="st34" x="105.9" y="90.5" width="32.1" height="14.3"/>
     </g>
-    <g id="text23" class="st19">
-      <g id="g9" class="st19">
-        <g id="text8-9" class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <g class="st19">
-                  <text class="st18" transform="translate(113.3 100.3)"><tspan x="0" y="0">fastq</tspan></text>
+    <g id="text23" class="st23">
+      <g id="g9" class="st23">
+        <g id="text8-9" class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <g class="st23">
+                      <text class="st22" transform="translate(113.3 100.3)"><tspan x="0" y="0">fastq</tspan></text>
+                    </g>
+                  </g>
                 </g>
               </g>
             </g>
@@ -404,43 +564,36 @@
       </g>
     </g>
   </g>
-  <path id="path27" class="st5" d="M359.8,77.4h30.4c.3,0,.6.3.6.6v30.3c0,.3-.3.6-.6.6h-30.4c-.3,0-.6-.3-.6-.6v-30.3c0-.3.3-.6.6-.6h0Z"/>
-  <g id="text32" class="st19">
-    <g id="g10" class="st19">
-      <g id="text9-6" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(360.1 125.4)"><tspan x="0" y="0">rasTair</tspan></text>
+  <path id="path27" class="st13" d="M359.8,77.4h30.4c.3,0,.6.3.6.6v30.3c0,.3-.3.6-.6.6h-30.4c-.3,0-.6-.3-.6-.6v-30.3c0-.3.3-.6.6-.6h0Z"/>
+  <g id="text32" class="st23">
+    <g id="g10" class="st23">
+      <g id="text9-6" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(360.1 125.4)"><tspan x="0" y="0">rasTair</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
         </g>
       </g>
     </g>
-    <g id="g11" class="st19">
-      <g id="text11" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st17" transform="translate(357.2 136.2)"><tspan x="0" y="0">intersect</tspan></text>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  <g id="text33" class="st19">
-    <g id="g12" class="st19">
-      <g id="text12" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(417.6 65.6)"><tspan x="0" y="0">asTair</tspan></text>
+    <g id="g11" class="st23">
+      <g id="text11" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st21" transform="translate(357.2 136.2)"><tspan x="0" y="0">intersect</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
@@ -448,27 +601,54 @@
       </g>
     </g>
   </g>
-  <g id="text37" class="st19">
-    <g id="g13" class="st19">
-      <g id="text13" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(417.6 125.4)"><tspan x="0" y="0">asTair</tspan></text>
+  <g id="text33" class="st23">
+    <g id="g12" class="st23">
+      <g id="text12" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(417.6 65.6)"><tspan x="0" y="0">asTair</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
         </g>
       </g>
     </g>
-    <g id="g15" class="st19">
-      <g id="text15" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st17" transform="translate(412.8 136.2)"><tspan x="0" y="0">intersect</tspan></text>
+  </g>
+  <g id="text37" class="st23">
+    <g id="g13" class="st23">
+      <g id="text13" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(417.6 125.4)"><tspan x="0" y="0">asTair</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="g15" class="st23">
+      <g id="text15" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st21" transform="translate(412.8 136.2)"><tspan x="0" y="0">intersect</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
@@ -477,16 +657,20 @@
     </g>
   </g>
   <g>
-    <rect id="rect39" class="st27" x="471" y="75.2" width="28.6" height="35.7"/>
-    <rect id="rect40" class="st28" x="469.2" y="89.5" width="32.1" height="14.3"/>
-    <g id="text40" class="st19">
-      <g id="g16" class="st19">
-        <g id="text16" class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <g class="st19">
-                  <text class="st18" transform="translate(479.7 99.3)"><tspan x="0" y="0">tsv</tspan></text>
+    <rect id="rect39" class="st33" x="471" y="75.2" width="28.6" height="35.7"/>
+    <rect id="rect40" class="st34" x="469.2" y="89.5" width="32.1" height="14.3"/>
+    <g id="text40" class="st23">
+      <g id="g16" class="st23">
+        <g id="text16" class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <g class="st23">
+                      <text class="st22" transform="translate(479.7 99.3)"><tspan x="0" y="0">tsv</tspan></text>
+                    </g>
+                  </g>
                 </g>
               </g>
             </g>
@@ -495,14 +679,18 @@
       </g>
     </g>
   </g>
-  <g id="text42" class="st19">
-    <g id="g17" class="st19">
-      <g id="text17" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(311.6 114.5)"><tspan x="0" y="0">PyMbias</tspan></text>
+  <g id="text42" class="st23">
+    <g id="g17" class="st23">
+      <g id="text17" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(311.6 114.5)"><tspan x="0" y="0">PyMbias</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
@@ -511,27 +699,35 @@
     </g>
   </g>
   <path id="path42" class="st9" d="M294.1,93.1h-35.2,35.2Z"/>
-  <g id="text47" class="st19">
-    <g id="g21" class="st19">
-      <g id="text21" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st21" transform="translate(244.3 114.5)"><tspan x="0" y="0">GATK4</tspan></text>
+  <g id="text47" class="st23">
+    <g id="g21" class="st23">
+      <g id="text21" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st25" transform="translate(244.3 114.5)"><tspan x="0" y="0">GATK4</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
         </g>
       </g>
     </g>
-    <g id="g22" class="st19">
-      <g id="text22" class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <g class="st19">
-                <text class="st17" transform="translate(227.7 125.3)"><tspan x="0" y="0">MarkDuplicates</tspan></text>
+    <g id="g22" class="st23">
+      <g id="text22" class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <g class="st23">
+                    <text class="st21" transform="translate(227.7 125.3)"><tspan x="0" y="0">MarkDuplicates</tspan></text>
+                  </g>
+                </g>
               </g>
             </g>
           </g>
@@ -549,13 +745,17 @@
       <mpath href="#path1-5"/>
     </animateMotion>
   </circle>
-  <g id="g6" class="st19">
-    <g id="text4-6" class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <text class="st24" transform="translate(212.8 80.3)"><tspan x="0" y="0">BWA</tspan></text>
+  <g id="g6" class="st23">
+    <g id="text4-6" class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <text class="st28" transform="translate(212.8 80.3)"><tspan x="0" y="0">BWA</tspan></text>
+                </g>
+              </g>
             </g>
           </g>
         </g>
@@ -563,53 +763,66 @@
     </g>
   </g>
   <g>
-    <polygon class="st15" points="70.5 7 58.6 34.6 55.1 34.6 67 7 70.5 7"/>
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st20" transform="translate(6 31.4)"><tspan x="0" y="0">CTI</tspan></text>
+    <polygon class="st30" points="70.5 7 58.6 34.6 55.1 34.6 67 7 70.5 7"/>
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st24" transform="translate(6 31.4)"><tspan x="0" y="0">CTI</tspan></text>
+              </g>
+            </g>
           </g>
         </g>
       </g>
     </g>
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <text class="st23" transform="translate(134.3 30.1)"><tspan x="0" y="0">inn</tspan></text>
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <text class="st27" transform="translate(134.3 30.1)"><tspan x="0" y="0">inn</tspan></text>
+              </g>
+            </g>
           </g>
         </g>
       </g>
     </g>
-    <g class="st19">
-      <g class="st19">
-        <g class="st19">
-          <g class="st19">
-            <g class="st19">
-              <text class="st22" transform="translate(72.8 30.1)"><tspan x="0" y="0">MST</tspan></text>
+    <g class="st23">
+      <g class="st23">
+        <g class="st23">
+          <g class="st23">
+            <g class="st23">
+              <g class="st23">
+                <g class="st23">
+                  <text class="st26" transform="translate(72.8 30.1)"><tspan x="0" y="0">MST</tspan></text>
+                </g>
+              </g>
             </g>
           </g>
         </g>
       </g>
     </g>
   </g>
-  <path id="rect25" class="st4" d="M177.9,71.9h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect24" class="st4" d="M177.9,103.4h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect41" class="st4" d="M223.4,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect43" class="st4" d="M258.7,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect44" class="st4" d="M294.1,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect42" class="st4" d="M329.4,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect28" class="st4" d="M375,71.8h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect26" class="st4" d="M430.6,71.8h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect27" class="st4" d="M430.6,103.3h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
-  <path id="rect29" class="st4" d="M375,103.3h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect25" class="st1" d="M177.9,71.9h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect24" class="st1" d="M177.9,103.4h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect41" class="st1" d="M223.4,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect43" class="st1" d="M258.7,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect44" class="st1" d="M294.1,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect42" class="st1" d="M329.4,87.5h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect28" class="st1" d="M375,71.8h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect26" class="st1" d="M430.6,71.8h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect27" class="st1" d="M430.6,103.3h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
+  <path id="rect29" class="st1" d="M375,103.3h0c3.1,0,5.6,2.5,5.6,5.6h0c0,3.1-2.5,5.6-5.6,5.6h0c-3.1,0-5.6-2.5-5.6-5.6h0c0-3.1,2.5-5.6,5.6-5.6Z"/>
   <g>
-    <path d="M186.8,30.6l3.3-8.7h.8l-3.4,8.7h-.8Z"/>
-    <path d="M191.8,25.9c0-.6,0-1.1,0-1.6h.9v.9h0c.3-.6.9-1.1,1.8-1.1s1.4.5,1.6,1.2h0c.2-.3.4-.6.6-.8.3-.3.7-.4,1.3-.4s1.9.5,1.9,2.5v3.4h-1v-3.3c0-1.1-.4-1.8-1.3-1.8s-1.1.4-1.2,1c0,.1,0,.3,0,.5v3.6h-1v-3.5c0-.9-.4-1.6-1.2-1.6s-1.1.5-1.3,1.1c0,.2,0,.3,0,.5v3.5h-1v-4.2Z"/>
-    <path d="M201.4,30.1v-.3c.8,0,.9-.1.9-1v-4c0-.9,0-.9-.9-1v-.3h2.7v.3c-.8,0-.9.1-.9,1v4c0,.9,0,.9.9,1v.3h-2.7Z"/>
-    <path d="M205.3,29c.3.2.9.4,1.4.4.8,0,1.1-.4,1.1-.9s-.3-.8-1.1-1.1c-1-.4-1.5-.9-1.5-1.6s.8-1.7,2-1.7,1.1.2,1.4.4l-.3.8c-.2-.1-.6-.3-1.2-.3s-1,.4-1,.8.3.7,1.1,1c1,.4,1.5.9,1.5,1.8s-.8,1.7-2.2,1.7-1.2-.2-1.6-.4l.3-.8Z"/>
-    <path d="M211.4,22.6v1.7h1.5v.8h-1.5v3.1c0,.7.2,1.1.8,1.1s.5,0,.6,0v.8c-.2,0-.5.1-.9.1s-.9-.2-1.1-.4c-.3-.3-.4-.8-.4-1.5v-3.2h-.9v-.8h.9v-1.4l1-.3Z"/>
-    <path d="M213.2,30.6l3.3-8.7h.8l-3.4,8.7h-.8Z"/>
+    <path d="M186.8,30.6l3.3-8.7h.8l-3.4,8.7h-.8,0Z"/>
+    <path d="M191.8,25.9v-1.6h.9v.9h0c.3-.6.9-1.1,1.8-1.1s1.4.5,1.6,1.2h0c.2-.3.4-.6.6-.8.3-.3.7-.4,1.3-.4s1.9.5,1.9,2.5v3.4h-1v-3.3c0-1.1-.4-1.8-1.3-1.8s-1.1.4-1.2,1v4.1h-1v-3.5c0-.9-.4-1.6-1.2-1.6s-1.1.5-1.3,1.1v4h-1v-4.2h-.1Z"/>
+    <path d="M201.4,30.1v-.3c.8,0,.9-.1.9-1v-4c0-.6-.3-.9-.9-1v-.3h2.7v.3c-.8,0-.9.1-.9,1v4c0,.6.3.9.9,1v.3h-2.7Z"/>
+    <path d="M205.3,29c.3.2.9.4,1.4.4.8,0,1.1-.4,1.1-.9s-.3-.8-1.1-1.1c-1-.4-1.5-.9-1.5-1.6s.8-1.7,2-1.7,1.1.2,1.4.4l-.3.8c-.2-.1-.6-.3-1.2-.3s-1,.4-1,.8.3.7,1.1,1c1,.4,1.5.9,1.5,1.8s-.8,1.7-2.2,1.7-1.2-.2-1.6-.4l.3-.8h.1Z"/>
+    <path d="M211.4,22.6v1.7h1.5v.8h-1.5v3.1c0,.7.2,1.1.8,1.1h.6v.8c-.2,0-.5.1-.9.1s-.9-.2-1.1-.4c-.3-.3-.4-.8-.4-1.5v-3.2h-.9v-.8h.9v-1.4l1-.3h0Z"/>
+    <path d="M213.2,30.6l3.3-8.7h.8l-3.4,8.7h-.8,0Z"/>
   </g>
+  <path class="st31" d="M480.4,12.7l9.1-9.1,9.2,9s-.2.3-.3.4c-.5.6-1.1,1.2-1.6,1.8l-5.8-5.5v9.6h6.8v2.9h-6.7v2.1s.1.5.2.5h6.5v2.9h-6.8v2s.1.5.2.5h6.5v2.7h-6.5l-.2.2v6.7h-3v-6.9h-6.5v-2.8h6.6v-2.4h-6.6v-2.9h6.6v-2.6h-6.6v-2.9h6.6v-9.6l-5.5,5.5c-.1,0-.8-.7-1-.8l-1.2-1.2h0Z"/>
 </svg>

@@ -1,8 +1,3 @@
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/CTI-MSTinn_logo_light.svg">
-    <img alt="mskcc/dnainn" src="assets/CTI-MSTinn_logo_light.svg" width="400">
-  </picture>
-
 <!-- [![GitHub Actions CI Status](https://github.com/cti/mstinn/actions/workflows/ci.yml/badge.svg)](https://github.com/cti/mstinn/actions/workflows/ci.yml)>
 [![GitHub Actions Linting Status](https://github.com/cti/mstinn/actions/workflows/linting.yml/badge.svg)](https://github.com/cti/mstinn/actions/workflows/linting.yml)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
 -->
