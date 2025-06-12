@@ -25,7 +25,7 @@
 4. Process BAM file ([`GATK MarkDuplicates`](https://github.com/broadinstitute/gatk/blob/master/src/main/java/org/broadinstitute/hellbender/tools/spark/transforms/markduplicates/MarkDuplicatesSpark.java))
 5. Intersect Metiloma and Targets BED files ([`BEDtools intersect`](https://github.com/arq5x/bedtools/blob/master/docs/content/tools/intersect.rst))
 6. Assess methylation bias and calculate best trimming thresholds([`PyMbias`]())
-7. Assess methylation by ([`asTair`])
+7. Assess methylation by ([`asTair`](https://bitbucket.org/bsblabludwig/astair/src/master/))
 8. Assess methylation by ([`rasTair`])
 9. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
 
@@ -75,6 +75,7 @@ Main developer:
 We thank the following people for their extensive assistance in the development of this pipeline:
 
 - [Caryn Hale](halec@mskcc.org)
+- [Grittney Tam](tamg@mskcc.org)
 - [Brian Loomis](loomisb@mskcc.org)
 
 ## Contributions and Support
