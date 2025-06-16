@@ -614,12 +614,12 @@
     </g>
   </g>
   <circle id="circle61" cx=".2" cy=".9" r="3.4">
-    <animateMotion accumulate="none" additive="replace" begin="0s" calcMode="paced" dur="10s" fill="remove" keyPoints="1;0" keyTimes="0;1" repeatCount="indefinite" restart="always">
+    <animateMotion accumulate="none" additive="replace" begin="0s" calcMode="paced" dur="8s" fill="remove" keyPoints="1;0" keyTimes="0;1" repeatCount="indefinite" restart="always">
       <mpath href="#path1"/>
     </animateMotion>
   </circle>
   <circle id="circle62" cx=".2" cy=".9" r="3.4">
-    <animateMotion accumulate="none" additive="replace" begin="0s" calcMode="paced" dur="10s" fill="remove" keyPoints="1;0" keyTimes="0;1" repeatCount="indefinite" restart="always">
+    <animateMotion accumulate="none" additive="replace" begin="0s" calcMode="paced" dur="8s" fill="remove" keyPoints="1;0" keyTimes="0;1" repeatCount="indefinite" restart="always">
       <mpath href="#path1-5"/>
     </animateMotion>
   </circle>
