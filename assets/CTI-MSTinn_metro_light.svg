@@ -82,10 +82,6 @@
       }
 
       .st22 {
-        fill: #9900db;
-      }
-
-      .st23 {
         fill: #a156ea;
       }
 
@@ -93,19 +89,15 @@
         font-family: Helvetica, Helvetica;
       }
 
-      .st24 {
+      .st23 {
         fill: #27dcf4;
       }
 
-      .st25 {
+      .st24 {
         fill: #575757;
       }
 
       .st16 {
-        stroke: #9900db;
-      }
-
-      .st17 {
         stroke: #27dcf4;
       }
 
@@ -113,7 +105,7 @@
         font-size: 30px;
       }
 
-      .st26 {
+      .st25 {
         fill: #82baff;
       }
 
@@ -122,12 +114,20 @@
         font-weight: 600;
       }
 
+      .st26 {
+        fill: #d200ff;
+      }
+
       .st8 {
         font-size: 6px;
       }
 
       .st20 {
         fill: #1f1d1d;
+      }
+
+      .st17 {
+        stroke: #d200ff;
       }
 
       .st27 {
@@ -142,28 +142,34 @@
         fill: #3a393b;
       }
     </style>
-    <linearGradient id="linear-gradient" x1="228.6" y1="-20.3" x2="394.2" y2="-20.3" gradientTransform="translate(0 106.4)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="228.6" y1="164.3" x2="394.2" y2="164.3" gradientTransform="translate(0 250.4) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ad27e6"/>
       <stop offset=".3" stop-color="#a156ea"/>
       <stop offset=".7" stop-color="#8575ea"/>
       <stop offset="1" stop-color="#82baff"/>
     </linearGradient>
-    <linearGradient id="linear-gradient1" x1="194.8" y1="86.2" x2="230.9" y2="86.2" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#9900db"/>
+    <linearGradient id="linear-gradient1" x1="194.8" y1="57.8" x2="230.9" y2="57.8" gradientTransform="translate(0 144) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d200ff"/>
       <stop offset="1" stop-color="#ad27e6"/>
     </linearGradient>
-    <linearGradient id="linear-gradient2" x1="391.9" y1="-374.5" x2="428" y2="-374.5" gradientTransform="translate(0 -288.4) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient2" x1="391.9" y1="518.5" x2="428" y2="518.5" gradientTransform="translate(0 -432.4)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#82baff"/>
       <stop offset="1" stop-color="#27dcf4"/>
     </linearGradient>
   </defs>
-  <text class="st5" transform="translate(6.4 31.4)"><tspan x="0" y="0">MSTinn</tspan></text>
+  <g class="st3">
+    <text class="st5" transform="translate(6.4 31.4)"><tspan x="0" y="0">MSTinn</tspan></text>
+  </g>
   <g class="st3">
     <g class="st3">
-      <text class="st4" transform="translate(247.7 62.8)"><tspan x="0" y="0">BWA</tspan></text>
+      <g class="st3">
+        <text class="st4" transform="translate(247.7 62.8)"><tspan x="0" y="0">BWA</tspan></text>
+      </g>
     </g>
     <g class="st3">
-      <text class="st7" transform="translate(243 73.6)"><tspan x="0" y="0">Sention</tspan></text>
+      <g class="st3">
+        <text class="st7" transform="translate(243 73.6)"><tspan x="0" y="0">Sention</tspan></text>
+      </g>
     </g>
   </g>
   <path id="rect1" class="st27" d="M21,71.1h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
@@ -178,7 +184,9 @@
                   <g class="st3">
                     <g class="st3">
                       <g class="st3">
-                        <text class="st8" transform="translate(27.6 76.3)"><tspan x="0" y="0">BWA ( Meth / mem2 )</tspan></text>
+                        <g class="st3">
+                          <text class="st8" transform="translate(27.6 76.3)"><tspan x="0" y="0">BWA ( Meth / mem2 )</tspan></text>
+                        </g>
                       </g>
                     </g>
                   </g>
@@ -190,7 +198,7 @@
       </g>
     </g>
   </g>
-  <path id="rect2" class="st22" d="M21,59.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <path id="rect2" class="st26" d="M21,59.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
   <g id="text2" class="st3">
     <g class="st3">
       <g class="st3">
@@ -202,7 +210,9 @@
                   <g class="st3">
                     <g class="st3">
                       <g class="st3">
-                        <text class="st8" transform="translate(27.6 64.9)"><tspan x="0" y="0">FastQC &amp; cat</tspan></text>
+                        <g class="st3">
+                          <text class="st8" transform="translate(27.6 64.9)"><tspan x="0" y="0">FastQC &amp; cat</tspan></text>
+                        </g>
                       </g>
                     </g>
                   </g>
@@ -226,32 +236,44 @@
                   <g class="st3">
                     <g class="st3">
                       <g class="st3">
-                        <text class="st0" transform="translate(23.7 52.8)"><tspan x="0" y="0">M</tspan></text>
+                        <g class="st3">
+                          <text class="st0" transform="translate(23.7 52.8)"><tspan x="0" y="0">M</tspan></text>
+                        </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
-                        <text class="st0" transform="translate(30.6 52.8)"><tspan x="0" y="0">ethylation</tspan></text>
+                        <g class="st3">
+                          <text class="st0" transform="translate(30.6 52.8)"><tspan x="0" y="0">ethylation</tspan></text>
+                        </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
-                        <text class="st0" transform="translate(72.2 52.8)"><tspan x="0" y="0">S</tspan></text>
+                        <g class="st3">
+                          <text class="st0" transform="translate(72.2 52.8)"><tspan x="0" y="0">S</tspan></text>
+                        </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
-                        <text class="st0" transform="translate(76.9 52.8)"><tspan x="0" y="0">equencing</tspan></text>
+                        <g class="st3">
+                          <text class="st0" transform="translate(76.9 52.8)"><tspan x="0" y="0">equencing</tspan></text>
+                        </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
-                        <text class="st0" transform="translate(118.5 52.8)"><tspan x="0" y="0">T</tspan></text>
+                        <g class="st3">
+                          <text class="st0" transform="translate(118.5 52.8)"><tspan x="0" y="0">T</tspan></text>
+                        </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
-                        <text class="st0" transform="translate(123.2 52.8)"><tspan x="0" y="0">APS</tspan></text>
+                        <g class="st3">
+                          <text class="st0" transform="translate(123.2 52.8)"><tspan x="0" y="0">APS</tspan></text>
+                        </g>
                       </g>
                     </g>
                   </g>
@@ -263,7 +285,7 @@
       </g>
     </g>
   </g>
-  <path id="rect4" class="st23" d="M21,82.5h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <path id="rect4" class="st22" d="M21,82.5h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
   <path id="rect5" class="st9" d="M21,93.9h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
   <g id="text5" class="st3">
     <g class="st3">
@@ -276,7 +298,9 @@
                   <g class="st3">
                     <g class="st3">
                       <g class="st3">
-                        <text class="st8" transform="translate(27.6 122.2)"><tspan x="0" y="0">rasTair</tspan></text>
+                        <g class="st3">
+                          <text class="st8" transform="translate(27.6 122.2)"><tspan x="0" y="0">rasTair</tspan></text>
+                        </g>
                       </g>
                     </g>
                   </g>
@@ -288,8 +312,8 @@
       </g>
     </g>
   </g>
-  <path id="rect6" class="st26" d="M21,105.3h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
-  <path id="rect7" class="st24" d="M21,116.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <path id="rect6" class="st25" d="M21,105.3h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
+  <path id="rect7" class="st23" d="M21,116.7h0c2,0,3.6,1.6,3.6,3.6h0c0,2-1.6,3.6-3.6,3.6h0c-2,0-3.6-1.6-3.6-3.6h0c0-2,1.6-3.6,3.6-3.6Z"/>
   <g id="text8" class="st3">
     <g class="st3">
       <g class="st3">
@@ -301,7 +325,9 @@
                   <g class="st3">
                     <g class="st3">
                       <g class="st3">
-                        <text class="st8" transform="translate(27.6 110.7)"><tspan x="0" y="0">PyMbias</tspan></text>
+                        <g class="st3">
+                          <text class="st8" transform="translate(27.6 110.7)"><tspan x="0" y="0">PyMbias</tspan></text>
+                        </g>
                       </g>
                     </g>
                   </g>
@@ -324,7 +350,9 @@
                   <g class="st3">
                     <g class="st3">
                       <g class="st3">
-                        <text class="st8" transform="translate(27.6 99.3)"><tspan x="0" y="0">BedTools Intersect</tspan></text>
+                        <g class="st3">
+                          <text class="st8" transform="translate(27.6 99.3)"><tspan x="0" y="0">BedTools Intersect</tspan></text>
+                        </g>
                       </g>
                     </g>
                   </g>
@@ -347,7 +375,9 @@
                   <g class="st3">
                     <g class="st3">
                       <g class="st3">
-                        <text class="st8" transform="translate(27.6 87.8)"><tspan x="0" y="0">GATK4 MarkDuplicates</tspan></text>
+                        <g class="st3">
+                          <text class="st8" transform="translate(27.6 87.8)"><tspan x="0" y="0">GATK4 MarkDuplicates</tspan></text>
+                        </g>
                       </g>
                     </g>
                   </g>
@@ -362,8 +392,8 @@
   <path id="path1" class="st15" d="M459,85.6h-33.2v-15.6h-31.6v15.5h-165.5v-15.5h-31.6s0,15.7,0,15.5h-23.8"/>
   <path id="path1-5" class="st14" d="M459,85.6h-33.2v14.7h-31.6v-14.8h-165.5v14.7h-31.6s0-14.8,0-14.7h-23.8"/>
   <path id="path2" class="st18" d="M394.2,86.1h-165.6,165.6Z"/>
-  <path id="path5" class="st17" d="M449.8,86.1h-24.1,24.1Z"/>
-  <path id="path6" class="st16" d="M197.2,86.3h-25.9,25.9Z"/>
+  <path id="path5" class="st16" d="M449.8,86.1h-24.1,24.1Z"/>
+  <path id="path6" class="st17" d="M197.2,86.3h-25.9,25.9Z"/>
   <path id="path8" class="st13" d="M197.7,70.4h30.4c.3,0,.6.3.6.6v30.3c0,.3-.3.6-.6.6h-30.4c-.3,0-.6-.3-.6-.6v-30.3c0-.3.3-.6.6-.6Z"/>
   <g id="text10-2" class="st3">
     <g id="g2" class="st3">
@@ -378,7 +408,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st6" transform="translate(197.8 58.6)"><tspan x="0" y="0">FastQC</tspan></text>
+                            <g class="st3">
+                              <text class="st6" transform="translate(197.8 58.6)"><tspan x="0" y="0">FastQC</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -405,7 +437,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st6" transform="translate(309.7 62.8)"><tspan x="0" y="0">BedTools</tspan></text>
+                            <g class="st3">
+                              <text class="st6" transform="translate(309.7 62.8)"><tspan x="0" y="0">BedTools</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -430,7 +464,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st1" transform="translate(311.3 73.6)"><tspan x="0" y="0">intersect</tspan></text>
+                            <g class="st3">
+                              <text class="st1" transform="translate(311.3 73.6)"><tspan x="0" y="0">intersect</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -457,7 +493,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st6" transform="translate(395.1 58.6)"><tspan x="0" y="0">rasTair</tspan></text>
+                            <g class="st3">
+                              <text class="st6" transform="translate(395.1 58.6)"><tspan x="0" y="0">rasTair</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -484,7 +522,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st6" transform="translate(206.3 118.4)"><tspan x="0" y="0">cat</tspan></text>
+                            <g class="st3">
+                              <text class="st6" transform="translate(206.3 118.4)"><tspan x="0" y="0">cat</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -518,7 +558,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st2" transform="translate(148.3 93.3)"><tspan x="0" y="0">fastq</tspan></text>
+                              <g class="st3">
+                                <text class="st2" transform="translate(148.3 93.3)"><tspan x="0" y="0">fastq</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -547,7 +589,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st6" transform="translate(395.1 118.4)"><tspan x="0" y="0">rasTair</tspan></text>
+                            <g class="st3">
+                              <text class="st6" transform="translate(395.1 118.4)"><tspan x="0" y="0">rasTair</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -572,7 +616,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st1" transform="translate(392.2 129.2)"><tspan x="0" y="0">intersect</tspan></text>
+                            <g class="st3">
+                              <text class="st1" transform="translate(392.2 129.2)"><tspan x="0" y="0">intersect</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -599,7 +645,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st6" transform="translate(346.6 107.5)"><tspan x="0" y="0">PyMbias</tspan></text>
+                            <g class="st3">
+                              <text class="st6" transform="translate(346.6 107.5)"><tspan x="0" y="0">PyMbias</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -626,7 +674,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st6" transform="translate(279.3 107.5)"><tspan x="0" y="0">GATK4</tspan></text>
+                            <g class="st3">
+                              <text class="st6" transform="translate(279.3 107.5)"><tspan x="0" y="0">GATK4</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -651,7 +701,9 @@
                       <g class="st3">
                         <g class="st3">
                           <g class="st3">
-                            <text class="st1" transform="translate(262.7 118.3)"><tspan x="0" y="0">MarkDuplicates</tspan></text>
+                            <g class="st3">
+                              <text class="st1" transform="translate(262.7 118.3)"><tspan x="0" y="0">MarkDuplicates</tspan></text>
+                            </g>
                           </g>
                         </g>
                       </g>
@@ -665,12 +717,12 @@
       </g>
     </g>
   </g>
-  <circle id="circle61" class="st25" cx=".2" cy=".9" r="3.4">
+  <circle id="circle61" class="st24" cx=".2" cy=".9" r="3.4">
     <animateMotion accumulate="none" additive="replace" begin="0s" calcMode="paced" dur="5s" fill="remove" keyPoints="1;0" keyTimes="0;1" repeatCount="indefinite" restart="always">
       <mpath href="#path1"/>
     </animateMotion>
   </circle>
-  <circle id="circle62" class="st25" cx=".2" cy=".9" r="3.4">
+  <circle id="circle62" class="st24" cx=".2" cy=".9" r="3.4">
     <animateMotion accumulate="none" additive="replace" begin="0s" calcMode="paced" dur="5s" fill="remove" keyPoints="1;0" keyTimes="0;1" repeatCount="indefinite" restart="always">
       <mpath href="#path1-5"/>
     </animateMotion>
@@ -707,7 +759,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st2" transform="translate(460.5 91.5)"><tspan x="0" y="0">tsv</tspan></text>
+                              <g class="st3">
+                                <text class="st2" transform="translate(460.5 91.5)"><tspan x="0" y="0">tsv</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
