@@ -142,33 +142,37 @@
         fill: #3a393b;
       }
     </style>
-    <linearGradient id="linear-gradient" x1="228.6" y1="164.3" x2="394.2" y2="164.3" gradientTransform="translate(0 250.4) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="228.6" y1="-92.3" x2="394.2" y2="-92.3" gradientTransform="translate(0 178.4)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ad27e6"/>
       <stop offset=".3" stop-color="#a156ea"/>
       <stop offset=".7" stop-color="#8575ea"/>
       <stop offset="1" stop-color="#82baff"/>
     </linearGradient>
-    <linearGradient id="linear-gradient1" x1="194.8" y1="57.8" x2="230.9" y2="57.8" gradientTransform="translate(0 144) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient1" x1="194.8" y1="14.2" x2="230.9" y2="14.2" gradientTransform="translate(0 72)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#d200ff"/>
       <stop offset="1" stop-color="#ad27e6"/>
     </linearGradient>
-    <linearGradient id="linear-gradient2" x1="391.9" y1="518.5" x2="428" y2="518.5" gradientTransform="translate(0 -432.4)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient2" x1="391.9" y1="-374.5" x2="428" y2="-374.5" gradientTransform="translate(0 -288.4) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#82baff"/>
       <stop offset="1" stop-color="#27dcf4"/>
     </linearGradient>
   </defs>
   <g class="st3">
-    <text class="st5" transform="translate(6.4 31.4)"><tspan x="0" y="0">MSTinn</tspan></text>
+    <g class="st3">
+      <text class="st5" transform="translate(6.4 31.4)"><tspan x="0" y="0">MSTinn</tspan></text>
+    </g>
   </g>
   <g class="st3">
     <g class="st3">
       <g class="st3">
-        <text class="st4" transform="translate(247.7 62.8)"><tspan x="0" y="0">BWA</tspan></text>
+        <text class="st4" transform="translate(247.7 62.9)"><tspan x="0" y="0">BWA</tspan></text>
       </g>
     </g>
+  </g>
+  <g class="st3">
     <g class="st3">
       <g class="st3">
-        <text class="st7" transform="translate(243 73.6)"><tspan x="0" y="0">Sention</tspan></text>
+        <text class="st7" transform="translate(240.6 73.6)"><tspan x="0" y="0">Sentieon</tspan></text>
       </g>
     </g>
   </g>
@@ -185,7 +189,9 @@
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st8" transform="translate(27.6 76.3)"><tspan x="0" y="0">BWA ( Meth / mem2 )</tspan></text>
+                          <g class="st3">
+                            <text class="st8" transform="translate(27.6 76.3)"><tspan x="0" y="0">BWA ( Meth / mem2 )</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -211,7 +217,9 @@
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st8" transform="translate(27.6 64.9)"><tspan x="0" y="0">FastQC &amp; cat</tspan></text>
+                          <g class="st3">
+                            <text class="st8" transform="translate(27.6 64.9)"><tspan x="0" y="0">FastQC &amp; cat</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -237,42 +245,54 @@
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st0" transform="translate(23.7 52.8)"><tspan x="0" y="0">M</tspan></text>
+                          <g class="st3">
+                            <text class="st0" transform="translate(23.7 52.8)"><tspan x="0" y="0">M</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st0" transform="translate(30.6 52.8)"><tspan x="0" y="0">ethylation</tspan></text>
+                          <g class="st3">
+                            <text class="st0" transform="translate(30.6 52.8)"><tspan x="0" y="0">ethylation</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st0" transform="translate(72.2 52.8)"><tspan x="0" y="0">S</tspan></text>
+                          <g class="st3">
+                            <text class="st0" transform="translate(72.2 52.8)"><tspan x="0" y="0">S</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st0" transform="translate(76.9 52.8)"><tspan x="0" y="0">equencing</tspan></text>
+                          <g class="st3">
+                            <text class="st0" transform="translate(76.9 52.8)"><tspan x="0" y="0">equencing</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st0" transform="translate(118.5 52.8)"><tspan x="0" y="0">T</tspan></text>
+                          <g class="st3">
+                            <text class="st0" transform="translate(118.5 52.8)"><tspan x="0" y="0">T</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st0" transform="translate(123.2 52.8)"><tspan x="0" y="0">APS</tspan></text>
+                          <g class="st3">
+                            <text class="st0" transform="translate(123.2 52.8)"><tspan x="0" y="0">APS</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -299,7 +319,9 @@
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st8" transform="translate(27.6 122.2)"><tspan x="0" y="0">rasTair</tspan></text>
+                          <g class="st3">
+                            <text class="st8" transform="translate(27.6 122.2)"><tspan x="0" y="0">rasTair</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -326,7 +348,9 @@
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st8" transform="translate(27.6 110.7)"><tspan x="0" y="0">PyMbias</tspan></text>
+                          <g class="st3">
+                            <text class="st8" transform="translate(27.6 110.7)"><tspan x="0" y="0">PyMbias</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -351,7 +375,9 @@
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st8" transform="translate(27.6 99.3)"><tspan x="0" y="0">BedTools Intersect</tspan></text>
+                          <g class="st3">
+                            <text class="st8" transform="translate(27.6 99.3)"><tspan x="0" y="0">BedTools Intersect</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -376,7 +402,9 @@
                     <g class="st3">
                       <g class="st3">
                         <g class="st3">
-                          <text class="st8" transform="translate(27.6 87.8)"><tspan x="0" y="0">GATK4 MarkDuplicates</tspan></text>
+                          <g class="st3">
+                            <text class="st8" transform="translate(27.6 87.8)"><tspan x="0" y="0">GATK4 MarkDuplicates</tspan></text>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -409,7 +437,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st6" transform="translate(197.8 58.6)"><tspan x="0" y="0">FastQC</tspan></text>
+                              <g class="st3">
+                                <text class="st6" transform="translate(197.8 58.6)"><tspan x="0" y="0">FastQC</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -438,7 +468,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st6" transform="translate(309.7 62.8)"><tspan x="0" y="0">BedTools</tspan></text>
+                              <g class="st3">
+                                <text class="st6" transform="translate(309.7 62.8)"><tspan x="0" y="0">BedTools</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -465,7 +497,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st1" transform="translate(311.3 73.6)"><tspan x="0" y="0">intersect</tspan></text>
+                              <g class="st3">
+                                <text class="st1" transform="translate(311.3 73.6)"><tspan x="0" y="0">intersect</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -494,7 +528,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st6" transform="translate(395.1 58.6)"><tspan x="0" y="0">rasTair</tspan></text>
+                              <g class="st3">
+                                <text class="st6" transform="translate(395.1 58.6)"><tspan x="0" y="0">rasTair</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -523,7 +559,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st6" transform="translate(206.3 118.4)"><tspan x="0" y="0">cat</tspan></text>
+                              <g class="st3">
+                                <text class="st6" transform="translate(206.3 118.4)"><tspan x="0" y="0">cat</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -559,7 +597,9 @@
                           <g class="st3">
                             <g class="st3">
                               <g class="st3">
-                                <text class="st2" transform="translate(148.3 93.3)"><tspan x="0" y="0">fastq</tspan></text>
+                                <g class="st3">
+                                  <text class="st2" transform="translate(148.3 93.3)"><tspan x="0" y="0">fastq</tspan></text>
+                                </g>
                               </g>
                             </g>
                           </g>
@@ -590,7 +630,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st6" transform="translate(395.1 118.4)"><tspan x="0" y="0">rasTair</tspan></text>
+                              <g class="st3">
+                                <text class="st6" transform="translate(395.1 118.4)"><tspan x="0" y="0">rasTair</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -617,7 +659,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st1" transform="translate(392.2 129.2)"><tspan x="0" y="0">intersect</tspan></text>
+                              <g class="st3">
+                                <text class="st1" transform="translate(392.2 129.2)"><tspan x="0" y="0">intersect</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -646,7 +690,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st6" transform="translate(346.6 107.5)"><tspan x="0" y="0">PyMbias</tspan></text>
+                              <g class="st3">
+                                <text class="st6" transform="translate(346.6 107.5)"><tspan x="0" y="0">PyMbias</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -675,7 +721,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st6" transform="translate(279.3 107.5)"><tspan x="0" y="0">GATK4</tspan></text>
+                              <g class="st3">
+                                <text class="st6" transform="translate(279.3 107.5)"><tspan x="0" y="0">GATK4</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -702,7 +750,9 @@
                         <g class="st3">
                           <g class="st3">
                             <g class="st3">
-                              <text class="st1" transform="translate(262.7 118.3)"><tspan x="0" y="0">MarkDuplicates</tspan></text>
+                              <g class="st3">
+                                <text class="st1" transform="translate(262.7 118.3)"><tspan x="0" y="0">MarkDuplicates</tspan></text>
+                              </g>
                             </g>
                           </g>
                         </g>
@@ -760,7 +810,9 @@
                           <g class="st3">
                             <g class="st3">
                               <g class="st3">
-                                <text class="st2" transform="translate(460.5 91.5)"><tspan x="0" y="0">tsv</tspan></text>
+                                <g class="st3">
+                                  <text class="st2" transform="translate(460.5 91.5)"><tspan x="0" y="0">tsv</tspan></text>
+                                </g>
                               </g>
                             </g>
                           </g>
