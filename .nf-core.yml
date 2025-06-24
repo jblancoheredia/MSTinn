@@ -1,0 +1,16 @@
+repository_type: pipeline
+
+nf_core_version: 3.3.1
+
+lint: {}
+
+template:
+  org: nf-core
+  name: mstinn
+  description: MSTinn stands for Methylation Sequencing TAPS by Innovation Lab
+  author: Juan Blanco Heredia <blancoj@mskcc.org> <jblancoheredia>
+  version: 1.0.0dev
+  force: true
+  outdir: .
+  skip_features: []
+  is_nfcore: true
