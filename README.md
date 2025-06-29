@@ -1,7 +1,7 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/MSTinn_logo_light.png">
-    <img alt="nf-core/mstinn" src="docs/images/MSTinn_logo_light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/MSTinn_logo_light.png">
+    <img alt="nf-core/mstinn" src="assets/MSTinn_logo_light.png">
   </picture>
 </h1>
 
