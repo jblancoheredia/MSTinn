@@ -1,0 +1,2287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   version="1.1"
+   viewBox="0 0 500 950"
+   sodipodi:docname="MSTinn_metro_light5.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview206"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0852632"
+     inkscape:cx="249.70902"
+     inkscape:cy="475"
+     inkscape:window-width="1200"
+     inkscape:window-height="1186"
+     inkscape:window-x="1657"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" />
+  <!-- Generator: Adobe Illustrator 29.6.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 207)  -->
+  <defs
+     id="defs20">
+    <style
+       id="style1">
+      .st0 {
+        fill: #62696c;
+      }
+
+      .st1 {
+        stroke: url(#linear-gradient2);
+      }
+
+      .st1, .st2, .st3, .st4, .st5, .st6 {
+        stroke-dasharray: 4.8 4.8;
+      }
+
+      .st1, .st2, .st3, .st4, .st5, .st6, .st7 {
+        stroke-miterlimit: 10;
+      }
+
+      .st1, .st2, .st3, .st4, .st5, .st6, .st8 {
+        fill: none;
+        stroke-width: 6px;
+      }
+
+      .st2 {
+        stroke: url(#linear-gradient1);
+      }
+
+      .st3 {
+        stroke: #86b8c3;
+      }
+
+      .st9 {
+        font-family: MavenPro-Regular, 'Maven Pro';
+      }
+
+      .st9, .st10, .st11, .st12, .st13, .st14, .st15, .st16 {
+        isolation: isolate;
+      }
+
+      .st9, .st15, .st16 {
+        font-size: 12px;
+      }
+
+      .st17 {
+        fill: #626465;
+      }
+
+      .st17, .st18, .st19, .st20, .st21 {
+        stroke: #000;
+      }
+
+      .st22 {
+        fill: url(#linear-gradient3);
+      }
+
+      .st4 {
+        stroke: #858ae9;
+      }
+
+      .st10 {
+        font-size: 8px;
+      }
+
+      .st10, .st11, .st12, .st13 {
+        font-family: MavenPro-Bold, 'Maven Pro';
+        font-weight: 700;
+      }
+
+      .st11, .st13 {
+        font-size: 47.3px;
+      }
+
+      .st11, .st23 {
+        fill: #82baff;
+      }
+
+      .st5 {
+        stroke: #935ee2;
+      }
+
+      .st24, .st13 {
+        fill: #8575ea;
+      }
+
+      .st12 {
+        font-size: 14px;
+      }
+
+      .st25 {
+        fill: #4d4d4d;
+      }
+
+      .st26 {
+        fill: #a156ea;
+      }
+
+      .st27 {
+        fill: #27dcf4;
+      }
+
+      .st18, .st7, .st15 {
+        fill: #fff;
+      }
+
+      .st6 {
+        stroke: #8cbafa;
+      }
+
+      .st28 {
+        fill: #a6a6a6;
+      }
+
+      .st29 {
+        fill: #8d68e2;
+      }
+
+      .st30 {
+        fill: #9853e1;
+      }
+
+      .st19 {
+        fill: #39383a;
+      }
+
+      .st7 {
+        stroke: #1e1c1c;
+      }
+
+      .st31 {
+        fill: #858ae9;
+      }
+
+      .st15 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .st32 {
+        fill: #8cb2f7;
+      }
+
+      .st20 {
+        fill: #1e1c1c;
+      }
+
+      .st16 {
+        font-family: MavenPro-SemiBold, 'Maven Pro';
+        font-weight: 600;
+      }
+
+      .st33 {
+        fill: #84bef8;
+      }
+
+      .st21 {
+        fill: #4f4f51;
+      }
+
+      .st34 {
+        fill: #d200ff;
+      }
+
+      .st8 {
+        stroke: url(#linear-gradient);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st35 {
+        fill: #86b8c3;
+      }
+
+      .st36 {
+        fill: #ad27e6;
+      }
+    </style>
+    <linearGradient
+       id="linear-gradient"
+       x1="325.7"
+       y1="898.5"
+       x2="325.7"
+       y2="63.5"
+       gradientTransform="translate(0 952) scale(1 -1)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#231f20"
+         id="stop1" />
+      <stop
+         offset=".2"
+         stop-color="#99acb1"
+         id="stop2" />
+      <stop
+         offset=".3"
+         stop-color="#27dcf4"
+         id="stop3" />
+      <stop
+         offset=".5"
+         stop-color="#82baff"
+         id="stop4" />
+      <stop
+         offset=".6"
+         stop-color="#8575ea"
+         id="stop5" />
+      <stop
+         offset=".8"
+         stop-color="#a156ea"
+         id="stop6" />
+      <stop
+         offset=".9"
+         stop-color="#ad27e6"
+         id="stop7" />
+      <stop
+         offset="1"
+         stop-color="#d200ff"
+         id="stop8" />
+    </linearGradient>
+    <linearGradient
+       id="linear-gradient1"
+       x1="205.8"
+       y1="338.5"
+       x2="205.8"
+       y2="300.5"
+       gradientTransform="translate(0 952) scale(1 -1)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#8d68e2"
+         id="stop9" />
+      <stop
+         offset=".5"
+         stop-color="#935ee2"
+         id="stop10" />
+      <stop
+         offset="1"
+         stop-color="#9853e1"
+         id="stop11" />
+    </linearGradient>
+    <linearGradient
+       id="linear-gradient2"
+       x1="205.6"
+       y1="505.6"
+       x2="205.6"
+       y2="543.6"
+       gradientTransform="translate(0 952) scale(1 -1)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#8cb2f7"
+         id="stop12" />
+      <stop
+         offset=".5"
+         stop-color="#8cbafa"
+         id="stop13" />
+      <stop
+         offset="1"
+         stop-color="#84bef8"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       id="linear-gradient3"
+       x1="451.7"
+       y1="871.6"
+       x2="481.7"
+       y2="889"
+       gradientTransform="translate(0 -846)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#27dcf4"
+         id="stop15" />
+      <stop
+         offset=".2"
+         stop-color="#82baff"
+         id="stop16" />
+      <stop
+         offset=".4"
+         stop-color="#8575ea"
+         id="stop17" />
+      <stop
+         offset=".6"
+         stop-color="#a156ea"
+         id="stop18" />
+      <stop
+         offset=".8"
+         stop-color="#ad27e6"
+         id="stop19" />
+      <stop
+         offset="1"
+         stop-color="#d200ff"
+         id="stop20" />
+    </linearGradient>
+  </defs>
+  <g
+     id="MainPaths">
+    <path
+       class="st8"
+       d="M325.6,245.6h21v-31.4c0-.3-.1-.6-.4-.6h-20.2M325.7,616.1V131.4v484.7ZM325.7,56.5v42.9-42.9ZM325.7,750.1v-102.1,102.1ZM325.7,845.2v-63.1,63.1ZM341.7,887.2v-42h-31.4c-.3,0-.6.3-.6.8v40.4M305.5,99.4h40.4c.4,0,.8.2.8.6v30.8c0,.3-.3.6-.8.6h-40.4c-.4,0-.8-.2-.8-.6v-30.8c0-.3.3-.6.8-.6h0ZM305.5,750.1h40.4c.4,0,.8.2.8.6v30.8c0,.3-.3.6-.8.6h-40.4c-.4,0-.8-.2-.8-.6v-30.8c0-.3.3-.6.8-.6h0ZM325.7,616.1v32"
+       id="path20" />
+    <line
+       id="line37-6"
+       class="st5"
+       x1="231.8"
+       y1="632.5"
+       x2="325.6"
+       y2="632.4" />
+    <path
+       id="path34-2"
+       class="st2"
+       d="M179.7,616.5h48.2c.5,0,1,.2,1,.6v30.8c0,.3-.4.6-1,.6h-48.2" />
+    <line
+       id="line37-61"
+       class="st6"
+       x1="231.7"
+       y1="427.4"
+       x2="325.4"
+       y2="427.4" />
+    <path
+       id="path34-21"
+       class="st1"
+       d="M179.5,411.4h48.2c.5,0,1,.2,1,.6v30.8c0,.3-.4.6-1,.6h-48.2" />
+    <line
+       id="line37-62"
+       class="st4"
+       x1="179.5"
+       y1="507.7"
+       x2="325.5"
+       y2="507" />
+  </g>
+  <g
+     id="_R_G">
+    <g
+       id="_R_G_L_6_G">
+      <path
+         id="_R_G_L_6_G_D_0_P_0"
+         fill="#4d4d4d"
+         fill-opacity="1"
+         fill-rule="nonzero"
+         d=" M4 0.25 C4,0.25 4,0.25 4,0.25 C6.05,0.25 7.75,1.95 7.75,4 C7.75,6.05 6.05,7.75 4,7.75 C1.95,7.75 0.25,6.05 0.25,4 C0.25,1.95 1.95,0.25 4,0.25z " />
+    </g>
+    <g
+       id="_R_G_L_5_G">
+      <path
+         id="_R_G_L_5_G_D_0_P_0"
+         fill="#4d4d4d"
+         fill-opacity="1"
+         fill-rule="nonzero"
+         d=" M4 0.25 C4,0.25 4,0.25 4,0.25 C6.05,0.25 7.75,1.95 7.75,4 C7.75,6.05 6.05,7.75 4,7.75 C1.95,7.75 0.25,6.05 0.25,4 C0.25,1.95 1.95,0.25 4,0.25z " />
+    </g>
+    <g
+       id="_R_G_L_4_G">
+      <path
+         id="_R_G_L_4_G_D_0_P_0"
+         fill="#4d4d4d"
+         fill-opacity="1"
+         fill-rule="nonzero"
+         d=" M4 0.25 C4,0.25 4,0.25 4,0.25 C6.05,0.25 7.75,1.95 7.75,4 C7.75,6.05 6.05,7.75 4,7.75 C1.95,7.75 0.25,6.05 0.25,4 C0.25,1.95 1.95,0.25 4,0.25z " />
+    </g>
+    <g
+       id="_R_G_L_3_G">
+      <path
+         id="_R_G_L_3_G_D_0_P_0"
+         fill="#4d4d4d"
+         fill-opacity="1"
+         fill-rule="nonzero"
+         d=" M4 0.25 C4,0.25 4,0.25 4,0.25 C6.05,0.25 7.75,1.95 7.75,4 C7.75,6.05 6.05,7.75 4,7.75 C1.95,7.75 0.25,6.05 0.25,4 C0.25,1.95 1.95,0.25 4,0.25z " />
+    </g>
+    <g
+       id="_R_G_L_2_G">
+      <path
+         id="_R_G_L_2_G_D_0_P_0"
+         fill="#4d4d4d"
+         fill-opacity="1"
+         fill-rule="nonzero"
+         d=" M4 0.25 C4,0.25 4,0.25 4,0.25 C6.05,0.25 7.75,1.95 7.75,4 C7.75,6.05 6.05,7.75 4,7.75 C1.95,7.75 0.25,6.05 0.25,4 C0.25,1.95 1.95,0.25 4,0.25z " />
+    </g>
+    <g
+       id="_R_G_L_1_G">
+      <path
+         id="_R_G_L_1_G_D_0_P_0"
+         fill="#4d4d4d"
+         fill-opacity="1"
+         fill-rule="nonzero"
+         d=" M4 0.25 C4,0.25 4,0.25 4,0.25 C6.05,0.25 7.75,1.95 7.75,4 C7.75,6.05 6.05,7.75 4,7.75 C1.95,7.75 0.25,6.05 0.25,4 C0.25,1.95 1.95,0.25 4,0.25z " />
+    </g>
+    <g
+       id="_R_G_L_0_G">
+      <path
+         id="_R_G_L_0_G_D_0_P_0"
+         fill="#4d4d4d"
+         fill-opacity="1"
+         fill-rule="nonzero"
+         d=" M4 0.25 C4,0.25 4,0.25 4,0.25 C6.05,0.25 7.75,1.95 7.75,4 C7.75,6.05 6.05,7.75 4,7.75 C1.95,7.75 0.25,6.05 0.25,4 C0.25,1.95 1.95,0.25 4,0.25z " />
+    </g>
+  </g>
+  <g
+     id="MetroStops">
+    <line
+       id="line37-63"
+       class="st3"
+       x1="369.6"
+       y1="230"
+       x2="402.8"
+       y2="230" />
+    <g
+       id="text34"
+       class="st14">
+      <g
+         id="g200"
+         class="st14">
+        <g
+           id="g199"
+           class="st14">
+          <g
+             id="text198"
+             class="st14">
+            <g
+               id="g268"
+               class="st14">
+              <g
+                 id="g267"
+                 class="st14">
+                <g
+                   id="g266"
+                   class="st14">
+                  <g
+                     id="g265"
+                     class="st14">
+                    <g
+                       id="g264"
+                       class="st14">
+                      <g
+                         id="g263"
+                         class="st14">
+                        <g
+                           id="text262"
+                           class="st14">
+                          <g
+                             class="st14"
+                             id="g25">
+                            <g
+                               class="st14"
+                               id="g24">
+                              <g
+                                 class="st14"
+                                 id="g23">
+                                <g
+                                   class="st14"
+                                   id="g22">
+                                <g
+                                   class="st14"
+                                   id="g21">
+                                <g
+                                   class="st14"
+                                   id="g20">
+                                <text
+                                   class="st16"
+                                   transform="translate(369.9 112.1)"
+                                   id="text20"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan20">FastQC</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="text196"
+         class="st14">
+        <g
+           id="g201"
+           class="st14">
+          <g
+             id="text200"
+             class="st14">
+            <g
+               id="g274"
+               class="st14">
+              <g
+                 id="g273"
+                 class="st14">
+                <g
+                   id="g272"
+                   class="st14">
+                  <g
+                     id="g271"
+                     class="st14">
+                    <g
+                       id="g270"
+                       class="st14">
+                      <g
+                         id="g269"
+                         class="st14">
+                        <g
+                           id="text268"
+                           class="st14">
+                          <g
+                             class="st14"
+                             id="g31">
+                            <g
+                               class="st14"
+                               id="g30">
+                              <g
+                                 class="st14"
+                                 id="g29">
+                                <g
+                                   class="st14"
+                                   id="g28">
+                                <g
+                                   class="st14"
+                                   id="g27">
+                                <g
+                                   class="st14"
+                                   id="g26">
+                                <text
+                                   class="st9"
+                                   transform="translate(369.1 126.5)"
+                                   id="text25"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan25">Original</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="text40"
+       class="st14">
+      <g
+         id="g203"
+         class="st14">
+        <g
+           id="g202"
+           class="st14">
+          <g
+             id="text201"
+             class="st14">
+            <g
+               id="g280"
+               class="st14">
+              <g
+                 id="g279"
+                 class="st14">
+                <g
+                   id="g278"
+                   class="st14">
+                  <g
+                     id="g277"
+                     class="st14">
+                    <g
+                       id="g276"
+                       class="st14">
+                      <g
+                         id="g275"
+                         class="st14">
+                        <g
+                           id="text274"
+                           class="st14">
+                          <g
+                             class="st14"
+                             id="g37">
+                            <g
+                               class="st14"
+                               id="g36">
+                              <g
+                                 class="st14"
+                                 id="g35">
+                                <g
+                                   class="st14"
+                                   id="g34">
+                                <g
+                                   class="st14"
+                                   id="g33">
+                                <g
+                                   class="st14"
+                                   id="g32">
+                                <text
+                                   class="st9"
+                                   transform="translate(419.1 224.9)"
+                                   id="text31"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan31">NumReads</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g205"
+         class="st14">
+        <g
+           id="g204"
+           class="st14">
+          <g
+             id="text203"
+             class="st14">
+            <g
+               id="g286"
+               class="st14">
+              <g
+                 id="g285"
+                 class="st14">
+                <g
+                   id="g284"
+                   class="st14">
+                  <g
+                     id="g283"
+                     class="st14">
+                    <g
+                       id="g282"
+                       class="st14">
+                      <g
+                         id="g281"
+                         class="st14">
+                        <g
+                           id="text280"
+                           class="st14">
+                          <g
+                             class="st14"
+                             id="g43">
+                            <g
+                               class="st14"
+                               id="g42">
+                              <g
+                                 class="st14"
+                                 id="g41">
+                                <g
+                                   class="st14"
+                                   id="g40">
+                                <g
+                                   class="st14"
+                                   id="g39">
+                                <g
+                                   class="st14"
+                                   id="g38">
+                                <text
+                                   class="st9"
+                                   transform="translate(419.6 239.3)"
+                                   id="text37"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan37">PreDefined</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="text67"
+       class="st14">
+      <g
+         id="g226"
+         class="st14">
+        <g
+           id="g225"
+           class="st14">
+          <g
+             id="text224"
+             class="st14">
+            <g
+               id="g366"
+               class="st14">
+              <g
+                 id="g365"
+                 class="st14">
+                <g
+                   id="g364"
+                   class="st14">
+                  <g
+                     id="g363"
+                     class="st14">
+                    <g
+                       id="g362"
+                       class="st14">
+                      <g
+                         id="g361"
+                         class="st14">
+                        <g
+                           id="text360"
+                           class="st14">
+                          <g
+                             class="st14"
+                             id="g49">
+                            <g
+                               class="st14"
+                               id="g48">
+                              <g
+                                 class="st14"
+                                 id="g47">
+                                <g
+                                   class="st14"
+                                   id="g46">
+                                <g
+                                   class="st14"
+                                   id="g45">
+                                <g
+                                   class="st14"
+                                   id="g44">
+                                <text
+                                   class="st16"
+                                   transform="translate(239.1 472.2)"
+                                   id="text43"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan43">SAMblaster</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g58">
+      <rect
+         id="rect14"
+         class="st18"
+         x="301.8"
+         y="26.9"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect15"
+         class="st17"
+         x="300.3"
+         y="43.3"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect16"
+         class="st18"
+         x="304.5"
+         y="29.8"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect17"
+         class="st21"
+         x="302.8"
+         y="45.8"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect18"
+         class="st18"
+         x="307.1"
+         y="33.1"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect19"
+         class="st19"
+         x="305.4"
+         y="48.2"
+         width="42.9"
+         height="19.1" />
+      <g
+         id="g57">
+        <rect
+           id="rect20"
+           class="st18"
+           x="310.2"
+           y="36.4"
+           width="38.1"
+           height="47.6" />
+        <g
+           id="g56">
+          <rect
+             id="rect21"
+             class="st20"
+             x="307.9"
+             y="50.7"
+             width="42.9"
+             height="19.1" />
+          <g
+             id="text21"
+             class="st14">
+            <g
+               id="text309"
+               class="st14">
+              <g
+                 id="g1008"
+                 class="st14">
+                <g
+                   id="text412"
+                   class="st14">
+                  <g
+                     id="g1007"
+                     class="st14">
+                    <g
+                       id="g1006"
+                       class="st14">
+                      <g
+                         id="g1005"
+                         class="st14">
+                        <g
+                           id="g1004"
+                           class="st14">
+                          <g
+                             id="g1003"
+                             class="st14">
+                            <g
+                               id="g1002"
+                               class="st14">
+                              <g
+                                 id="text1001"
+                                 class="st14">
+                                <g
+                                   class="st14"
+                                   id="g55">
+                                <g
+                                   class="st14"
+                                   id="g54">
+                                <g
+                                   class="st14"
+                                   id="g53">
+                                <g
+                                   class="st14"
+                                   id="g52">
+                                <g
+                                   class="st14"
+                                   id="g51">
+                                <g
+                                   class="st14"
+                                   id="g50">
+                                <text
+                                   class="st15"
+                                   transform="translate(317.8 63.7)"
+                                   id="text49"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan49">fastq</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g66">
+      <g
+         id="g59">
+        <rect
+           id="rect23"
+           class="st18"
+           x="305.3"
+           y="148"
+           width="38.1"
+           height="47.6" />
+        <rect
+           id="rect24"
+           class="st19"
+           x="302.9"
+           y="167.1"
+           width="42.9"
+           height="19.1" />
+        <rect
+           id="rect25"
+           class="st18"
+           x="307.7"
+           y="150.4"
+           width="38.1"
+           height="47.6" />
+        <rect
+           id="rect26"
+           class="st20"
+           x="305.3"
+           y="169.5"
+           width="42.9"
+           height="19.1" />
+      </g>
+      <g
+         id="text26"
+         class="st14">
+        <g
+           id="g1017"
+           class="st14">
+          <g
+             id="g1016"
+             class="st14">
+            <g
+               id="g1015"
+               class="st14">
+              <g
+                 id="g1014"
+                 class="st14">
+                <g
+                   id="g1013"
+                   class="st14">
+                  <g
+                     id="g1012"
+                     class="st14">
+                    <g
+                       id="g1011"
+                       class="st14">
+                      <g
+                         id="g1010"
+                         class="st14">
+                        <g
+                           id="g1009"
+                           class="st14">
+                          <g
+                             id="text1008"
+                             class="st14">
+                            <g
+                               class="st14"
+                               id="g65">
+                              <g
+                                 class="st14"
+                                 id="g64">
+                                <g
+                                   class="st14"
+                                   id="g63">
+                                <g
+                                   class="st14"
+                                   id="g62">
+                                <g
+                                   class="st14"
+                                   id="g61">
+                                <g
+                                   class="st14"
+                                   id="g60">
+                                <text
+                                   class="st15"
+                                   transform="translate(315.2 182.5)"
+                                   id="text59"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan59">fastq</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       id="rect36"
+       class="st7"
+       d="M325.5,222.5h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect44"
+       class="st7"
+       d="M325.5,262h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect111"
+       class="st7"
+       d="M325.5,301.5h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect105"
+       class="st7"
+       d="M325.5,341h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect112"
+       class="st7"
+       d="M325.5,380.5h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect109"
+       class="st7"
+       d="M325.5,538.4h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect125"
+       class="st7"
+       d="M325.5,577.5h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <polygon
+       id="polygon37-0"
+       class="st35"
+       points="375.5 240.1 366.9 240.1 356.7 230 366.9 219.8 375.5 219.8 365.3 230 375.5 240.1" />
+    <g
+       class="st14"
+       id="g67">
+      <text
+         class="st16"
+         transform="translate(345.2 351)"
+         id="text66"><tspan
+           x="0"
+           y="0"
+           id="tspan66">AlignUBAM*</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g69">
+      <text
+         class="st16"
+         transform="translate(275.4 384)"
+         id="text68"><tspan
+           x="0"
+           y="0"
+           id="tspan67">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(238.2 398.4)"
+         id="text69"><tspan
+           x="0"
+           y="0"
+           id="tspan68">CorrectUMIs</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g71">
+      <text
+         class="st16"
+         transform="translate(345.2 269.5)"
+         id="text70"><tspan
+           x="0"
+           y="0"
+           id="tspan69">Seqtk</tspan></text>
+      <text
+         class="st9"
+         transform="translate(345.2 283.9)"
+         id="text71"><tspan
+           x="0"
+           y="0"
+           id="tspan70">Sample</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g73">
+      <text
+         class="st16"
+         transform="translate(260.2 230)"
+         id="text72"><tspan
+           x="0"
+           y="0"
+           id="tspan71">Counts*</tspan></text>
+      <text
+         class="st9"
+         transform="translate(224.4 244.4)"
+         id="text73"><tspan
+           x="0"
+           y="0"
+           id="tspan72">Downsampling</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g75">
+      <text
+         class="st16"
+         transform="translate(345.2 423)"
+         id="text74"><tspan
+           x="0"
+           y="0"
+           id="tspan73">SAMtools</tspan></text>
+      <text
+         class="st9"
+         transform="translate(345.2 437.4)"
+         id="text75"><tspan
+           x="0"
+           y="0"
+           id="tspan74">sort / index</tspan></text>
+    </g>
+    <polygon
+       id="polygon37-01"
+       class="st32"
+       points="182.8 453.6 174.2 453.6 164 443.5 174.2 433.3 182.8 433.3 172.6 443.5 182.8 453.6" />
+    <g
+       class="st14"
+       id="g77">
+      <text
+         class="st16"
+         transform="translate(275.4 309)"
+         id="text76"><tspan
+           x="0"
+           y="0"
+           id="tspan75">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(257.7 323.4)"
+         id="text77"><tspan
+           x="0"
+           y="0"
+           id="tspan76">FQ2BAM</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g79">
+      <text
+         class="st16"
+         transform="translate(260.2 112.1)"
+         id="text78"><tspan
+           x="0"
+           y="0"
+           id="tspan77">cat</tspan></text>
+      <text
+         class="st9"
+         transform="translate(246.2 126.5)"
+         id="text79"><tspan
+           x="0"
+           y="0"
+           id="tspan78">FastQ</tspan></text>
+    </g>
+    <polygon
+       id="polygon37-02"
+       class="st33"
+       points="182.8 421.6 174.2 421.6 164 411.5 174.2 401.3 182.8 401.3 172.6 411.5 182.8 421.6" />
+    <path
+       id="rect103"
+       class="st7"
+       d="M325.5,419.9h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect104"
+       class="st7"
+       d="M325.5,459.4h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <g
+       class="st14"
+       id="g81">
+      <text
+         class="st16"
+         transform="translate(345.2 503)"
+         id="text80"><tspan
+           x="0"
+           y="0"
+           id="tspan79">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(345.2 517.4)"
+         id="text81"><tspan
+           x="0"
+           y="0"
+           id="tspan80">UMIsGroup + MDup</tspan></text>
+    </g>
+    <polygon
+       id="polygon37-03"
+       class="st31"
+       points="182.8 517.5 174.2 517.5 164 507.4 174.2 497.2 182.8 497.2 172.6 507.4 182.8 517.5" />
+    <path
+       id="rect108"
+       class="st7"
+       d="M325.5,499.8h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <g
+       class="st14"
+       id="g83">
+      <text
+         class="st16"
+         transform="translate(125.9 503.4)"
+         id="text82"><tspan
+           x="0"
+           y="0"
+           id="tspan81">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(78.4 517.8)"
+         id="text83"><tspan
+           x="0"
+           y="0"
+           id="tspan82">DuplexMetrics</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g85">
+      <text
+         class="st16"
+         transform="translate(275.4 542.8)"
+         id="text84"><tspan
+           x="0"
+           y="0"
+           id="tspan83">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(220.7 557.2)"
+         id="text85"><tspan
+           x="0"
+           y="0"
+           id="tspan84">CallDuplexCons</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g87">
+      <text
+         class="st16"
+         transform="translate(345.2 585)"
+         id="text86"><tspan
+           x="0"
+           y="0"
+           id="tspan85">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(345.2 599.4)"
+         id="text87"><tspan
+           x="0"
+           y="0"
+           id="tspan86">FilterConsReads</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g89">
+      <text
+         class="st16"
+         transform="translate(345.2 632.5)"
+         id="text88"><tspan
+           x="0"
+           y="0"
+           id="tspan87">BWA</tspan></text>
+      <text
+         class="st9"
+         transform="translate(345.2 646.9)"
+         id="text89"><tspan
+           x="0"
+           y="0"
+           id="tspan88">meth/mem2</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g91">
+      <text
+         class="st16"
+         transform="translate(253.4 678.1)"
+         id="text90"><tspan
+           x="0"
+           y="0"
+           id="tspan89">BEDtools</tspan></text>
+      <text
+         class="st9"
+         transform="translate(257 692.5)"
+         id="text91"><tspan
+           x="0"
+           y="0"
+           id="tspan90">Intersect</tspan></text>
+    </g>
+    <path
+       id="rect1251"
+       class="st7"
+       d="M325.5,672.5h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect1252"
+       class="st7"
+       d="M325.5,711.5h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <g
+       class="st14"
+       id="g92">
+      <text
+         class="st16"
+         transform="translate(345.2 724.1)"
+         id="text92"><tspan
+           x="0"
+           y="0"
+           id="tspan91">PyMbias*</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g93">
+      <text
+         class="st16"
+         transform="translate(368.2 767.3)"
+         id="text93"><tspan
+           x="0"
+           y="0"
+           id="tspan92">rasTair</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g95">
+      <text
+         class="st16"
+         transform="translate(238.2 766.6)"
+         id="text94"><tspan
+           x="0"
+           y="0"
+           id="tspan93">rasTair</tspan></text>
+      <text
+         class="st9"
+         transform="translate(230.3 781)"
+         id="text95"><tspan
+           x="0"
+           y="0"
+           id="tspan94">Intersect</tspan></text>
+    </g>
+    <g
+       id="g97">
+      <g
+         id="g261">
+        <rect
+           id="rect251"
+           class="st18"
+           x="333.4"
+           y="879.1"
+           width="38.1"
+           height="47.6" />
+        <rect
+           id="rect261"
+           class="st20"
+           x="331"
+           y="898.2"
+           width="42.9"
+           height="19.1" />
+      </g>
+      <g
+         class="st14"
+         id="g96">
+        <text
+           class="st15"
+           transform="translate(345.1 910.8)"
+           id="text96"><tspan
+             x="0"
+             y="0"
+             id="tspan95">tsv</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g99">
+      <g
+         id="g262">
+        <rect
+           id="rect252"
+           class="st18"
+           x="279.8"
+           y="879.1"
+           width="38.1"
+           height="47.6" />
+        <rect
+           id="rect262"
+           class="st20"
+           x="277.4"
+           y="898.2"
+           width="42.9"
+           height="19.1" />
+      </g>
+      <g
+         class="st14"
+         id="g98">
+        <text
+           class="st15"
+           transform="translate(290.2 910.8)"
+           id="text97"><tspan
+             x="0"
+             y="0"
+             id="tspan97">pdf</tspan></text>
+      </g>
+    </g>
+    <g
+       class="st14"
+       id="g100">
+      <text
+         class="st16"
+         transform="translate(345.2 811.7)"
+         id="text99"><tspan
+           x="0"
+           y="0"
+           id="tspan99">MSTinn*</tspan></text>
+      <text
+         class="st9"
+         transform="translate(345.2 826.1)"
+         id="text100"><tspan
+           x="0"
+           y="0"
+           id="tspan100">Analysis</tspan></text>
+    </g>
+    <path
+       id="rect35"
+       class="st7"
+       d="M304.5,108.3h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect34"
+       class="st7"
+       d="M346.5,108.3h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <g
+       class="st14"
+       id="g102">
+      <text
+         class="st16"
+         transform="translate(127.4 406.1)"
+         id="text101"><tspan
+           x="0"
+           y="0"
+           id="tspan101">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(98.5 420.5)"
+         id="text102"><tspan
+           x="0"
+           y="0"
+           id="tspan102">ErrorRates</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g104">
+      <text
+         class="st16"
+         transform="translate(119.8 440.9)"
+         id="text103"><tspan
+           x="0"
+           y="0"
+           id="tspan103">Picard</tspan></text>
+      <text
+         class="st9"
+         transform="translate(64.1 455.3)"
+         id="text104"><tspan
+           x="0"
+           y="0"
+           id="tspan104">CollectHSmetrics</tspan></text>
+    </g>
+    <path
+       id="rect351"
+       class="st7"
+       d="M325.5,806.6h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect341"
+       class="st7"
+       d="M304.6,759.1h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <path
+       id="rect352"
+       class="st7"
+       d="M346.9,759.1h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <g
+       class="st14"
+       id="g108">
+      <g
+         class="st14"
+         id="g107">
+        <g
+           class="st14"
+           id="g106">
+          <g
+             class="st14"
+             id="g105">
+            <text
+               class="st11"
+               transform="translate(103.6 48.3)"
+               id="text105"><tspan
+                 x="0"
+                 y="0"
+                 id="tspan105">inn</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       class="st14"
+       id="g113">
+      <g
+         class="st14"
+         id="g112">
+        <g
+           class="st14"
+           id="g111">
+          <g
+             class="st14"
+             id="g110">
+            <g
+               class="st14"
+               id="g109">
+              <text
+                 class="st13"
+                 transform="translate(9.2 48.3)"
+                 id="text108"><tspan
+                   x="0"
+                   y="0"
+                   id="tspan108">MST</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g118">
+      <path
+         class="st28"
+         d="M174.2,48.3l6.4-17h1.6l-6.6,17h-1.6.2Z"
+         id="path113" />
+      <path
+         class="st28"
+         d="M184,39.1v-3.1h1.8v1.8h0c.6-1.2,1.8-2.1,3.5-2.1s2.7,1,3.1,2.3h0c.4-.6.8-1.2,1.2-1.6.6-.6,1.4-.8,2.5-.8s3.7,1,3.7,4.9v6.6h-1.9v-6.4c0-2.1-.8-3.5-2.5-3.5s-2.1.8-2.3,1.9v8h-1.9v-6.8c0-1.8-.8-3.1-2.3-3.1s-2.1,1-2.5,2.1v7.8h-1.9v-8.2h-.2v.2h-.3Z"
+         id="path114" />
+      <path
+         class="st28"
+         d="M202.7,47.3v-.6c1.6,0,1.8-.2,1.8-1.9v-7.8c0-1.2-.6-1.8-1.8-1.9v-.6h5.3v.6c-1.6,0-1.8.2-1.8,1.9v7.8c0,1.2.6,1.8,1.8,1.9v.6h-5.3Z"
+         id="path115" />
+      <path
+         class="st28"
+         d="M210.3,45.2c.6.4,1.8.8,2.7.8,1.6,0,2.1-.8,2.1-1.8s-.6-1.6-2.1-2.1c-1.9-.8-2.9-1.8-2.9-3.1s1.6-3.3,3.9-3.3,2.1.4,2.7.8l-.6,1.6c-.4-.2-1.2-.6-2.3-.6s-1.9.8-1.9,1.6.6,1.4,2.1,1.9c1.9.8,2.9,1.8,2.9,3.5s-1.6,3.3-4.3,3.3-2.3-.4-3.1-.8l.6-1.6h.2v-.2h0Z"
+         id="path116" />
+      <path
+         class="st28"
+         d="M222.2,32.7v3.3h2.9v1.6h-2.9v6c0,1.4.4,2.1,1.6,2.1h1.2v1.6c-.4,0-1,.2-1.8.2s-1.8-.4-2.1-.8c-.6-.6-.8-1.6-.8-2.9v-6.2h-1.8v-1.6h1.8v-2.7l1.9-.6h0Z"
+         id="path117" />
+      <path
+         class="st28"
+         d="M225.7,48.3l6.4-17h1.6l-6.6,17h-1.6.2Z"
+         id="path118" />
+    </g>
+    <path
+       class="st22"
+       d="M454.1,21.5l12.7-12.6,12.8,12.6s-.3.4-.4.5c-.7.8-1.6,1.6-2.3,2.5l-8.1-7.6v13.4h9.4v4.1h-9.3v2.9c0,0,.2.7.3.7h9.1v4.1h-9.4v2.7s.2.6.3.6h9v3.7h-9l-.3.3v9.3h-4.1v-9.6h-9.1v-3.9h9.1v-3.3h-9.1v-4.1h9.1v-3.7h-9.1v-4.1h9.1v-13.4l-7.6,7.6c-.2,0-1.1-1-1.3-1.1l-1.6-1.7h0c0-.1-.2.1-.2.1Z"
+       id="path119" />
+    <g
+       id="text1"
+       class="st14">
+      <g
+         class="st14"
+         id="g132">
+        <g
+           class="st14"
+           id="g131">
+          <g
+             class="st14"
+             id="g130">
+            <g
+               class="st14"
+               id="g129">
+              <g
+                 class="st14"
+                 id="g128">
+                <g
+                   class="st14"
+                   id="g127">
+                  <g
+                     class="st14"
+                     id="g126">
+                    <g
+                       class="st14"
+                       id="g125">
+                      <g
+                         class="st14"
+                         id="g124">
+                        <g
+                           class="st14"
+                           id="g123">
+                          <g
+                             class="st14"
+                             id="g122">
+                            <g
+                               class="st14"
+                               id="g121">
+                              <g
+                                 class="st14"
+                                 id="g120">
+                                <g
+                                   class="st14"
+                                   id="g119">
+                                <text
+                                   class="st10"
+                                   transform="translate(32.1 143.7)"
+                                   id="text119"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan119">BWA ( Meth / mem2 )</tspan></text>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="text2"
+       class="st14">
+      <g
+         class="st14"
+         id="g146">
+        <g
+           class="st14"
+           id="g145">
+          <g
+             class="st14"
+             id="g144">
+            <g
+               class="st14"
+               id="g143">
+              <g
+                 class="st14"
+                 id="g142">
+                <g
+                   class="st14"
+                   id="g141">
+                  <g
+                     class="st14"
+                     id="g140">
+                    <g
+                       class="st14"
+                       id="g139">
+                      <g
+                         class="st14"
+                         id="g138">
+                        <g
+                           class="st14"
+                           id="g137">
+                          <g
+                             class="st14"
+                             id="g136">
+                            <g
+                               class="st14"
+                               id="g135">
+                              <g
+                                 class="st14"
+                                 id="g134">
+                                <g
+                                   class="st14"
+                                   id="g133">
+                                <text
+                                   class="st10"
+                                   transform="translate(32.1 100.1)"
+                                   id="text132"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan132">FastQC &amp; cat</tspan></text>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="text5"
+       class="st14">
+      <g
+         class="st14"
+         id="g160">
+        <g
+           class="st14"
+           id="g159">
+          <g
+             class="st14"
+             id="g158">
+            <g
+               class="st14"
+               id="g157">
+              <g
+                 class="st14"
+                 id="g156">
+                <g
+                   class="st14"
+                   id="g155">
+                  <g
+                     class="st14"
+                     id="g154">
+                    <g
+                       class="st14"
+                       id="g153">
+                      <g
+                         class="st14"
+                         id="g152">
+                        <g
+                           class="st14"
+                           id="g151">
+                          <g
+                             class="st14"
+                             id="g150">
+                            <g
+                               class="st14"
+                               id="g149">
+                              <g
+                                 class="st14"
+                                 id="g148">
+                                <g
+                                   class="st14"
+                                   id="g147">
+                                <text
+                                   class="st10"
+                                   transform="translate(32.1 187.3)"
+                                   id="text146"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan146">rasTair</tspan></text>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="text8"
+       class="st14">
+      <g
+         class="st14"
+         id="g174">
+        <g
+           class="st14"
+           id="g173">
+          <g
+             class="st14"
+             id="g172">
+            <g
+               class="st14"
+               id="g171">
+              <g
+                 class="st14"
+                 id="g170">
+                <g
+                   class="st14"
+                   id="g169">
+                  <g
+                     class="st14"
+                     id="g168">
+                    <g
+                       class="st14"
+                       id="g167">
+                      <g
+                         class="st14"
+                         id="g166">
+                        <g
+                           class="st14"
+                           id="g165">
+                          <g
+                             class="st14"
+                             id="g164">
+                            <g
+                               class="st14"
+                               id="g163">
+                              <g
+                                 class="st14"
+                                 id="g162">
+                                <g
+                                   class="st14"
+                                   id="g161">
+                                <text
+                                   class="st10"
+                                   transform="translate(32.1 158.3)"
+                                   id="text160"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan160">PyMbias</tspan></text>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="text9"
+       class="st14">
+      <g
+         class="st14"
+         id="g188">
+        <g
+           class="st14"
+           id="g187">
+          <g
+             class="st14"
+             id="g186">
+            <g
+               class="st14"
+               id="g185">
+              <g
+                 class="st14"
+                 id="g184">
+                <g
+                   class="st14"
+                   id="g183">
+                  <g
+                     class="st14"
+                     id="g182">
+                    <g
+                       class="st14"
+                       id="g181">
+                      <g
+                         class="st14"
+                         id="g180">
+                        <g
+                           class="st14"
+                           id="g179">
+                          <g
+                             class="st14"
+                             id="g178">
+                            <g
+                               class="st14"
+                               id="g177">
+                              <g
+                                 class="st14"
+                                 id="g176">
+                                <g
+                                   class="st14"
+                                   id="g175">
+                                <text
+                                   class="st10"
+                                   transform="translate(32.1 172.8)"
+                                   id="text174"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan174">BedTools Intersect</tspan></text>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       id="rect1"
+       class="st36"
+       d="M21.1,189.4h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <path
+       id="rect2"
+       class="st34"
+       d="M21.1,204h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <path
+       id="rect4"
+       class="st26"
+       d="M21.1,174.9h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <path
+       id="rect5"
+       class="st24"
+       d="M21.1,160.4h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <path
+       id="rect6"
+       class="st23"
+       d="M21.1,145.8h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <path
+       id="rect7"
+       class="st27"
+       d="M21.1,131.3h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <path
+       id="rect51"
+       class="st35"
+       d="M21.1,116.8h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <path
+       id="rect71"
+       class="st0"
+       d="M21.1,102.3h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
+    <g
+       class="st14"
+       id="g189">
+      <text
+         class="st10"
+         transform="translate(32.1 114.7)"
+         id="text188"><tspan
+           x="0"
+           y="0"
+           id="tspan188">Downsampling</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g190">
+      <text
+         class="st10"
+         transform="translate(32.1 129.2)"
+         id="text189"><tspan
+           x="0"
+           y="0"
+           id="tspan189">UMI processing</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g191">
+      <text
+         class="st10"
+         transform="translate(32.1 201.8)"
+         id="text190"><tspan
+           x="0"
+           y="0"
+           id="tspan190">PostAnalysis</tspan></text>
+    </g>
+    <polygon
+       id="polygon37-04"
+       class="st30"
+       points="182.9 658.6 174.3 658.6 164.1 648.5 174.3 638.3 182.9 638.3 172.7 648.5 182.9 658.6" />
+    <polygon
+       id="polygon37-05"
+       class="st29"
+       points="182.9 626.6 174.3 626.6 164.1 616.5 174.3 606.3 182.9 606.3 172.7 616.5 182.9 626.6" />
+    <g
+       class="st14"
+       id="g192">
+      <text
+         class="st16"
+         transform="translate(127.6 611.2)"
+         id="text191"><tspan
+           x="0"
+           y="0"
+           id="tspan191">fgbio</tspan></text>
+      <text
+         class="st9"
+         transform="translate(98.7 625.6)"
+         id="text192"><tspan
+           x="0"
+           y="0"
+           id="tspan192">ErrorRates</tspan></text>
+    </g>
+    <g
+       class="st14"
+       id="g194">
+      <text
+         class="st16"
+         transform="translate(120 645.9)"
+         id="text193"><tspan
+           x="0"
+           y="0"
+           id="tspan193">Picard</tspan></text>
+      <text
+         class="st9"
+         transform="translate(64.3 660.3)"
+         id="text194"><tspan
+           x="0"
+           y="0"
+           id="tspan194">CollectHSmetrics</tspan></text>
+    </g>
+    <path
+       id="rect353"
+       class="st7"
+       d="M325.7,625h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
+    <g
+       class="st14"
+       id="g206">
+      <text
+         class="st12"
+         transform="translate(17 84)"
+         id="text195"><tspan
+           x="0"
+           y="0"
+           id="tspan195">M</tspan></text>
+      <text
+         class="st16"
+         transform="translate(28.8 84)"
+         id="text197"><tspan
+           x="0"
+           y="0"
+           id="tspan196">ethylation </tspan></text>
+      <text
+         class="st12"
+         transform="translate(90.1 84)"
+         id="text199"><tspan
+           x="0"
+           y="0"
+           id="tspan197">S</tspan></text>
+      <text
+         class="st16"
+         transform="translate(98.2 84)"
+         id="text202"><tspan
+           x="0"
+           y="0"
+           id="tspan199">equencing </tspan></text>
+      <text
+         class="st12"
+         transform="translate(159.8 84)"
+         id="text204"><tspan
+           x="0"
+           y="0"
+           id="tspan202">T</tspan></text>
+      <text
+         class="st16"
+         transform="translate(168 84)"
+         id="text205"><tspan
+           x="0"
+           y="0"
+           id="tspan204">APS</tspan></text>
+    </g>
+  </g>
+  <animateMotion
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_6_G"
+     fill="freeze"
+     keyTimes="0;0.0350877;0.0745614;0.122807;0.1535088;0.2192982;0.2894737;0.4780702;0.5526316;0.618421;0.6403509;0.7280701;0.7631579;0.7982456;0.8289473;0.8859649;0.9166666;0.9210526;0.9912281;1"
+     path="M325.68 71.76 C325.68,71.76 325.68,99.4 325.68,99.4 C325.68,99.4 304.68,99.4 304.68,99.4 C304.68,99.4 304.68,131.26 304.68,131.26 C304.68,131.26 325.68,131.26 325.68,131.26 C325.68,131.26 325.68,213.26 325.68,213.26 C325.68,213.26 325.68,245.3 325.68,245.3 C325.68,245.3 325.68,427.3 325.68,427.3 C325.68,427.3 325.68,507 325.68,507 C325.68,507 325.68,585 325.68,585 C325.68,585 325.68,632 325.68,632 C325.68,632 325.68,750 325.68,750 C325.68,750 305.01,750 305.01,750 C305.01,750 305.01,782 305.01,782 C305.01,782 325.68,782 325.68,782 C325.68,782 325.68,845 325.68,845 C325.68,845 305,845 305,845 C305,845 309.33,845 309.33,845 C309.33,845 309.33,891 309.33,891 C309.33,891 309.33,891 309.33,891 "
+     keyPoints="0;0.03;0.05;0.09;0.11;0.2;0.23;0.43;0.51;0.6;0.65;0.78;0.8;0.83;0.86;0.92;0.95;0.95;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_6_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-4 -4"
+     to="-4 -4"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-4 -4;-4 -4"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_5_G"
+     fill="freeze"
+     keyTimes="0;0.0350877;0.0745614;0.122807;0.1535088;0.2192982;0.2894737;0.4780702;0.5526316;0.6184211;1"
+     path="M325.68 71.76 C325.68,71.76 325.68,99.4 325.68,99.4 C325.68,99.4 304.68,99.4 304.68,99.4 C304.68,99.4 304.68,131.26 304.68,131.26 C304.68,131.26 325.68,131.26 325.68,131.26 C325.68,131.26 325.68,213.26 325.68,213.26 C325.68,213.26 325.68,245.3 325.68,245.3 C325.68,245.3 325.68,427.3 325.68,427.3 C325.68,427.3 325.68,507 325.68,507 C325.68,507 170,507 170,507 C170,507 170,507 170,507 "
+     keyPoints="0;0.04;0.08;0.13;0.16;0.29;0.34;0.63;0.75;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_5_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-4 -4"
+     to="-4 -4"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-4 -4;-4 -4"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_4_G"
+     fill="freeze"
+     keyTimes="0;0.0350877;0.0745614;0.122807;0.1535088;0.2192982;0.2894737;0.4780702;0.5526316;0.5789473;0.6184211;1"
+     path="M325.68 71.76 C325.68,71.76 325.68,99.4 325.68,99.4 C325.68,99.4 304.68,99.4 304.68,99.4 C304.68,99.4 304.68,131.26 304.68,131.26 C304.68,131.26 325.68,131.26 325.68,131.26 C325.68,131.26 325.68,213.26 325.68,213.26 C325.68,213.26 325.68,245.3 325.68,245.3 C325.68,245.3 325.68,427.3 325.68,427.3 C325.68,427.3 229.01,427.3 229.01,427.3 C229.01,427.3 229.01,443.63 229.01,443.63 C229.01,443.63 170.01,443.63 170.01,443.63 C170.01,443.63 170.01,443.63 170.01,443.63 "
+     keyPoints="0;0.05;0.09;0.14;0.18;0.32;0.38;0.7;0.87;0.9;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_4_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-4 -4"
+     to="-4 -4"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-4 -4;-4 -4"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_3_G"
+     fill="freeze"
+     keyTimes="0;0.0350877;0.0745614;0.122807;0.1535088;0.2192982;0.2894737;0.4780702;0.5526316;0.5789473;0.6184211;1"
+     path="M325.68 71.76 C325.68,71.76 325.68,99.4 325.68,99.4 C325.68,99.4 304.68,99.4 304.68,99.4 C304.68,99.4 304.68,131.26 304.68,131.26 C304.68,131.26 325.68,131.26 325.68,131.26 C325.68,131.26 325.68,213.26 325.68,213.26 C325.68,213.26 325.68,245.3 325.68,245.3 C325.68,245.3 325.68,427.3 325.68,427.3 C325.68,427.3 229.01,427.3 229.01,427.3 C229.01,427.3 229.01,411.63 229.01,411.63 C229.01,411.63 170,411.63 170,411.63 C170,411.63 170,411.63 170,411.63 "
+     keyPoints="0;0.05;0.09;0.14;0.18;0.32;0.38;0.7;0.87;0.9;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_3_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-4 -4"
+     to="-4 -4"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-4 -4;-4 -4"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_2_G"
+     fill="freeze"
+     keyTimes="0;0.0350877;0.0745614;0.122807;0.1535088;0.2192982;0.2412281;0.2675438;0.2894737;0.4780702;0.5526316;0.618421;0.6403509;0.7280701;0.7631579;0.7982456;0.8333333;0.8859649;0.9210526;0.9912281;1"
+     path="M325.68 71.76 C325.68,71.76 325.68,99.4 325.68,99.4 C325.68,99.4 346.35,99.4 346.35,99.4 C346.35,99.4 346.68,131.26 346.68,131.26 C346.68,131.26 325.68,131.26 325.68,131.26 C325.68,131.26 325.68,213.26 325.68,213.26 C325.68,213.26 346.01,213.26 346.01,213.26 C346.01,213.26 346.01,245.26 346.01,245.26 C346.01,245.26 325.68,245.26 325.68,245.26 C325.68,245.26 325.68,427.3 325.68,427.3 C325.68,427.3 325.68,506.97 325.68,506.97 C325.68,506.97 325.68,584.97 325.68,584.97 C325.68,584.97 325.68,632 325.68,632 C325.68,632 325.68,750 325.68,750 C325.68,750 346.35,750 346.35,750 C346.35,750 346.35,782 346.35,782 C346.35,782 325.7,782 325.7,782 C325.7,782 325.7,845 325.7,845 C325.7,845 341.3,845 341.3,845 C341.3,845 341.3,891 341.3,891 C341.3,891 341.3,891 341.3,891 "
+     keyPoints="0;0.03;0.05;0.08;0.11;0.19;0.21;0.25;0.27;0.46;0.54;0.62;0.67;0.79;0.82;0.85;0.87;0.94;0.95;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_2_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-4 -4"
+     to="-4 -4"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-4 -4;-4 -4"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_1_G"
+     fill="freeze"
+     keyTimes="0;0.0350877;0.0745614;0.122807;0.1535088;0.2192982;0.2412281;0.2675438;0.2894737;0.4780702;0.5526316;0.618421;0.6403509;0.6842105;0.7017544;0.7280702;1"
+     path="M325.68 71.76 C325.68,71.76 325.68,99.4 325.68,99.4 C325.68,99.4 346.35,99.4 346.35,99.4 C346.35,99.4 346.68,131.26 346.68,131.26 C346.68,131.26 325.68,131.26 325.68,131.26 C325.68,131.26 325.68,213.26 325.68,213.26 C325.68,213.26 346.01,213.26 346.01,213.26 C346.01,213.26 346.01,245.26 346.01,245.26 C346.01,245.26 325.68,245.26 325.68,245.26 C325.68,245.26 325.68,427.3 325.68,427.3 C325.68,427.3 325.68,506.97 325.68,506.97 C325.68,506.97 325.68,584.97 325.68,584.97 C325.68,584.97 325.68,632 325.68,632 C325.68,632 229.01,632 229.01,632 C229.01,632 229.01,648.33 229.01,648.33 C229.01,648.33 170,648.33 170,648.33 C170,648.33 170,648.33 170,648.33 "
+     keyPoints="0;0.03;0.06;0.1;0.12;0.22;0.25;0.29;0.31;0.54;0.64;0.73;0.79;0.91;0.93;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_1_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-4 -4"
+     to="-4 -4"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-4 -4;-4 -4"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_0_G"
+     fill="freeze"
+     keyTimes="0;0.0350877;0.0745614;0.122807;0.1535088;0.2192982;0.2412281;0.2675438;0.2894737;0.4780702;0.5526316;0.618421;0.6403509;0.6842105;0.7017544;0.7280702;1"
+     path="M325.68 71.76 C325.68,71.76 325.68,99.4 325.68,99.4 C325.68,99.4 346.35,99.4 346.35,99.4 C346.35,99.4 346.68,131.26 346.68,131.26 C346.68,131.26 325.68,131.26 325.68,131.26 C325.68,131.26 325.68,213.26 325.68,213.26 C325.68,213.26 346.01,213.26 346.01,213.26 C346.01,213.26 346.01,245.26 346.01,245.26 C346.01,245.26 325.68,245.26 325.68,245.26 C325.68,245.26 325.68,427.3 325.68,427.3 C325.68,427.3 325.68,506.97 325.68,506.97 C325.68,506.97 325.68,584.97 325.68,584.97 C325.68,584.97 325.68,632 325.68,632 C325.68,632 229.01,632 229.01,632 C229.01,632 229.01,616.33 229.01,616.33 C229.01,616.33 170,616.33 170,616.33 C170,616.33 170,616.33 170,616.33 "
+     keyPoints="0;0.03;0.06;0.1;0.12;0.23;0.25;0.29;0.31;0.54;0.64;0.73;0.79;0.91;0.93;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="7.6076076s"
+     begin="0s"
+     xlink:href="#_R_G_L_0_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-4 -4"
+     to="-4 -4"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-4 -4;-4 -4"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animate
+     attributeType="XML"
+     attributeName="opacity"
+     dur="8s"
+     from="0"
+     to="1"
+     xlink:href="#time_group" />
+  <g
+     id="time_group" />
+</svg>

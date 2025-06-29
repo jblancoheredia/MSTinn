@@ -1,7 +1,7 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/nf-core-mstinn_logo_dark.png">
-    <img alt="nf-core/mstinn" src="docs/images/nf-core-mstinn_logo_light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/MSTinn_logo_light.png">
+    <img alt="nf-core/mstinn" src="docs/images/MSTinn_logo_light.png">
   </picture>
 </h1>
 
@@ -20,17 +20,23 @@
 
 ## Introduction
 
-**nf-core/mstinn** is a bioinformatics pipeline that ...
+**cti/mstinn** MSTinn stands for Methylation Sequencing TAPS by Innovation Lab
 
-<!-- TODO nf-core:
-   Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
-   major pipeline sections and the types of output it produces. You're giving an overview to someone new
-   to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
--->
+## Pipeline
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/MSTinn_metro_dark.svg">
+  <img alt="Metro" src="assets/MSTinn_metro_light.svg" width="1500">
+</picture>
 
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/guidelines/graphic_design/workflow_diagrams#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+1. Merge FastQ files ([`cat`](http://www.linfo.org/cat.html))
+2. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
+3. UMI processing ([`fgbio`])(https://fulcrumgenomics.github.io/fgbio/)
+4. Map Reads to Reference ([`BWA-meth`](https://github.com/brentp/bwa-meth), [`BWA-mem2`](https://github.com/bwa-mem2/bwa-mem2))
+5. Intersect Metiloma and Targets BED files ([`BEDtools intersect`](https://github.com/arq5x/bedtools/blob/master/docs/content/tools/intersect.rst))
+6. Assess methylation bias and calculate best trimming thresholds([`PyMbias`]())
+7. Assess methylation by ([`asTair`](https://bitbucket.org/bsblabludwig/astair/src/master/))
+8. Assess methylation by ([`rasTair`])
+9. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
 
 ## Usage
 
@@ -58,47 +64,44 @@ Now, you can run the pipeline using:
 <!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
 
 ```bash
-nextflow run nf-core/mstinn \
+nextflow run cti/mstinn \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
-   --outdir <OUTDIR>
+   --outdir ../03_outs
 ```
 
 > [!WARNING]
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).
 
-For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/mstinn/usage) and the [parameter documentation](https://nf-co.re/mstinn/parameters).
-
 ## Pipeline output
 
-To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/mstinn/results) tab on the nf-core website pipeline page.
+To see the results of an example test run with a full size dataset refer to the [results](https://jblancoheredia/mstinn/results) tab on the nf-core website pipeline page.
 For more details about the output files and reports, please refer to the
-[output documentation](https://nf-co.re/mstinn/output).
+[output documentation](https://jblancoheredia/mstinn/output).
 
 ## Credits
 
-nf-core/mstinn was originally written by Juan Blanco Heredia <blancoj@mskcc.org> <jblancoheredia>.
+MSTinn was originally written by Juan Blanco-Heredia at the Marie-Josée and Henry R. Kravis Center for Molecular Oncology, Technology Innovation Lab, Memorial Sloan Kettering Cancer Center.
+
+Main developer:
+
+- [Juan Blanco-Heredia](blancoj@mskcc.org)
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+- [Caryn Hale](halec@mskcc.org)
+- [Grittney Tam](tamg@mskcc.org)
+- [Brian Loomis](loomisb@mskcc.org)
 
 ## Contributions and Support
 
 If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
 
-For further information or help, don't hesitate to get in touch on the [Slack `#mstinn` channel](https://nfcore.slack.com/channels/mstinn) (you can join with [this invite](https://nf-co.re/join/slack)).
-
 ## Citations
-
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use nf-core/mstinn for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
-
-<!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
 An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
 
-You can cite the `nf-core` publication as follows:
+This pipeline uses code and infrastructure developed and maintained by the [nf-core](https://nf-co.re) community, reused here under the [MIT license](https://github.com/nf-core/tools/blob/main/LICENSE).
 
 > **The nf-core framework for community-curated bioinformatics pipelines.**
 >

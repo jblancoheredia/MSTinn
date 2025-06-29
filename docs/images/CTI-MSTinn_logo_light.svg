@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 2880 360">
+  <!-- Generator: Adobe Illustrator 29.6.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 207)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st1 {
+        fill: #8575ea;
+      }
+
+      .st1, .st2, .st3, .st4 {
+        isolation: isolate;
+      }
+
+      .st1, .st3, .st4 {
+        font-family: MavenPro-Bold, 'Maven Pro';
+        font-size: 402px;
+        font-weight: 700;
+      }
+
+      .st5 {
+        fill: url(#linear-gradient);
+      }
+
+      .st3 {
+        fill: #a155ea;
+      }
+
+      .st6 {
+        fill: #a6a6a6;
+      }
+
+      .st4 {
+        fill: #82baff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-15.2" y1="-479" x2="195.4" y2="-600.6" gradientTransform="translate(0 -356) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27dcf4"/>
+      <stop offset=".2" stop-color="#82baff"/>
+      <stop offset=".4" stop-color="#8575ea"/>
+      <stop offset=".6" stop-color="#a156ea"/>
+      <stop offset=".8" stop-color="#ad27e6"/>
+      <stop offset="1" stop-color="#d200ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="4543.5" y1="855.8" x2="4614.8" y2="814.6" gradientTransform="translate(5457.1 -655) rotate(-180) scale(1 -1)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <text class="st3" transform="translate(174.1 320.1)"><tspan x="0" y="0">CTI</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <text class="st4" transform="translate(1771.5 320.1)"><tspan x="0" y="0">inn</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <g class="st2">
+          <text class="st1" transform="translate(969.5 320.1)"><tspan x="0" y="0">MST</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path class="st5" d="M1.9,93.4L90.9,5l89.3,88c.3.6-1.9,3.1-2.6,3.8-5.1,5.8-10.9,11.2-16,17.2l-56.7-53.1v93.8h65.9v28.5h-65.1s-.6.5-.6.6v20.1c0,.8,1.3,4.9,2.3,4.9h63.5v28.5h-65.9v19.1c0,.6,1.3,4.4,1.9,4.4h63.3s.6.5.6.6v25.9s-.5.6-.6.6h-62.8c-.2,0-2.3,2.2-2.3,2.3v64.8h-28.8v-67H12.6v-27.2h63.7v-23.4H12.6v-28.5h63.7v-25.6H12.6v-28.5h63.7V60.9l-53.4,53.1c-1.4.3-7.7-6.8-9.4-7.7l-11.3-12v-.9h-.2Z"/>
+  <polygon class="st0" points="779.5 355 931.5 5 975.5 5 824.5 355 779.5 355"/>
+  <g>
+    <path class="st6" d="M2371.7,320.1l54.6-144h13.2l-56.3,144h-13.2,1.7Z"/>
+    <path class="st6" d="M2454.5,242.3v-26.5h14.9v14.9h0c5-9.9,14.9-18.2,29.8-18.2s23.2,8.3,26.5,19.9h0c3.3-5,6.6-9.9,9.9-13.2,5-5,11.6-6.6,21.5-6.6s31.4,8.3,31.4,41.4v56.3h-16.6v-54.6c0-18.2-6.6-29.8-21.5-29.8s-18.2,6.6-19.9,16.6v67.9h-16.6v-57.9c0-14.9-6.6-26.5-19.9-26.5s-18.2,8.3-21.5,18.2v66.2h-16.6v-69.5h-1.7v1.7Z"/>
+    <path class="st6" d="M2613.4,311.8v-5c13.2,0,14.9-1.7,14.9-16.6v-66.2c0-9.9-5-14.9-14.9-16.6v-5h44.7v5c-13.2,0-14.9,1.7-14.9,16.6v66.2c0,9.9,5,14.9,14.9,16.6v5h-44.7Z"/>
+    <path class="st6" d="M2677.9,293.6c5,3.3,14.9,6.6,23.2,6.6,13.2,0,18.2-6.6,18.2-14.9s-5-13.2-18.2-18.2c-16.6-6.6-24.8-14.9-24.8-26.5s13.2-28.1,33.1-28.1,18.2,3.3,23.2,6.6l-5,13.2c-3.3-1.7-9.9-5-19.9-5s-16.6,6.6-16.6,13.2,5,11.6,18.2,16.6c16.6,6.6,24.8,14.9,24.8,29.8s-13.2,28.1-36.4,28.1-19.9-3.3-26.5-6.6l5-13.2h1.7v-1.7Z"/>
+    <path class="st6" d="M2778.9,187.7v28.1h24.8v13.2h-24.8v51.3c0,11.6,3.3,18.2,13.2,18.2h9.9v13.2c-3.3,0-8.3,1.7-14.9,1.7s-14.9-3.3-18.2-6.6c-5-5-6.6-13.2-6.6-24.8v-53h-14.9v-13.2h14.9v-23.2l16.6-5h0Z"/>
+    <path class="st6" d="M2808.7,320.1l54.6-144h13.2l-56.3,144h-13.2,1.7Z"/>
+  </g>
+</svg>

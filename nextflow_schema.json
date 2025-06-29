@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/nf-core/mstinn/main/nextflow_schema.json",
-    "title": "nf-core/mstinn pipeline parameters",
+    "$id": "https://raw.githubusercontent.com/jblancoheredia/mstinn/master/nextflow_schema.json",
+    "title": "cti/mstinn pipeline parameters",
     "description": "MSTinn stands for Methylation Sequencing TAPS by Innovation Lab",
     "type": "object",
     "$defs": {
