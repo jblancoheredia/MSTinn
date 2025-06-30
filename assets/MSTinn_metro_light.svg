@@ -21,13 +21,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="2.49"
      inkscape:cx="246.58635"
-     inkscape:cy="150"
+     inkscape:cy="140.36145"
      inkscape:window-width="2624"
      inkscape:window-height="1186"
      inkscape:window-x="1725"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="_R_G" />
+     inkscape:current-layer="svg179" />
   <!-- Generator: Adobe Illustrator 29.6.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 207)  -->
   <defs
      id="defs41">
@@ -701,7 +701,7 @@
        y1="820.40002"
        x2="325.79999"
        y2="269.60001"
-       gradientTransform="matrix(1,0,0,-0.9948867,-0.00481928,948.77096)"
+       gradientTransform="matrix(1,0,0,-0.91099661,-0.00481928,926.25805)"
        gradientUnits="userSpaceOnUse">
       <stop
          offset="0"
@@ -796,17 +796,18 @@
       <stop
          offset="0"
          stop-color="#656c6e"
-         id="stop19-4" />
+         id="stop19-4"
+         style="stop-color:#444749;stop-opacity:1;" />
       <stop
-         offset=".5"
+         offset="1"
          stop-color="#666d6f"
          id="stop20-4" />
       <stop
-         offset=".7"
+         offset="1"
          stop-color="#6b7476"
          id="stop21-5" />
       <stop
-         offset=".9"
+         offset="1"
          stop-color="#747f82"
          id="stop22-9" />
       <stop
@@ -1189,8 +1190,8 @@
     <path
        id="path13-7-3"
        class="st2"
-       d="M 325.79518,678.75869 V 135.55057 Z"
-       style="fill:none;stroke:url(#linear-gradient-7);stroke-width:5.98464px;stroke-linecap:round;stroke-linejoin:round" />
+       d="M 325.79518,679.01356 V 181.60942 Z"
+       style="fill:none;stroke:url(#linear-gradient-7);stroke-width:5.72677px;stroke-linecap:round;stroke-linejoin:round" />
     <g
        id="_R_G_L_6_G">
       <path
