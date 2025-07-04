@@ -226,6 +226,67 @@
                     "hidden": true
                 }
             }
+        },
+        "custom_pipeline_options": {
+            "title": "Custom pipeline options",
+            "type": "object",
+            "fa_icon": "fas fa-cogs",
+            "description": "Custom parameters required for this pipeline run.",
+            "properties": {
+                "aligner": { "type": "string", "description": "Aligner to use (e.g., bwa-meth)" },
+                "refs_dir": { "type": "string", "format": "directory-path", "description": "Directory containing reference files." },
+                "seq_center": { "type": "string", "description": "Sequencing center name." },
+                "rastair_not": { "type": "string", "description": "Rastair not parameter (comma-separated values)." },
+                "rastair_nob": { "type": "string", "description": "Rastair nob parameter (comma-separated values)." },
+                "seq_library": { "type": "string", "description": "Sequencing library name." },
+                "read_length": { "type": "integer", "description": "Read length." },
+                "seq_platform": { "type": "string", "description": "Sequencing platform (e.g., ILLUMINA)." },
+                "skip_multiqc": { "type": "boolean", "description": "Skip MultiQC step." },
+                "save_reference": { "type": "boolean", "description": "Save reference index files." },
+                "run_dedupandrecal": { "type": "boolean", "description": "Run deduplication and recalibration." },
+                "run_downsamplings": { "type": "boolean", "description": "Run downsampling steps." },
+                "run_umiprocessing": { "type": "boolean", "description": "Run UMI processing." },
+                "pymbias_plot_type": { "type": "string", "description": "PyMBias plot type (e.g., pdf)." },
+                "pymbias_plot_ax_x": { "type": "integer", "description": "PyMBias plot axis X size." },
+                "pymbias_plot_ax_y": { "type": "integer", "description": "PyMBias plot axis Y size." },
+                "downsampling_total_reads": { "type": ["integer", "null"], "description": "Total reads for downsampling (null allowed)." },
+                "max_memory": { "type": "string", "description": "Maximum memory (e.g., 128 GB)." },
+                "max_cpus": { "type": "integer", "description": "Maximum number of CPUs." },
+                "max_time": { "type": "string", "description": "Maximum time (e.g., 7d)." },
+                "memory": { "type": "string", "description": "Memory per process (e.g., 6 GB)." },
+                "cpus": { "type": "integer", "description": "CPUs per process." },
+                "run_strctrlvarnts": { "type": "boolean", "description": "Run STR control variants." },
+                "run_copynumberalt": { "type": "boolean", "description": "Run copy number alteration analysis." },
+                "run_variantdscvry": { "type": "boolean", "description": "Run variant discovery." },
+                "run_immunoncology": { "type": "boolean", "description": "Run immuno-oncology analysis." },
+                "run_telomerefeats": { "type": "boolean", "description": "Run telomere features analysis." },
+                "genome_base": { "type": "string", "format": "directory-path", "description": "Base directory for genome files." },
+                "ensembl_version": { "type": "integer", "description": "Ensembl version number." },
+                "metdct": { "type": "string", "format": "file-path", "description": "Methylation dictionary file." },
+                "metdir": { "type": "string", "format": "directory-path", "description": "Methylation directory." },
+                "metref": { "type": "string", "format": "file-path", "description": "Methylation reference file." },
+                "metbed": { "type": "string", "format": "file-path", "description": "Methylation BED file." },
+                "metfai": { "type": "string", "format": "file-path", "description": "Methylation FASTA index file." },
+                "bwaref": { "type": "string", "format": "file-path", "description": "BWA reference file." },
+                "bwafai": { "type": "string", "format": "file-path", "description": "BWA FASTA index file." },
+                "bwadir": { "type": "string", "format": "directory-path", "description": "BWA directory." },
+                "refflat": { "type": "string", "format": "file-path", "description": "RefFlat annotation file." },
+                "cytobands": { "type": "string", "format": "file-path", "description": "Cytobands file." },
+                "intervals": { "type": "string", "format": "file-path", "description": "Intervals BED file." },
+                "kraken2db": { "type": "string", "format": "directory-path", "description": "Kraken2 database directory." },
+                "annotations": { "type": "string", "format": "file-path", "description": "Annotations GTF file." },
+                "chromosomes": { "type": "string", "format": "file-path", "description": "Chromosome lengths file." },
+                "exclude_bed": { "type": "string", "format": "file-path", "description": "Exclude BED file." },
+                "known_sites": { "type": "string", "format": "file-path", "description": "Known sites VCF file." },
+                "blocklist_bed": { "type": "string", "format": "file-path", "description": "Blocklist BED file." },
+                "pon_directory": { "type": "string", "format": "directory-path", "description": "Panel of normals directory." },
+                "known_sites_tbi": { "type": "string", "format": "file-path", "description": "Known sites VCF index file." },
+                "protein_domains": { "type": "string", "format": "file-path", "description": "Protein domains GFF3 file." },
+                "intervals_bed_gunzip": { "type": "string", "format": "file-path", "description": "Intervals BED gzipped file." },
+                "normal_uncollapsed_bam": { "type": "string", "format": "file-path", "description": "Normal uncollapsed BAM file." },
+                "normal_uncollapsed_bai": { "type": "string", "format": "file-path", "description": "Normal uncollapsed BAI file." },
+                "intervals_bed_gunzip_index": { "type": "string", "format": "file-path", "description": "Intervals BED gzipped index file." }
+            }
         }
     },
     "allOf": [
@@ -240,6 +301,9 @@
         },
         {
             "$ref": "#/$defs/generic_options"
+        },
+        {
+            "$ref": "#/$defs/custom_pipeline_options"
         }
     ]
 }
