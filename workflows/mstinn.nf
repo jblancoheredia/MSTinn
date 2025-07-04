@@ -17,6 +17,7 @@ include { MULTIQC                                                       } from '
 include { BWAMEM2                                                       } from '../modules/local/bwamem2/main'
 include { BWA_METH                 	                                    } from '../modules/local/bwameth/main'
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
+include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
@@ -32,7 +33,6 @@ include { GATK4_MARKDUPLICATES          	                            } from '../
 // include { MOSDEPTH_RAW                                                  } from '../modules/local/mosdepth/main'
 // include { MOSDEPTH_SIM                                                  } from '../modules/local/mosdepth/main'
 // include { ALIGN_BAM_FIN                                                 } from '../modules/local/umi_align_bam/main'
-// include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 // include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 // include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 // include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
@@ -202,16 +202,16 @@ workflow MSTINN {
         ch_versions = ch_versions.mix(FGBIO_FASTQTOBAM.out.versions.first())
         ch_ubam = FGBIO_FASTQTOBAM.out.bam
 
-//        //
-//        // MODULE: Align with bwa mem but avoid sort
-//        //
-//        sort = false
-//        ALIGN_BAM_RAW(ch_ubam, ch_fasta, ch_fai, ch_dict, ch_bwa2, sort)
-//        ch_versions = ch_versions.mix(ALIGN_BAM_RAW.out.versions.first())
-//        ch_raw_bam = ALIGN_BAM_RAW.out.bam
-//        ch_raw_sort_bam = ALIGN_BAM_RAW.out.sort_bam
-//        ch_raw_sort_bai = ALIGN_BAM_RAW.out.sort_bai
-//
+        //
+        // MODULE: Align with bwa mem but avoid sort
+        //
+        sort = false
+        ALIGN_BAM_RAW(ch_ubam, ch_metref, ch_metfai, ch_metdct, ch_metdir, sort)
+        ch_versions = ch_versions.mix(ALIGN_BAM_RAW.out.versions.first())
+        ch_raw_bam = ALIGN_BAM_RAW.out.bam
+        ch_raw_sort_bam = ALIGN_BAM_RAW.out.sort_bam
+        ch_raw_sort_bai = ALIGN_BAM_RAW.out.sort_bai
+
 //        //
 //        // MODULE: Run fgbio correctumis
 //        //
