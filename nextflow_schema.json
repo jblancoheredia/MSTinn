@@ -287,6 +287,37 @@
                 "normal_uncollapsed_bai": { "type": "string", "format": "file-path", "description": "Normal uncollapsed BAI file." },
                 "intervals_bed_gunzip_index": { "type": "string", "format": "file-path", "description": "Intervals BED gzipped index file." }
             }
+        },
+        "fgbio_umi_parameters": {
+            "title": "fgbio UMI parameters",
+            "type": "object",
+            "fa_icon": "fas fa-vial",
+            "description": "Parameters for fgbio UMI processing.",
+            "properties": {
+                "f2b_umi_qual_tag": { "type": "string", "description": "UMI quality tag (default: QX)" },
+                "f2b_umi_tag": { "type": "string", "description": "UMI tag (default: RX)" },
+                "f2b_read_structure": { "type": "string", "description": "Read structure (default: 3M2S+T 3M2S+T)" },
+                "correct_max_mismatch": { "type": "integer", "description": "Maximum mismatches allowed for correction (default: 1)" },
+                "correct_min_distance": { "type": "integer", "description": "Minimum distance for correction (default: 1)" },
+                "correct_min_corrected": { "type": "string", "description": "Minimum fraction corrected (default: 0.5)" },
+                "group_edits": { "type": "integer", "description": "Number of edits for grouping (default: 0)" },
+                "group_strategy": { "type": "string", "description": "Grouping strategy (default: paired)" },
+                "group_min_map_q": { "type": "integer", "description": "Minimum mapping quality for grouping (default: 0)" },
+                "group_mark_duplicates": { "type": "boolean", "description": "Mark duplicates in grouping (default: true)" },
+                "group_include_secondary": { "type": "boolean", "description": "Include secondary alignments in grouping (default: false)" },
+                "group_allow_inter_contig": { "type": "boolean", "description": "Allow inter-contig grouping (default: true)" },
+                "group_include_non_pf_reads": { "type": "boolean", "description": "Include non-PF reads in grouping (default: false)" },
+                "group_include_supplementary": { "type": "boolean", "description": "Include supplementary alignments in grouping (default: false)" },
+                "call_min_baseq": { "type": "integer", "description": "Minimum base quality for calling (default: 10)" },
+                "call_min_reads": { "type": "string", "description": "Minimum reads for calling (default: 1 1 0)" },
+                "call_error_rate_pre_umi": { "type": "integer", "description": "Error rate pre-UMI (default: 40)" },
+                "call_error_rate_post_umi": { "type": "integer", "description": "Error rate post-UMI (default: 35)" },
+                "filter_min_reads": { "type": "integer", "description": "Minimum reads for filtering (default: 2)" },
+                "filter_min_base_quality": { "type": "integer", "description": "Minimum base quality for filtering (default: 1)" },
+                "filter_max_base_error_rate": { "type": "number", "description": "Maximum base error rate for filtering (default: 0.1)" },
+                "filter_max_read_error_rate": { "type": "number", "description": "Maximum read error rate for filtering (default: 0.025)" },
+                "filter_max_no_call_fraction": { "type": "number", "description": "Maximum no-call fraction for filtering (default: 0.1)" }
+            }
         }
     },
     "allOf": [
@@ -304,6 +335,9 @@
         },
         {
             "$ref": "#/$defs/custom_pipeline_options"
+        },
+        {
+            "$ref": "#/$defs/fgbio_umi_parameters"
         }
     ]
 }
