@@ -15,9 +15,10 @@ include { paramsSummaryMap                                              } from '
 include { FASTQC                                                        } from '../modules/nf-core/fastqc/main'
 include { MULTIQC                                                       } from '../modules/nf-core/multiqc/main'
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
+include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
+include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
+include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
-// include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
-// include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 // include { BAMCUT                                                        } from '../modules/local/bamcut/main'
 // include { SPADES                                                        } from '../modules/local/spades/main'
 // include { REPEATSEQ                                                     } from '../modules/local/repeatseq/main'
@@ -31,7 +32,6 @@ include { CAT_FASTQ                     	                            } from '../
 // include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 // include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 // include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
-// include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 // include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
 // include { MSISENSORPRO_FIN                                              } from '../modules/local/msisensorpro/pro/main'
 // include { MSISENSORPRO_RAW                                              } from '../modules/local/msisensorpro/pro/main'
@@ -144,63 +144,63 @@ workflow MSTINN {
     .set { ch_cat_fastq }
     ch_versions = ch_versions.mix(CAT_FASTQ.out.versions)
 
-//    if (params.run_downsamplings) {
-//
-//        if (params.downsampling_total_reads) {
-//
-//            //
-//            // MODULE: Run Downsampling with seqtk
-//            //
-//            DOWNSAMPLINGS_SEQTK(ch_cat_fastq, params.downsampling_total_reads)
-//            ch_versions = ch_versions.mix(DOWNSAMPLINGS_SEQTK.out.versions)
-//            ch_downsampled_reads = DOWNSAMPLINGS_SEQTK.out.downsampled_reads
-//
-//            ch_fastqs = ch_downsampled_reads
-//
-//        } else {
-//
-//            //
-//            // MODULE: Run in-house script for counting reads
-//            //
-//            DOWNSAMPLINGS_COUNT(ch_cat_fastq)
-//            ch_versions = ch_versions.mix(DOWNSAMPLINGS_COUNT.out.versions)
-//            ch_global_min_reads = DOWNSAMPLINGS_COUNT.out.total_reads
-//                .map { file -> 
-//                    def count = file.text.trim()
-//                    count.toInteger()
-//                }
-//                .collect()
-//                .map { counts -> 
-//                    def min_count = counts.min()
-//                    min_count
-//                }
-//
-//            //
-//            // MODULE: Run Downsampling with seqtk
-//            //
-//            DOWNSAMPLINGS_SEQTK(ch_cat_fastq, ch_global_min_reads)
-//            ch_versions = ch_versions.mix(DOWNSAMPLINGS_SEQTK.out.versions)
-//            ch_downsampled_reads = DOWNSAMPLINGS_SEQTK.out.downsampled_reads
-//
-//            ch_fastqs = ch_downsampled_reads
-//
-//        }
-//
-//    } else {
-//
-//        ch_fastqs = ch_cat_fastq
-//
-//    }
-//
-//    if (params.run_umiprocessing) {
-//        
-//        //
-//        // MODULE: Run fgbio FastqToBam
-//        //
-//        FGBIO_FASTQTOBAM(ch_fastqs)
-//        ch_versions = ch_versions.mix(FGBIO_FASTQTOBAM.out.versions.first())
-//        ch_ubam = FGBIO_FASTQTOBAM.out.bam
-//
+    if (params.run_downsamplings) {
+
+        if (params.downsampling_total_reads) {
+
+            //
+            // MODULE: Run Downsampling with seqtk
+            //
+            DOWNSAMPLINGS_SEQTK(ch_cat_fastq, params.downsampling_total_reads)
+            ch_versions = ch_versions.mix(DOWNSAMPLINGS_SEQTK.out.versions)
+            ch_downsampled_reads = DOWNSAMPLINGS_SEQTK.out.downsampled_reads
+
+            ch_fastqs = ch_downsampled_reads
+
+        } else {
+
+            //
+            // MODULE: Run in-house script for counting reads
+            //
+            DOWNSAMPLINGS_COUNT(ch_cat_fastq)
+            ch_versions = ch_versions.mix(DOWNSAMPLINGS_COUNT.out.versions)
+            ch_global_min_reads = DOWNSAMPLINGS_COUNT.out.total_reads
+                .map { file -> 
+                    def count = file.text.trim()
+                    count.toInteger()
+                }
+                .collect()
+                .map { counts -> 
+                    def min_count = counts.min()
+                    min_count
+                }
+
+            //
+            // MODULE: Run Downsampling with seqtk
+            //
+            DOWNSAMPLINGS_SEQTK(ch_cat_fastq, ch_global_min_reads)
+            ch_versions = ch_versions.mix(DOWNSAMPLINGS_SEQTK.out.versions)
+            ch_downsampled_reads = DOWNSAMPLINGS_SEQTK.out.downsampled_reads
+
+            ch_fastqs = ch_downsampled_reads
+
+        }
+
+    } else {
+
+        ch_fastqs = ch_cat_fastq
+
+    }
+
+    if (params.run_umiprocessing) {
+        
+        //
+        // MODULE: Run fgbio FastqToBam
+        //
+        FGBIO_FASTQTOBAM(ch_fastqs)
+        ch_versions = ch_versions.mix(FGBIO_FASTQTOBAM.out.versions.first())
+        ch_ubam = FGBIO_FASTQTOBAM.out.bam
+
 //        //
 //        // MODULE: Align with bwa mem but avoid sort
 //        //
@@ -350,36 +350,36 @@ workflow MSTINN {
 //            error "Invalid aligner selected: ${params.aligner}. Please choose either 'bwa-meth' or 'bwa-mem2'"
 //        }
 //
-//    } else {
-//
-//            // User aligner selection
-//        if (params.aligner == 'bwa-meth') {
-//            //
-//            // MODULE: Run BWA-METH
-//            //
-//            BWA_METH(ch_fastqs, ch_metdir, ch_metref)
-//            ch_versions = ch_versions.mix(BWA_METH.out.versions.first())
-//            ch_bam_mapped = BWA_METH.out.bam
-//        } else if (params.aligner == 'bwa-mem2') {
-//            //
-//            // MODULE: Run BWA-MEM2
-//            //
-//            sort_bam = 'sort'
-//            BWAMEM2(ch_fastqs, ch_bwadir, ch_bwaref, ch_bwafai, sort_bam)
-//            ch_versions = ch_versions.mix(BWAMEM2.out.versions.first())
-//            ch_bam_mapped = BWAMEM2.out.bam
-//        } else {
-//            error "Invalid aligner selected: ${params.aligner}. Please choose either 'bwa-meth' or 'bwa-mem2'"
-//        }
-//
-//        //
-//        // MODULE: Run GATK4 MarkDuplicates
-//        //
-//        GATK4_MARKDUPLICATES(ch_bam_mapped, params.metref, params.metfai)
-//        ch_versions = ch_versions.mix(GATK4_MARKDUPLICATES.out.versions.first())
-//        ch_bam_dedup = GATK4_MARKDUPLICATES.out.bam
-//
-//    }
+    } else {
+
+            // User aligner selection
+        if (params.aligner == 'bwa-meth') {
+            //
+            // MODULE: Run BWA-METH
+            //
+            BWA_METH(ch_fastqs, ch_metdir, ch_metref)
+            ch_versions = ch_versions.mix(BWA_METH.out.versions.first())
+            ch_bam_mapped = BWA_METH.out.bam
+        } else if (params.aligner == 'bwa-mem2') {
+            //
+            // MODULE: Run BWA-MEM2
+            //
+            sort_bam = 'sort'
+            BWAMEM2(ch_fastqs, ch_bwadir, ch_bwaref, ch_bwafai, sort_bam)
+            ch_versions = ch_versions.mix(BWAMEM2.out.versions.first())
+            ch_bam_mapped = BWAMEM2.out.bam
+        } else {
+            error "Invalid aligner selected: ${params.aligner}. Please choose either 'bwa-meth' or 'bwa-mem2'"
+        }
+
+        //
+        // MODULE: Run GATK4 MarkDuplicates
+        //
+        GATK4_MARKDUPLICATES(ch_bam_mapped, params.metref, params.metfai)
+        ch_versions = ch_versions.mix(GATK4_MARKDUPLICATES.out.versions.first())
+        ch_bam_dedup = GATK4_MARKDUPLICATES.out.bam
+
+    }
 //
 //    //
 //    // MODULE: Run BedTools with Intersect to subset bam file to the target region

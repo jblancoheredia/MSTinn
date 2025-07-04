@@ -15,6 +15,11 @@
                         "git_sha": "08108058ea36a63f141c25c4e75f9f872a5b2296",
                         "installed_by": ["modules"]
                     },
+                    "fgbio/fastqtobam": {
+                        "branch": "master",
+                        "git_sha": "6d6019016541f1e33efcdcd5f5fd731fef288bc2",
+                        "installed_by": ["modules"]
+                    },
                     "gatk4/haplotypecaller": {
                         "branch": "master",
                         "git_sha": "05954dab2ff481bcb999f24455da29a5828af08d",
