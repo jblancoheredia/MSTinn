@@ -1,12 +1,18 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/nf-core/mstinn/main/assets/schema_input.json",
-    "title": "nf-core/mstinn pipeline - params.input schema",
+    "$id": "https://raw.githubusercontent.com/jblancoheredia/mstinn/main/assets/schema_input.json",
+    "title": "cti/mstinn pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {
         "type": "object",
         "properties": {
+            "patient": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Patient ID must be provided and cannot contain spaces",
+                "meta": ["patient"]
+            },
             "sample": {
                 "type": "string",
                 "pattern": "^\\S+$",
@@ -26,6 +32,18 @@
                 "exists": true,
                 "pattern": "^\\S+\\.f(ast)?q\\.gz$",
                 "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+            },
+            "tumour": {
+                "type": "boolean",
+                "meta": ["tumour"],
+                "default": "true",
+                "errorMessage": "Is the sample a tumour? Defaults to true, normal sample being false"
+            },
+            "matched": {
+                "type": "boolean",
+                "errorMessage": "Is the sample part of a tumour-normal match or tumour-only? Defaults to false (tumour only).",
+                "meta": ["matched"],
+                "default": "false"
             }
         },
         "required": ["sample", "fastq_1"]
