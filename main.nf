@@ -47,7 +47,6 @@ workflow CTI_MSTINN {
     samplesheet
 
     main:
-
     //
     // WORKFLOW: Run pipeline
     //
@@ -69,7 +68,6 @@ workflow CTI_MSTINN {
 workflow {
 
     main:
-
     //
     // SUBWORKFLOW: Run initialisation tasks
     //

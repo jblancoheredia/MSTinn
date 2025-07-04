@@ -34,6 +34,11 @@
                         "branch": "master",
                         "git_sha": "d090922b1a4b80ba283186459ababf8e308abcbb",
                         "installed_by": ["modules"]
+                    },
+                    "sentieon/bwamem": {
+                        "branch": "master",
+                        "git_sha": "6b36f8e5427ec38911565398de57656ca3a2606a",
+                        "installed_by": ["modules"]
                     }
                 }
             },

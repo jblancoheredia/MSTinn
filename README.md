@@ -23,7 +23,7 @@
 
 1. Merge FastQ files ([`cat`](http://www.linfo.org/cat.html))
 2. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-3. UMI processing ([`fgbio`])(https://fulcrumgenomics.github.io/fgbio/)
+3. UMI processing ([`fgbio`](https://fulcrumgenomics.github.io/fgbio/))
 4. Map Reads to Reference ([`BWA-meth`](https://github.com/brentp/bwa-meth), [`BWA-mem2`](https://github.com/bwa-mem2/bwa-mem2))
 5. Intersect Metiloma and Targets BED files ([`BEDtools intersect`](https://github.com/arq5x/bedtools/blob/master/docs/content/tools/intersect.rst))
 6. Assess methylation bias and calculate best trimming thresholds([`PyMbias`]())
