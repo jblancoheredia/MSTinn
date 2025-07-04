@@ -377,6 +377,8 @@ workflow MSTINN {
         // MODULE: Run GATK4 MarkDuplicates
         //
         GATK4_MARKDUPLICATES(ch_bam_mapped, params.metref, params.metfai)
+        ch_multiqc_files = ch_multiqc_files.mix(GATK4_MARKDUPLICATES.out.complex_metrics.map{it[1]}.collect())
+        ch_multiqc_files = ch_multiqc_files.mix(GATK4_MARKDUPLICATES.out.metrics.map{it[1]}.collect())
         ch_versions = ch_versions.mix(GATK4_MARKDUPLICATES.out.versions.first())
         ch_bam_dedup = GATK4_MARKDUPLICATES.out.bam
 
