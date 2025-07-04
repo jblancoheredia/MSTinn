@@ -93,7 +93,6 @@ ch_metfai                                           = Channel.fromPath(params.me
 ch_bwadir                                           = Channel.fromPath(params.bwadir).map                   { it -> [[id:it.Name], it] }.collect()
 ch_bwaref                                           = Channel.fromPath(params.bwaref).map                   { it -> [[id:it.Name], it] }.collect()
 ch_bwafai                                           = Channel.fromPath(params.bwafai).map                   { it -> [[id:it.Name], it] }.collect()
-ch_targets                                          = Channel.fromPath(params.targets).map                  { it -> [[id:it.Name], it] }.collect()
 ch_intervals                                        = Channel.fromPath(params.intervals).map                { it -> [[id:it.Name], it] }.collect()
 ch_known_sites                                      = Channel.fromPath(params.known_sites).map              { it -> [[id:it.Name], it] }.collect()
 ch_known_sites_tbi                                  = Channel.fromPath(params.known_sites_tbi).map          { it -> [[id:it.Name], it] }.collect()
