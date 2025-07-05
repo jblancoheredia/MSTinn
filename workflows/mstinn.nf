@@ -31,6 +31,7 @@ include { SURVIVOR_SCAN_READS                                           } from '
 include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
 include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
+include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
@@ -54,13 +55,10 @@ include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '
 // include { COLLECTHSMETRICS_SIM                                          } from '../modules/local/picard/collecthsmetrics/main'
 // include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 // include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
-// include { SAMTOOLS_SORT_INDEX_FIN                                       } from '../modules/local/samtools/sort_index/main'
-
 // include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { ASTAIR                        	                            } from '../modules/local/astair/main'
 // include { PYMBIAS                                                       } from '../modules/local/pymbias/main'
 // include { RASTAIR                       	                            } from '../modules/local/rastair/main'
-
 // include { RASTAIR_MBIAS                 	                            } from '../modules/local/rastair/main'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 // include { RASTAIR_PERREAD               	                            } from '../modules/local/rastair/main'
@@ -331,17 +329,17 @@ workflow MSTINN {
         ch_bam_duplex = ALIGN_BAM_CON.out.duplex_bam
         ch_bam_simplex = ALIGN_BAM_CON.out.simplex_bam
 
-//    //
-//    // MODULE: Run SamToools Sort & Index
-//    //
-//    SAMTOOLS_SORT_INDEX_FIN(ch_bam_fin, ch_fai, ch_fasta, ch_bam_duplex, ch_bam_simplex)
-//    ch_versions = ch_versions.mix(SAMTOOLS_SORT_INDEX_FIN.out.versions)
-//    ch_bam_fin_sort = SAMTOOLS_SORT_INDEX_FIN.out.bam
-//    ch_bam_fin_indx = SAMTOOLS_SORT_INDEX_FIN.out.bai
-//    ch_bam_fin_stix = SAMTOOLS_SORT_INDEX_FIN.out.bam_bai
-//    ch_bam_dup_stix = SAMTOOLS_SORT_INDEX_FIN.out.bam_duplex
-//    ch_bam_sim_stix = SAMTOOLS_SORT_INDEX_FIN.out.bam_simplex
-//
+        //
+        // MODULE: Run SamToools Sort & Index
+        //
+        SAMTOOLS_SORT_INDEX_CON(ch_bam_fin, ch_bwafai, ch_bwaref, ch_bam_duplex, ch_bam_simplex)
+        ch_versions = ch_versions.mix(SAMTOOLS_SORT_INDEX_CON.out.versions)
+        ch_bam_fin_sort = SAMTOOLS_SORT_INDEX_CON.out.bam
+        ch_bam_fin_indx = SAMTOOLS_SORT_INDEX_CON.out.bai
+        ch_bam_fin_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_bai
+        ch_bam_dup_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_duplex
+        ch_bam_sim_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_simplex
+    
 //    //
 //    // MODULE: Run SamTools View to count reads accross the BAM files
 //    //
