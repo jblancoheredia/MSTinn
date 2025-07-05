@@ -19,6 +19,7 @@ include { BWAMEM2                                                       } from '
 include { BWA_METH                 	                                    } from '../modules/local/bwameth/main'
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
 include { SAMBLASTER                                                    } from '../modules/local/samblaster/main'
+include { ALIGN_BAM_CON                                                 } from '../modules/local/umi_align_bam/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
@@ -44,7 +45,6 @@ include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '
 // include { MOSDEPTH_FIN                                                  } from '../modules/local/mosdepth/main'
 // include { MOSDEPTH_RAW                                                  } from '../modules/local/mosdepth/main'
 // include { MOSDEPTH_SIM                                                  } from '../modules/local/mosdepth/main'
-// include { ALIGN_BAM_FIN                                                 } from '../modules/local/umi_align_bam/main'
 // include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 // include { MSISENSORPRO_FIN                                              } from '../modules/local/msisensorpro/pro/main'
 // include { MSISENSORPRO_RAW                                              } from '../modules/local/msisensorpro/pro/main'
@@ -323,6 +323,51 @@ workflow MSTINN {
         ch_bam_bai_simplex_fil = FGBIO_FILTERCONSENSUSREADS.out.simplex_bam_bai
 
         //
+        // MODULE: Align with BWA mem
+        //
+        ALIGN_BAM_CON(ch_bam_bai_final_fil, ch_bam_bai_duplex_fil, ch_bam_bai_simplex_fil, ch_bwaref, ch_bwafai, ch_bwadct, ch_bwadir)
+        ch_versions = ch_versions.mix(ALIGN_BAM_CON.out.versions.first())
+        ch_bam_fin = ALIGN_BAM_CON.out.bam
+        ch_bam_duplex = ALIGN_BAM_CON.out.duplex_bam
+        ch_bam_simplex = ALIGN_BAM_CON.out.simplex_bam
+
+//    //
+//    // MODULE: Run SamToools Sort & Index
+//    //
+//    SAMTOOLS_SORT_INDEX_FIN(ch_bam_fin, ch_fai, ch_fasta, ch_bam_duplex, ch_bam_simplex)
+//    ch_versions = ch_versions.mix(SAMTOOLS_SORT_INDEX_FIN.out.versions)
+//    ch_bam_fin_sort = SAMTOOLS_SORT_INDEX_FIN.out.bam
+//    ch_bam_fin_indx = SAMTOOLS_SORT_INDEX_FIN.out.bai
+//    ch_bam_fin_stix = SAMTOOLS_SORT_INDEX_FIN.out.bam_bai
+//    ch_bam_dup_stix = SAMTOOLS_SORT_INDEX_FIN.out.bam_duplex
+//    ch_bam_sim_stix = SAMTOOLS_SORT_INDEX_FIN.out.bam_simplex
+//
+//    //
+//    // MODULE: Run SamTools View to count reads accross the BAM files
+//    //
+//    UMI_READ_COUNTS(ch_ubam, ch_bam_fcu, ch_bam_grouped, ch_consensus_bam, ch_bam_bai_final_fil, ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
+//    ch_versions = ch_versions.mix(UMI_READ_COUNTS.out.versions.first())
+//
+//    //
+//    // MODULE: Run SamTools View to count reads accross the BAM files
+//    //
+//    COLLECT_UMI_METRICS(ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
+//    ch_versions = ch_versions.mix(COLLECT_UMI_METRICS.out.versions.first())
+//    ch_cons_family_sizes = COLLECT_UMI_METRICS.out.cons_family_sizes
+//
+//    //
+//    // MODULE: Run Preseq CCurve
+//    //
+//    PRESEQ_CCURVE(ch_cons_family_sizes)
+//    ch_versions = ch_versions.mix(PRESEQ_CCURVE.out.versions.first())
+//
+//    //
+//    // MODULE: Run Preseq LCExtrap
+//    //
+//    PRESEQ_LCEXTRAP(ch_grouped_family_sizes)
+//    ch_versions = ch_versions.mix(PRESEQ_LCEXTRAP.out.versions.first())
+
+//        //
 //        // MODULE: Run ErrorRateByReadPosition in Final BAM
 //        //
 //        FGBIO_ERRORRATEBYREADPOSITION_FIN(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
