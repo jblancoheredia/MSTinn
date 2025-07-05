@@ -19,9 +19,9 @@
      inkscape:pageopacity="1"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="2.49"
-     inkscape:cx="246.58635"
-     inkscape:cy="140.36145"
+     inkscape:zoom="9.28"
+     inkscape:cx="293.64224"
+     inkscape:cy="312.33836"
      inkscape:window-width="2624"
      inkscape:window-height="1186"
      inkscape:window-x="1725"
@@ -701,8 +701,9 @@
        y1="820.40002"
        x2="325.79999"
        y2="269.60001"
-       gradientTransform="matrix(1,0,0,-0.91099661,-0.00481928,926.25805)"
-       gradientUnits="userSpaceOnUse">
+       gradientTransform="matrix(1,0,0,-0.91099661,-0.60395723,926.15029)"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="repeat">
       <stop
          offset="0"
          stop-color="#656c6e"
@@ -715,10 +716,6 @@
          offset="0"
          stop-color="#99acb1"
          id="stop3-2" />
-      <stop
-         offset=".2"
-         stop-color="#80b6bf"
-         id="stop4-1" />
       <stop
          offset=".2"
          stop-color="#50cadb"
@@ -1190,8 +1187,8 @@
     <path
        id="path13-7-3"
        class="st2"
-       d="M 325.79518,679.01356 V 181.60942 Z"
-       style="fill:none;stroke:url(#linear-gradient-7);stroke-width:5.72677px;stroke-linecap:round;stroke-linejoin:round" />
+       d="M 325.19604,678.9058 V 181.50166 Z"
+       style="fill:none;stroke:url(#linear-gradient-7);stroke-width:5.727;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0" />
     <g
        id="_R_G_L_6_G">
       <path
