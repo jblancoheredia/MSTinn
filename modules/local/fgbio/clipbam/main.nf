@@ -8,9 +8,9 @@ process FGBIO_CLIPBAM {
         'blancojmskcc/umi_aligner:1.0.0' }"
 
     input:
-    tuple val(meta),  path(bam), path(bai), path(nbam), path(nbai)
-    tuple val(meta1), path(fasta)
-    tuple val(meta1), path(fai)
+    tuple val(meta),  path(bam)
+    tuple val(meta2), path(fasta)
+    tuple val(meta3), path(fai)
 
     output:
     tuple val(meta), path("*.t.clipped.bam"), path("*.t.clipped.bai"), path("*.n.clipped.bam"), path("*.n.clipped.bai"), emit: bam
