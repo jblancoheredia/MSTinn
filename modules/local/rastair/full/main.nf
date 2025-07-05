@@ -40,12 +40,12 @@ process RASTAIR_FULL {
         ${bam} \\
         >> ${prefix}_rastair_output.mbias
 
-    cutoffs = "\$(PyMbias \\
+    cutoffs=\$(PyMbias \\
         -p ${prefix} \\
         -s ${plot_type} \\
         -x ${plot_ax_x} \\
         -y ${plot_ax_y} \\
-        ${prefix}_rastair_output.mbias)"
+        ${prefix}_rastair_output.mbias)
 
     eval "\$cutoffs"
 
