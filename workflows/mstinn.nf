@@ -13,11 +13,14 @@ include { paramsSummaryMap                                              } from '
 */
 
 include { FASTQC                                                        } from '../modules/nf-core/fastqc/main'
+include { SPADES                                                        } from '../modules/local/spades/main'
 include { MULTIQC                                                       } from '../modules/nf-core/multiqc/main'
 include { BWAMEM2                                                       } from '../modules/local/bwamem2/main'
 include { BWA_METH                 	                                    } from '../modules/local/bwameth/main'
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
+include { SAMBLASTER                                                    } from '../modules/local/samblaster/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
+include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
@@ -30,16 +33,13 @@ include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 // include { BAMCUT                                                        } from '../modules/local/bamcut/main'
-// include { SPADES                                                        } from '../modules/local/spades/main'
 // include { REPEATSEQ                                                     } from '../modules/local/repeatseq/main'
 // include { MERGE_REPS                                                    } from '../modules/local/merge_reps/main'
-// include { SAMBLASTER                                                    } from '../modules/local/samblaster/main'
 // include { MOSDEPTH_DUP                                                  } from '../modules/local/mosdepth/main'
 // include { MOSDEPTH_FIN                                                  } from '../modules/local/mosdepth/main'
 // include { MOSDEPTH_RAW                                                  } from '../modules/local/mosdepth/main'
 // include { MOSDEPTH_SIM                                                  } from '../modules/local/mosdepth/main'
 // include { ALIGN_BAM_FIN                                                 } from '../modules/local/umi_align_bam/main'
-// include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 // include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 // include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
 // include { MSISENSORPRO_FIN                                              } from '../modules/local/msisensorpro/pro/main'
@@ -260,26 +260,26 @@ workflow MSTINN {
         ch_coverage_raw  = COLLECTHSMETRICS_RAW.out.coverage
         ch_hsmetrics_raw = COLLECTHSMETRICS_RAW.out.hsmetrics
 
-//        //
-//        // MODULE: Run SamBlaster
-//        //
-//        SAMBLASTER(ch_bam_fcu)
-//        ch_versions = ch_versions.mix(SAMBLASTER.out.versions.first())
-//        ch_split_reads = SAMBLASTER.out.split_reads
-//
-//        //
-//        // MODULE: Run SPAdes
-//        //
-//        SPADES(ch_split_reads)
-//        ch_versions = ch_versions.mix(SPADES.out.versions.first())
-//        ch_multiqc_files = ch_multiqc_files.mix(SPADES.out.log.map{it[1]}.collect())
-//
-//        //
-//        // MODULE: Run FilterContigs custom script
-//        //
-//        FILTER_CONTIGS(SPADES.out.contigs, '100', '1')
-//        ch_versions = ch_versions.mix(FILTER_CONTIGS.out.versions.first())
-//        ch_split_contigs = FILTER_CONTIGS.out.fasta
+        //
+        // MODULE: Run SamBlaster
+        //
+        SAMBLASTER(ch_bam_fcu)
+        ch_versions = ch_versions.mix(SAMBLASTER.out.versions.first())
+        ch_split_reads = SAMBLASTER.out.split_reads
+
+        //
+        // MODULE: Run SPAdes
+        //
+        SPADES(ch_split_reads)
+        ch_versions = ch_versions.mix(SPADES.out.versions.first())
+        ch_multiqc_files = ch_multiqc_files.mix(SPADES.out.log.map{it[1]}.collect())
+
+        //
+        // MODULE: Run FilterContigs custom script
+        //
+        FILTER_CONTIGS(SPADES.out.contigs, '100', '1')
+        ch_versions = ch_versions.mix(FILTER_CONTIGS.out.versions.first())
+        ch_split_contigs = FILTER_CONTIGS.out.fasta
 //
 //        //
 //        // MODULE: Run fgbio GroupReadsByUmi
