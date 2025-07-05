@@ -291,6 +291,7 @@ workflow MSTINN {
         FGBIO_GROUPREADSBYUMI(SAMBLASTER.out.bam, params.group_strategy, params.group_edits, params.group_include_secondary, params.group_allow_inter_contig, params.group_include_supplementary, params.group_min_map_q, params.group_include_non_pf_reads, params.group_mark_duplicates)
         ch_multiqc_files = ch_multiqc_files.mix(FGBIO_GROUPREADSBYUMI.out.histogram.map{it[1]}.collect())
         ch_versions = ch_versions.mix(FGBIO_GROUPREADSBYUMI.out.versions.first())
+        ch_grouped_family_sizes = FGBIO_GROUPREADSBYUMI.out.histogram
         ch_bam_grouped = FGBIO_GROUPREADSBYUMI.out.bam
 
         //
