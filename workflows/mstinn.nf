@@ -23,6 +23,7 @@ include { ALIGN_BAM_CON                                                 } from '
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 include { PRESEQ_CCURVE                                                 } from '../modules/local/preseq/ccurve/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
+include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 include { PRESEQ_LCEXTRAP                                               } from '../modules/local/preseq/lcextrap/main'
 include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
@@ -47,20 +48,7 @@ include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '
 include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
-// include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
-// include { BAMCUT                                                        } from '../modules/local/bamcut/main'
-// include { REPEATSEQ                                                     } from '../modules/local/repeatseq/main'
-// include { MERGE_REPS                                                    } from '../modules/local/merge_reps/main'
-// include { MOSDEPTH_DUP                                                  } from '../modules/local/mosdepth/main'
-// include { MOSDEPTH_FIN                                                  } from '../modules/local/mosdepth/main'
-// include { MOSDEPTH_RAW                                                  } from '../modules/local/mosdepth/main'
-// include { MOSDEPTH_SIM                                                  } from '../modules/local/mosdepth/main'
-// include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
-// include { MSISENSORPRO_FIN                                              } from '../modules/local/msisensorpro/pro/main'
-// include { MSISENSORPRO_RAW                                              } from '../modules/local/msisensorpro/pro/main'
 
-// include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
-// include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { ASTAIR                        	                            } from '../modules/local/astair/main'
 // include { PYMBIAS                                                       } from '../modules/local/pymbias/main'
 // include { RASTAIR                       	                            } from '../modules/local/rastair/main'
@@ -407,6 +395,13 @@ workflow MSTINN {
         SAMTOOLS_COLLATEFASTQ(ch_bam_bai_duplex_fil, ch_bwaref, [])
         ch_versions = ch_versions.mix(SAMTOOLS_COLLATEFASTQ.out.versions)
         ch_consensus_reads = SAMTOOLS_COLLATEFASTQ.out.fastq
+
+        //
+        // MODULE: Run FastQC
+        //
+        FASTQ_CONSENSUS(ch_consensus_reads)
+        ch_multiqc_files = ch_multiqc_files.mix(FASTQ_CONSENSUS.out.zip.collect{it[1]})
+        ch_versions = ch_versions.mix(FASTQ_CONSENSUS.out.versions)
 
         // User aligner selection
         if (params.aligner == 'bwa-meth') {
