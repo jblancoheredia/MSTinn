@@ -23,6 +23,7 @@ include { FGBIO_CORRECTUMIS                                             } from '
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
+include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 // include { BAMCUT                                                        } from '../modules/local/bamcut/main'
@@ -48,7 +49,6 @@ include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '
 // include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 // include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
 // include { SAMTOOLS_SORT_INDEX_FIN                                       } from '../modules/local/samtools/sort_index/main'
-// include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
 // include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 // include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
 // include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
@@ -220,6 +220,15 @@ workflow MSTINN {
         ch_multiqc_files = ch_multiqc_files.mix(FGBIO_CORRECTUMIS.out.metrics.map{it[1]}.collect())
         ch_versions = ch_versions.mix(FGBIO_CORRECTUMIS.out.versions.first())
         ch_bam_fcu = FGBIO_CORRECTUMIS.out.bam
+
+        //
+        // MODULE: Run SamToools Sort & Index
+        //
+        SAMTOOLS_SORT_INDEX_RAW(ch_bam_fcu, ch_fasta, params.fai)
+        ch_versions = ch_versions.mix(SAMTOOLS_SORT_INDEX_RAW.out.versions.first())
+        ch_bam_fcu_sort = SAMTOOLS_SORT_INDEX_RAW.out.bam
+        ch_bam_fcu_indx = SAMTOOLS_SORT_INDEX_RAW.out.bai
+        ch_bam_fcu_stix = SAMTOOLS_SORT_INDEX_RAW.out.bam_bai
 
         //
         // MODULE: Run ErrorRateByReadPosition 
