@@ -11,7 +11,6 @@ process ALIGN_BAM_RAW {
     tuple val(meta),  path(unmapped_bam)
     tuple val(meta2), path(fasta)
     tuple val(meta3), path(fasta_fai)
-    tuple val(meta4), path(dict)
     tuple val(meta5), path(bwa_dir)
     val sort_type
 
