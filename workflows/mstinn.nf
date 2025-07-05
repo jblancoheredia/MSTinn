@@ -230,13 +230,13 @@ workflow MSTINN {
         ch_bam_fcu_indx = SAMTOOLS_SORT_INDEX_RAW.out.bai
         ch_bam_fcu_stix = SAMTOOLS_SORT_INDEX_RAW.out.bam_bai
 
-        //
-        // MODULE: Run ErrorRateByReadPosition 
-        //
-        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
-        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
-        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
-
+//        //
+//        // MODULE: Run ErrorRateByReadPosition 
+//        //
+//        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
+//        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
+//        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
+//
 //        //
 //        // MODULE: Run Picard's Collect HS Metrics for raw BAM files
 //        //
