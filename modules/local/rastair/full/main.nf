@@ -57,7 +57,7 @@ process RASTAIR_FULL {
         ${bam} \\
         >> ${prefix}_rastair_output.mods
 
-    rastair_summarize.py \\
+    Summarize \\
         --rastair_in  ${prefix}_rastair_output.mods \\
         --summary_out ${prefix}_rastair_output.mods.summary
 
@@ -69,26 +69,51 @@ process RASTAIR_FULL {
         -b ${intervals} \\
         > ${prefix}_rastair_output.targeted.mods
 
-    rastair_summarize.py \\
+    Summarize \\
         --rastair_in  ${prefix}_rastair_output.targeted.mods \\
         --summary_out ${prefix}_rastair_output.targeted.mods.summary
+
+    rastair \\
+        per-read \\
+        --nOT \$not \\
+        --nOB \$nob \\
+        --fasta-file ${fasta} \\
+        ${bam} \\
+        >> ${prefix}_rastair_output_perread.mods
+
+    Summarize \\
+        --rastair_in  ${prefix}_rastair_output_perread.mods \\
+        --summary_out ${prefix}_rastair_output_perread.mods.summary
+
+    bedtools \\
+        intersect \\
+        -header \\
+        -u \\
+        -a ${prefix}_rastair_output_perread.mods \\
+        -b ${intervals} \\
+        > ${prefix}_rastair_output_perread.targeted.mods
+
+    Summarize \\
+        --rastair_in  ${prefix}_rastair_output_perread.targeted.mods \\
+        --summary_out ${prefix}_rastair_output_perread.targeted.mods.summary
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         rastair: \$(rastair --version)
     END_VERSIONS
     """
-
     stub:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
-    // TODO nf-core: A stub section should mimic the execution of the original module as best as possible
-    //               Have a look at the following examples:
-    //               Simple example: https://github.com/nf-core/modules/blob/818474a292b4860ae8ff88e149fbcda68814114d/modules/nf-core/bcftools/annotate/main.nf#L47-L63
-    //               Complex example: https://github.com/nf-core/modules/blob/818474a292b4860ae8ff88e149fbcda68814114d/modules/nf-core/bedtools/split/main.nf#L38-L54
     """
     
     touch ${prefix}.bam
+    touch ${prefix}_cutoffs.tsv
+    touch ${prefix}_rastair_output.mods
+    touch ${prefix}_rastair_output.mbias
+    touch ${prefix}_rastair_output.mods.summary
+    touch ${prefix}_rastair_output.targeted.mods
+    touch ${prefix}_rastair_output.targeted.mods.summary
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
