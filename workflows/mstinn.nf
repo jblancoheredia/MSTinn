@@ -91,6 +91,7 @@ ch_metdct                                           = Channel.fromPath(params.me
 ch_metdir                                           = Channel.fromPath(params.metdir).map                   { it -> [[id:it.Name], it] }.collect()
 ch_metref                                           = Channel.fromPath(params.metref).map                   { it -> [[id:it.Name], it] }.collect()
 ch_metfai                                           = Channel.fromPath(params.metfai).map                   { it -> [[id:it.Name], it] }.collect()
+ch_bwadct                                           = Channel.fromPath(params.bwadct).map                   { it -> [[id:it.Name], it] }.collect()
 ch_bwadir                                           = Channel.fromPath(params.bwadir).map                   { it -> [[id:it.Name], it] }.collect()
 ch_bwaref                                           = Channel.fromPath(params.bwaref).map                   { it -> [[id:it.Name], it] }.collect()
 ch_bwafai                                           = Channel.fromPath(params.bwafai).map                   { it -> [[id:it.Name], it] }.collect()
@@ -206,7 +207,7 @@ workflow MSTINN {
         // MODULE: Align with bwa mem but avoid sort
         //
         sort = false
-        ALIGN_BAM_RAW(ch_ubam, ch_bwaref, ch_bwafai, ch_bwadir, sort)
+        ALIGN_BAM_RAW(ch_ubam, ch_bwaref, ch_bwafai, ch_bwadir, ch_bwadct, sort)
         ch_versions = ch_versions.mix(ALIGN_BAM_RAW.out.versions.first())
         ch_raw_bam = ALIGN_BAM_RAW.out.bam
         ch_raw_sort_bam = ALIGN_BAM_RAW.out.sort_bam
