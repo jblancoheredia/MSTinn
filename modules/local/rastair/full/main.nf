@@ -24,6 +24,7 @@ process RASTAIR_FULL {
     tuple val(meta), path("*.mods")                 , emit: mods
     tuple val(meta), path("*.mbias")                , emit: mbias
     tuple val(meta), path("*_output.mods.summary")  , emit: summary
+    tuple val(meta), path("*_output_perread.mods")  , emit: perread
     tuple val(meta), path("*.targeted.mods.summary"), emit: targeted_summary
     path "versions.yml"                             , emit: versions
 
@@ -81,22 +82,6 @@ process RASTAIR_FULL {
         ${bam} \\
         >> ${prefix}_rastair_output_perread.mods
 
-    Summarize \\
-        --rastair_in  ${prefix}_rastair_output_perread.mods \\
-        --summary_out ${prefix}_rastair_output_perread.mods.summary
-
-    bedtools \\
-        intersect \\
-        -header \\
-        -u \\
-        -a ${prefix}_rastair_output_perread.mods \\
-        -b ${intervals} \\
-        > ${prefix}_rastair_output_perread.targeted.mods
-
-    Summarize \\
-        --rastair_in  ${prefix}_rastair_output_perread.targeted.mods \\
-        --summary_out ${prefix}_rastair_output_perread.targeted.mods.summary
-
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         rastair: \$(rastair --version)
@@ -106,12 +91,12 @@ process RASTAIR_FULL {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    
     touch ${prefix}.bam
     touch ${prefix}_cutoffs.tsv
     touch ${prefix}_rastair_output.mods
     touch ${prefix}_rastair_output.mbias
     touch ${prefix}_rastair_output.mods.summary
+    touch ${prefix}_rastair_output_perread.mods
     touch ${prefix}_rastair_output.targeted.mods
     touch ${prefix}_rastair_output.targeted.mods.summary
 
