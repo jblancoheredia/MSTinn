@@ -280,6 +280,7 @@
                 "exclude_bed": { "type": "string", "format": "file-path", "description": "Exclude BED file." },
                 "known_sites": { "type": "string", "format": "file-path", "description": "Known sites VCF file." },
                 "blocklist_bed": { "type": "string", "format": "file-path", "description": "Blocklist BED file." },
+                "interval_list": { "type": "string", "format": "file-path", "description": "Intervals list BED file." },
                 "pon_directory": { "type": "string", "format": "directory-path", "description": "Panel of normals directory." },
                 "known_sites_tbi": { "type": "string", "format": "file-path", "description": "Known sites VCF index file." },
                 "protein_domains": { "type": "string", "format": "file-path", "description": "Protein domains GFF3 file." },
