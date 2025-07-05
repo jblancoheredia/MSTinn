@@ -51,6 +51,7 @@ process RASTAIR_FULL {
 
     rastair \\
         call \\
+        -@ ${task.cpus} \\
         --nOT \$not \\
         --nOB \$nob \\
         --fasta-file ${fasta} \\
@@ -75,8 +76,7 @@ process RASTAIR_FULL {
 
     rastair \\
         per-read \\
-        --nOT \$not \\
-        --nOB \$nob \\
+        -@ ${task.cpus} \\
         --fasta-file ${fasta} \\
         ${bam} \\
         >> ${prefix}_rastair_output_perread.mods
