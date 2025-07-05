@@ -22,8 +22,11 @@ include { FGBIO_FASTQTOBAM                                              } from '
 include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
+include { SURVIVOR_SCAN_READS                                           } from '../modules/local/survivor/scanreads/main'
+include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
+include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '../modules/local/picard/collectmultiplemetrics/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 // include { BAMCUT                                                        } from '../modules/local/bamcut/main'
@@ -41,7 +44,6 @@ include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '
 // include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
 // include { MSISENSORPRO_FIN                                              } from '../modules/local/msisensorpro/pro/main'
 // include { MSISENSORPRO_RAW                                              } from '../modules/local/msisensorpro/pro/main'
-// include { SURVIVOR_SCAN_READS                                           } from '../modules/local/survivor/scanreads/main'
 // include { COLLECTHSMETRICS_DUP                                          } from '../modules/local/picard/collecthsmetrics/main'
 // include { COLLECTHSMETRICS_CON                                          } from '../modules/local/picard/collecthsmetrics/main'
 // include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
@@ -237,14 +239,27 @@ workflow MSTINN {
         ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
         ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
 
-//        //
-//        // MODULE: Run Picard's Collect HS Metrics for raw BAM files
-//        //
-//        COLLECTHSMETRICS_RAW(ch_bam_fcu_sort, ch_bam_fcu_indx, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
-//        ch_versions = ch_versions.mix(COLLECTHSMETRICS_RAW.out.versions.first())
-//        ch_coverage_raw  = COLLECTHSMETRICS_RAW.out.coverage
-//        ch_hsmetrics_raw = COLLECTHSMETRICS_RAW.out.hsmetrics
-//
+        //
+        // MODULE: Run Picard Tool CollectMultipleMetrics
+        //
+        PICARD_COLLECTMULTIPLEMETRICS(ch_bam_fcu_stix, ch_bwaref, ch_bwafai)
+        ch_multiqc_files = ch_multiqc_files.mix(PICARD_COLLECTMULTIPLEMETRICS.out.metrics.map{it[1]}.collect())
+        ch_versions = ch_versions.mix(PICARD_COLLECTMULTIPLEMETRICS.out.versions.first())
+
+        //
+        // MODULE: Run Survivor ScanReads to get Error Profiles
+        //
+        SURVIVOR_SCAN_READS(ch_bam_fcu_sort, ch_bam_fcu_indx, params.read_length)
+        ch_versions = ch_versions.mix(SURVIVOR_SCAN_READS.out.versions.first())
+
+        //
+        // MODULE: Run Picard's Collect HS Metrics for raw BAM files
+        //
+        COLLECTHSMETRICS_RAW(ch_bam_fcu_sort, ch_bam_fcu_indx, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+        ch_versions = ch_versions.mix(COLLECTHSMETRICS_RAW.out.versions.first())
+        ch_coverage_raw  = COLLECTHSMETRICS_RAW.out.coverage
+        ch_hsmetrics_raw = COLLECTHSMETRICS_RAW.out.hsmetrics
+
 //        //
 //        // MODULE: Run SamBlaster
 //        //
