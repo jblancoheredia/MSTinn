@@ -23,6 +23,7 @@ include { FGBIO_CORRECTUMIS                                             } from '
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
+include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 // include { BAMCUT                                                        } from '../modules/local/bamcut/main'
 // include { SPADES                                                        } from '../modules/local/spades/main'
@@ -51,8 +52,7 @@ include { GATK4_MARKDUPLICATES          	                            } from '../
 // include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 // include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
 // include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
-// include { FGBIO_ERRORRATEBYREADPOSITION_FIN                             } from '../modules/local/fgbio/errorratebyreadposition/main'
-// include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
+// include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { ASTAIR                        	                            } from '../modules/local/astair/main'
 // include { PYMBIAS                                                       } from '../modules/local/pymbias/main'
 // include { RASTAIR                       	                            } from '../modules/local/rastair/main'
@@ -221,12 +221,13 @@ workflow MSTINN {
         ch_versions = ch_versions.mix(FGBIO_CORRECTUMIS.out.versions.first())
         ch_bam_fcu = FGBIO_CORRECTUMIS.out.bam
 
-//        //
-//        // MODULE: Run ErrorRateByReadPosition 
-//        //
-//        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
-//        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
-//
+        //
+        // MODULE: Run ErrorRateByReadPosition 
+        //
+        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
+        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
+        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
+
 //        //
 //        // MODULE: Run Picard's Collect HS Metrics for raw BAM files
 //        //
