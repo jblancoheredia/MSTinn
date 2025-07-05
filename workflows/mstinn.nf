@@ -206,7 +206,7 @@ workflow MSTINN {
         // MODULE: Align with bwa mem but avoid sort
         //
         sort = false
-        ALIGN_BAM_RAW(ch_ubam, ch_metref, ch_metfai, ch_metdct, ch_metdir, sort)
+        ALIGN_BAM_RAW(ch_ubam, ch_bwaref, ch_bwafai, ch_bwadir, sort)
         ch_versions = ch_versions.mix(ALIGN_BAM_RAW.out.versions.first())
         ch_raw_bam = ALIGN_BAM_RAW.out.bam
         ch_raw_sort_bam = ALIGN_BAM_RAW.out.sort_bam
