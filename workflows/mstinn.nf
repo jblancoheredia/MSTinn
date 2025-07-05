@@ -22,6 +22,7 @@ include { SAMBLASTER                                                    } from '
 include { ALIGN_BAM_CON                                                 } from '../modules/local/umi_align_bam/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
+include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
 include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
@@ -339,13 +340,13 @@ workflow MSTINN {
         ch_bam_fin_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_bai
         ch_bam_dup_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_duplex
         ch_bam_sim_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_simplex
+
+        //
+        // MODULE: Run SamTools View to count reads accross the BAM files
+        //
+        UMI_READ_COUNTS(ch_ubam, ch_bam_fcu, ch_bam_grouped, ch_consensus_bam, ch_bam_bai_final_fil, ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
+        ch_versions = ch_versions.mix(UMI_READ_COUNTS.out.versions.first())
     
-//    //
-//    // MODULE: Run SamTools View to count reads accross the BAM files
-//    //
-//    UMI_READ_COUNTS(ch_ubam, ch_bam_fcu, ch_bam_grouped, ch_consensus_bam, ch_bam_bai_final_fil, ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
-//    ch_versions = ch_versions.mix(UMI_READ_COUNTS.out.versions.first())
-//
 //    //
 //    // MODULE: Run SamTools View to count reads accross the BAM files
 //    //
