@@ -30,6 +30,9 @@ include { FILTER_CONTIGS                                                } from '
 include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 include { PRESEQ_LCEXTRAP                                               } from '../modules/local/preseq/lcextrap/main'
+include { RASTAIR_PERREAD               	                            } from '../modules/local/rastair/main'
+include { RASTAIR_SUMMARY               	                            } from '../modules/local/rastair/main'
+include { SENTIEON_BWAMEM                                               } from '../modules/nf-core/sentieon/bwamem/main'
 include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
@@ -44,10 +47,13 @@ include { COLLECTHSMETRICS_RAW                                          } from '
 include { COLLECTHSMETRICS_SIM                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
 include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
+include { GATK4_HAPLOTYPECALLER                                         } from '../modules/nf-core/gatk4/haplotypecaller/main'
 include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
 include { PREP_BEDTOOLS_INTERSECT       	                            } from '../modules/local/bedtools/prep_bedtools_intersect' 
 include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
+include { ASTAIR_BEDTOOLS_INTERSECT     	                            } from '../modules/local/bedtools/astair_bedtools_intersect' 
+include { RASTAIR_BEDTOOLS_INTERSECT    	                            } from '../modules/local/bedtools/rastair_bedtools_intersect' 
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
 include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '../modules/local/picard/collectmultiplemetrics/main'
@@ -56,14 +62,6 @@ include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 
 
-// include { RASTAIR_PERREAD               	                            } from '../modules/local/rastair/main'
-// include { RASTAIR_SUMMARY               	                            } from '../modules/local/rastair/main'
-// include { SENTIEON_BWAMEM                                               } from '../modules/nf-core/sentieon/bwamem/main'  
-// include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
-// include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
-// include { GATK4_HAPLOTYPECALLER                                      } from '../modules/nf-core/gatk4/haplotypecaller/main'
-// include { ASTAIR_BEDTOOLS_INTERSECT     	                            } from '../modules/local/bedtools/astair_bedtools_intersect' 
-// include { RASTAIR_BEDTOOLS_INTERSECT    	                            } from '../modules/local/bedtools/rastair_bedtools_intersect' 
 
 
 /*
@@ -476,7 +474,7 @@ workflow MSTINN {
         //
         RASTAIR_MBIAS(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
         ch_versions = ch_versions.mix(RASTAIR_MBIAS.out.versions.first())
-    
+
         //
         // MODULE: Run PyMbias
         //
@@ -485,55 +483,55 @@ workflow MSTINN {
         PYMBIAS.out.cutoffs
             .map { meta, cutoff_file -> getMbiasParams(cutoff_file) }
             .set { ch_cutoffs }
-    
+
         //
         // MODULE: Run rasTair
         //
         RASTAIR(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_cutoffs)
         ch_versions = ch_versions.mix(RASTAIR.out.versions.first())
         ch_rastair_mods = RASTAIR.out.mods
-    
-//    //
-//    // MODULE: Run BedTools with Intersect to subset bam file to the target region
-//    //
-//    RASTAIR_BEDTOOLS_INTERSECT(ch_rastair_mods, ch_metbed, '_rastair_output_targeted')
-//    ch_versions = ch_versions.mix(RASTAIR_BEDTOOLS_INTERSECT.out.versions.first())
-//    ch_rastair_mods_targeted = RASTAIR_BEDTOOLS_INTERSECT.out.mods
-//
-//    //
-//    // MODULE: Run rasTair summary for the targeted mods
-//    //
-//    RASTAIR_SUMMARY(ch_rastair_mods_targeted)
-//    ch_versions = ch_versions.mix(RASTAIR_BEDTOOLS_INTERSECT.out.versions.first())
-//
-//    //
-//    // MODULE: Run astair
-//    //
-//    ASTAIR(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_metdir, params.read_length)
-//    ch_versions = ch_versions.mix(ASTAIR.out.versions.first())
-//    ch_astair_mods = ASTAIR.out.mods
-//
-//    //
-//    // MODULE: Run BedTools with Intersect to subset bam file to the target region
-//    //
-//    ASTAIR_BEDTOOLS_INTERSECT(ch_astair_mods, ch_metbed, '_astair_output_targeted')
-//    ch_versions = ch_versions.mix(ASTAIR_BEDTOOLS_INTERSECT.out.versions.first())
-//    ch_astair_mods_targeted = ASTAIR_BEDTOOLS_INTERSECT.out.mods
-//
-//    //
-//    // MODULE: Run FgBio ClipBAM 
-//    //
-//    FGBIO_CLIPBAM(ch_bam_dedup, ch_bwaref, ch_bwafai)
-//    ch_versions = ch_versions.mix(FGBIO_CLIPBAM.out.versions)
-//    ch_bam_clipped = FGBIO_CLIPBAM.out.bam
-//    ch_txt = FGBIO_CLIPBAM.out.txt
-//// TO-DO:    multi_qc_files = FGBIO_CLIPBAM.out.metrics
-//
-//    //
-//    // MODULE: Run GATK4 HAP
-//    //
-//    GATK4_HAPLOTYPECALLER(ch_bam_clipped, ch_bwaref, ch_bwafai, ch_bwadct, ch_known_sites, ch_known_sites_tbi, ch_intervals)
-//    ch_versions = ch_versions.mix(GATK4_HAPLOTYPECALLER.out.versions)
+
+        //
+        // MODULE: Run BedTools with Intersect to subset bam file to the target region
+        //
+        RASTAIR_BEDTOOLS_INTERSECT(ch_rastair_mods, ch_metbed, '_rastair_output_targeted')
+        ch_versions = ch_versions.mix(RASTAIR_BEDTOOLS_INTERSECT.out.versions.first())
+        ch_rastair_mods_targeted = RASTAIR_BEDTOOLS_INTERSECT.out.mods
+
+        //
+        // MODULE: Run rasTair summary for the targeted mods
+        //
+        RASTAIR_SUMMARY(ch_rastair_mods_targeted)
+        ch_versions = ch_versions.mix(RASTAIR_BEDTOOLS_INTERSECT.out.versions.first())
+
+        //
+        // MODULE: Run astair
+        //
+        ASTAIR(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_metdir, params.read_length)
+        ch_versions = ch_versions.mix(ASTAIR.out.versions.first())
+        ch_astair_mods = ASTAIR.out.mods
+
+        //
+        // MODULE: Run BedTools with Intersect to subset bam file to the target region
+        //
+        ASTAIR_BEDTOOLS_INTERSECT(ch_astair_mods, ch_metbed, '_astair_output_targeted')
+        ch_versions = ch_versions.mix(ASTAIR_BEDTOOLS_INTERSECT.out.versions.first())
+        ch_astair_mods_targeted = ASTAIR_BEDTOOLS_INTERSECT.out.mods
+
+        //
+        // MODULE: Run FgBio ClipBAM 
+        //
+        FGBIO_CLIPBAM(ch_bam_dedup, ch_bwaref, ch_bwafai)
+        ch_versions = ch_versions.mix(FGBIO_CLIPBAM.out.versions)
+        ch_bam_clipped = FGBIO_CLIPBAM.out.bam
+        ch_txt = FGBIO_CLIPBAM.out.txt
+    // TO-DO:    multi_qc_files = FGBIO_CLIPBAM.out.metrics
+
+        //
+        // MODULE: Run GATK4 HAP
+        //
+        GATK4_HAPLOTYPECALLER(ch_bam_clipped, ch_bwaref, ch_bwafai, ch_bwadct, ch_known_sites, ch_known_sites_tbi, ch_intervals)
+        ch_versions = ch_versions.mix(GATK4_HAPLOTYPECALLER.out.versions)
 
     //
     // Collate and save software versions
