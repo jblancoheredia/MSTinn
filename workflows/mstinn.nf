@@ -28,8 +28,12 @@ include { DOWNSAMPLINGS_SEQTK                                           } from '
 include { SURVIVOR_SCAN_READS                                           } from '../modules/local/survivor/scanreads/main'
 include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
+include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
+include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
+include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
 include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '../modules/local/picard/collectmultiplemetrics/main'
+include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 // include { BAMCUT                                                        } from '../modules/local/bamcut/main'
@@ -51,9 +55,7 @@ include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '
 // include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 // include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
 // include { SAMTOOLS_SORT_INDEX_FIN                                       } from '../modules/local/samtools/sort_index/main'
-// include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
-// include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
-// include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
+
 // include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { ASTAIR                        	                            } from '../modules/local/astair/main'
 // include { PYMBIAS                                                       } from '../modules/local/pymbias/main'
@@ -280,47 +282,47 @@ workflow MSTINN {
         FILTER_CONTIGS(SPADES.out.contigs, '100', '1')
         ch_versions = ch_versions.mix(FILTER_CONTIGS.out.versions.first())
         ch_split_contigs = FILTER_CONTIGS.out.fasta
-//
-//        //
-//        // MODULE: Run fgbio GroupReadsByUmi
-//        //
-//        FGBIO_GROUPREADSBYUMI(SAMBLASTER.out.bam, params.group_strategy, params.group_edits, params.group_include_secondary, params.group_allow_inter_contig, params.group_include_supplementary, params.group_min_map_q, params.group_include_non_pf_reads, params.group_mark_duplicates)
-//        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_GROUPREADSBYUMI.out.histogram.map{it[1]}.collect())
-//        ch_versions = ch_versions.mix(FGBIO_GROUPREADSBYUMI.out.versions.first())
-//        ch_bam_grouped = FGBIO_GROUPREADSBYUMI.out.bam
-//
-//        //
-//        // MODULE: Run fgbio CollectDuplexSeqMetrics
-//        //
-//        FGBIO_COLLECTDUPLEXSEQMETRICS(ch_bam_grouped, params.interval_list)
-//        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.metrics.map{it[1]}.collect())
-//        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.pdf.map{it[1]}.collect())   
-//        ch_versions = ch_versions.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.versions.first())
-//
-//        //
-//        // MODULE: Run fgbio CallDuplexConsensusReads
-//        //
-//        FGBIO_CALLDUPLEXCONSENSUSREADS(ch_bam_grouped, params.call_min_reads, params.call_min_baseq)
-//        ch_versions = ch_versions.mix(FGBIO_CALLDUPLEXCONSENSUSREADS.out.versions.first())
-//        FGBIO_CALLDUPLEXCONSENSUSREADS.out.bam.set { ch_consensus_bam }
-//
-//        //
-//        // MODULE: Run fgbio SortBam
-//        //
-//        FGBIO_SORTCONBAM(ch_consensus_bam)
-//        ch_versions = ch_versions.mix(FGBIO_SORTCONBAM.out.versions.first())
-//        ch_consensus_bam_sorted = FGBIO_SORTCONBAM.out.bam
-//
-//        //
-//        // MODULE: Run FgBIO FilterConsensusReads to produce the "Consensus", "Duplex" & "Simplex" BAM files
-//        //
-//        FGBIO_FILTERCONSENSUSREADS(ch_consensus_bam_sorted, params.fasta, params.fai, params.filter_min_reads, params.filter_min_base_quality, params.filter_max_base_error_rate, params.filter_max_read_error_rate, params.filter_max_no_call_fraction)
-//        ch_versions = ch_versions.mix(FGBIO_FILTERCONSENSUSREADS.out.versions.first())
-//        ch_bam_bai_final_fil = FGBIO_FILTERCONSENSUSREADS.out.suplex_bam_bai
-//        ch_bam_bai_duplex_fil = FGBIO_FILTERCONSENSUSREADS.out.duplex_bam_bai
-//        ch_bam_bai_simplex_fil = FGBIO_FILTERCONSENSUSREADS.out.simplex_bam_bai
-//
-//        //
+
+        //
+        // MODULE: Run fgbio GroupReadsByUmi
+        //
+        FGBIO_GROUPREADSBYUMI(SAMBLASTER.out.bam, params.group_strategy, params.group_edits, params.group_include_secondary, params.group_allow_inter_contig, params.group_include_supplementary, params.group_min_map_q, params.group_include_non_pf_reads, params.group_mark_duplicates)
+        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_GROUPREADSBYUMI.out.histogram.map{it[1]}.collect())
+        ch_versions = ch_versions.mix(FGBIO_GROUPREADSBYUMI.out.versions.first())
+        ch_bam_grouped = FGBIO_GROUPREADSBYUMI.out.bam
+
+        //
+        // MODULE: Run fgbio CollectDuplexSeqMetrics
+        //
+        FGBIO_COLLECTDUPLEXSEQMETRICS(ch_bam_grouped, params.interval_list)
+        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.metrics.map{it[1]}.collect())
+        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.pdf.map{it[1]}.collect())   
+        ch_versions = ch_versions.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.versions.first())
+
+        //
+        // MODULE: Run fgbio CallDuplexConsensusReads
+        //
+        FGBIO_CALLDUPLEXCONSENSUSREADS(ch_bam_grouped, params.call_min_reads, params.call_min_baseq)
+        ch_versions = ch_versions.mix(FGBIO_CALLDUPLEXCONSENSUSREADS.out.versions.first())
+        FGBIO_CALLDUPLEXCONSENSUSREADS.out.bam.set { ch_consensus_bam }
+
+        //
+        // MODULE: Run fgbio SortBam
+        //
+        FGBIO_SORTCONBAM(ch_consensus_bam)
+        ch_versions = ch_versions.mix(FGBIO_SORTCONBAM.out.versions.first())
+        ch_consensus_bam_sorted = FGBIO_SORTCONBAM.out.bam
+
+        //
+        // MODULE: Run FgBIO FilterConsensusReads to produce the "Consensus", "Duplex" & "Simplex" BAM files
+        //
+        FGBIO_FILTERCONSENSUSREADS(ch_consensus_bam_sorted, params.bwaref, params.bwafai, params.filter_min_reads, params.filter_min_base_quality, params.filter_max_base_error_rate, params.filter_max_read_error_rate, params.filter_max_no_call_fraction)
+        ch_versions = ch_versions.mix(FGBIO_FILTERCONSENSUSREADS.out.versions.first())
+        ch_bam_bai_final_fil = FGBIO_FILTERCONSENSUSREADS.out.suplex_bam_bai
+        ch_bam_bai_duplex_fil = FGBIO_FILTERCONSENSUSREADS.out.duplex_bam_bai
+        ch_bam_bai_simplex_fil = FGBIO_FILTERCONSENSUSREADS.out.simplex_bam_bai
+
+        //
 //        // MODULE: Run ErrorRateByReadPosition in Final BAM
 //        //
 //        FGBIO_ERRORRATEBYREADPOSITION_FIN(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
