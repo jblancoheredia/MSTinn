@@ -32,7 +32,10 @@ include { COLLECT_UMI_METRICS                                           } from '
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 include { SURVIVOR_SCAN_READS                                           } from '../modules/local/survivor/scanreads/main'
+include { COLLECTHSMETRICS_DUP                                          } from '../modules/local/picard/collecthsmetrics/main'
+include { COLLECTHSMETRICS_CON                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
+include { COLLECTHSMETRICS_SIM                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
 include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
@@ -41,6 +44,7 @@ include { FGBIO_FILTERCONSENSUSREADS                                    } from '
 include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
 include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '../modules/local/picard/collectmultiplemetrics/main'
 include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
+include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 // include { BAMCUT                                                        } from '../modules/local/bamcut/main'
@@ -53,10 +57,7 @@ include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '
 // include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 // include { MSISENSORPRO_FIN                                              } from '../modules/local/msisensorpro/pro/main'
 // include { MSISENSORPRO_RAW                                              } from '../modules/local/msisensorpro/pro/main'
-// include { COLLECTHSMETRICS_DUP                                          } from '../modules/local/picard/collecthsmetrics/main'
-// include { COLLECTHSMETRICS_CON                                          } from '../modules/local/picard/collecthsmetrics/main'
-// include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
-// include { COLLECTHSMETRICS_SIM                                          } from '../modules/local/picard/collecthsmetrics/main'
+
 // include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 // include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
 // include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
@@ -370,35 +371,35 @@ workflow MSTINN {
         PRESEQ_LCEXTRAP(ch_grouped_family_sizes)
         ch_versions = ch_versions.mix(PRESEQ_LCEXTRAP.out.versions.first())
 
-//        //
-//        // MODULE: Run ErrorRateByReadPosition in Final BAM
-//        //
-//        FGBIO_ERRORRATEBYREADPOSITION_FIN(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
-//        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_FIN.out.versions)
-//
-//        //
-//        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
-//        //
-//        COLLECTHSMETRICS_CON(ch_bam_fin_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
-//        ch_versions = ch_versions.mix(COLLECTHSMETRICS_CON.out.versions.first())
-//        ch_coverage_con  = COLLECTHSMETRICS_CON.out.coverage
-//        ch_hsmetrics_con = COLLECTHSMETRICS_CON.out.hsmetrics
-//
-//        //
-//        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
-//        //
-//        COLLECTHSMETRICS_DUP(ch_bam_dup_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
-//        ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
-//        ch_coverage_con  = COLLECTHSMETRICS_DUP.out.coverage
-//        ch_hsmetrics_con = COLLECTHSMETRICS_DUP.out.hsmetrics
-//
-//        //
-//        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
-//        //
-//        COLLECTHSMETRICS_SIM(ch_bam_sim_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
-//        ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
-//        ch_coverage_con  = COLLECTHSMETRICS_SIM.out.coverage
-//        ch_hsmetrics_con = COLLECTHSMETRICS_SIM.out.hsmetrics
+        //
+        // MODULE: Run ErrorRateByReadPosition in Final BAM
+        //
+        FGBIO_ERRORRATEBYREADPOSITION_CON(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
+        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_CON.out.versions)
+
+        //
+        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
+        //
+        COLLECTHSMETRICS_CON(ch_bam_fin_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+        ch_versions = ch_versions.mix(COLLECTHSMETRICS_CON.out.versions.first())
+        ch_coverage_con  = COLLECTHSMETRICS_CON.out.coverage
+        ch_hsmetrics_con = COLLECTHSMETRICS_CON.out.hsmetrics
+
+        //
+        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
+        //
+        COLLECTHSMETRICS_DUP(ch_bam_dup_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+        ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
+        ch_coverage_con  = COLLECTHSMETRICS_DUP.out.coverage
+        ch_hsmetrics_con = COLLECTHSMETRICS_DUP.out.hsmetrics
+
+        //
+        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
+        //
+        COLLECTHSMETRICS_SIM(ch_bam_sim_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+        ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
+        ch_coverage_con  = COLLECTHSMETRICS_SIM.out.coverage
+        ch_hsmetrics_con = COLLECTHSMETRICS_SIM.out.hsmetrics
 //
 //        //
 //        // MODULE: Extract FastQ reads from BAM
