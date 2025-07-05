@@ -469,10 +469,11 @@ workflow MSTINN {
         ch_bam_mapped_targeted_indexed = PREP_BEDTOOLS_INTERSECT.out.bam.join(SAMTOOLS_INDEX.out.bai)
 
         //
-        // MODULE: Run rasTair in per-read mode
+        // MODULE: Run rasTair
         //
         RASTAIR_FULL(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_metbed, params.pymbias_plot_type, params.pymbias_plot_ax_x, params.pymbias_plot_ax_y)
         ch_versions = ch_versions.mix(RASTAIR_FULL.out.versions.first())
+        ch_rastair_mods = RASTAIR_FULL.out.mods
 
 //        //
 //        // MODULE: Run rasTair in per-read mode

@@ -65,10 +65,10 @@ process RASTAIR_FULL {
         -u \\
         -a ${prefix}_rastair_output.mods \\
         -b ${intervals} \\
-        > ${modsout}
+        > ${prefix}_rastair_output.targeted.mods
 
     rastair_summarize.py \\
-        --rastair_in  ${prefix}_rastair_output.mods \\
+        --rastair_in  ${prefix}_rastair_output.targeted.mods \\
         --summary_out ${prefix}_rastair_output.targeted.mods.summary
 
     cat <<-END_VERSIONS > versions.yml
