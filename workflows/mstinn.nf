@@ -476,23 +476,23 @@ workflow MSTINN {
         //
         RASTAIR_MBIAS(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
         ch_versions = ch_versions.mix(RASTAIR_MBIAS.out.versions.first())
-//
-//    //
-//    // MODULE: Run PyMbias
-//    //
-//    PYMBIAS(RASTAIR_MBIAS.out.mbias, params.pymbias_plot_type, params.pymbias_plot_ax_x, params.pymbias_plot_ax_y)
-//    ch_versions = ch_versions.mix(PYMBIAS.out.versions.first())
-//    PYMBIAS.out.cutoffs
-//        .map { meta, cutoff_file -> getMbiasParams(cutoff_file) }
-//        .set { ch_cutoffs }
-//
-//    //
-//    // MODULE: Run rasTair
-//    //
-//    RASTAIR(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_cutoffs)
-//    ch_versions = ch_versions.mix(RASTAIR.out.versions.first())
-//    ch_rastair_mods = RASTAIR.out.mods
-//
+    
+        //
+        // MODULE: Run PyMbias
+        //
+        PYMBIAS(RASTAIR_MBIAS.out.mbias, params.pymbias_plot_type, params.pymbias_plot_ax_x, params.pymbias_plot_ax_y)
+        ch_versions = ch_versions.mix(PYMBIAS.out.versions.first())
+        PYMBIAS.out.cutoffs
+            .map { meta, cutoff_file -> getMbiasParams(cutoff_file) }
+            .set { ch_cutoffs }
+    
+        //
+        // MODULE: Run rasTair
+        //
+        RASTAIR(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_cutoffs)
+        ch_versions = ch_versions.mix(RASTAIR.out.versions.first())
+        ch_rastair_mods = RASTAIR.out.mods
+    
 //    //
 //    // MODULE: Run BedTools with Intersect to subset bam file to the target region
 //    //
