@@ -38,6 +38,7 @@ include { COLLECTHSMETRICS_RAW                                          } from '
 include { COLLECTHSMETRICS_SIM                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
 include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
+include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
 include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
@@ -59,7 +60,6 @@ include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '
 // include { MSISENSORPRO_RAW                                              } from '../modules/local/msisensorpro/pro/main'
 
 // include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
-// include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
 // include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 // include { ASTAIR                        	                            } from '../modules/local/astair/main'
 // include { PYMBIAS                                                       } from '../modules/local/pymbias/main'
@@ -400,34 +400,34 @@ workflow MSTINN {
         ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
         ch_coverage_con  = COLLECTHSMETRICS_SIM.out.coverage
         ch_hsmetrics_con = COLLECTHSMETRICS_SIM.out.hsmetrics
-//
-//        //
-//        // MODULE: Extract FastQ reads from BAM
-//        //
-//        SAMTOOLS_COLLATEFASTQ(ch_bam_bai_duplex_fil, ch_bwaref, [])
-//        ch_versions = ch_versions.mix(SAMTOOLS_COLLATEFASTQ.out.versions)
-//        ch_consensus_reads = SAMTOOLS_COLLATEFASTQ.out.fastq
-//
-//        // User aligner selection
-//        if (params.aligner == 'bwa-meth') {
-//            //
-//            // MODULE: Run BWA-METH
-//            //
-//            BWA_METH(ch_consensus_reads, ch_metdir, ch_metref)
-//            ch_versions = ch_versions.mix(BWA_METH.out.versions.first())
-//            ch_bam_dedup = BWA_METH.out.bam
-//        } else if (params.aligner == 'bwa-mem2') {
-//            //
-//            // MODULE: Run BWA-MEM2
-//            //
-//            sort_bam = 'sort'
-//            BWAMEM2(ch_consensus_reads, ch_bwadir, ch_bwaref, ch_bwafai, sort_bam)
-//            ch_versions = ch_versions.mix(BWAMEM2.out.versions.first())
-//            ch_bam_dedup = BWAMEM2.out.bam
-//        } else {
-//            error "Invalid aligner selected: ${params.aligner}. Please choose either 'bwa-meth' or 'bwa-mem2'"
-//        }
-//
+
+        //
+        // MODULE: Extract FastQ reads from BAM
+        //
+        SAMTOOLS_COLLATEFASTQ(ch_bam_bai_duplex_fil, ch_bwaref, [])
+        ch_versions = ch_versions.mix(SAMTOOLS_COLLATEFASTQ.out.versions)
+        ch_consensus_reads = SAMTOOLS_COLLATEFASTQ.out.fastq
+
+        // User aligner selection
+        if (params.aligner == 'bwa-meth') {
+            //
+            // MODULE: Run BWA-METH
+            //
+            BWA_METH(ch_consensus_reads, ch_metdir, ch_metref)
+            ch_versions = ch_versions.mix(BWA_METH.out.versions.first())
+            ch_bam_dedup = BWA_METH.out.bam
+        } else if (params.aligner == 'bwa-mem2') {
+            //
+            // MODULE: Run BWA-MEM2
+            //
+            sort_bam = 'sort'
+            BWAMEM2(ch_consensus_reads, ch_bwadir, ch_bwaref, ch_bwafai, sort_bam)
+            ch_versions = ch_versions.mix(BWAMEM2.out.versions.first())
+            ch_bam_dedup = BWAMEM2.out.bam
+        } else {
+            error "Invalid aligner selected: ${params.aligner}. Please choose either 'bwa-meth' or 'bwa-mem2'"
+        }
+
     } else {
 
             // User aligner selection
