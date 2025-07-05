@@ -21,11 +21,14 @@ include { CAT_FASTQ                     	                            } from '../
 include { SAMBLASTER                                                    } from '../modules/local/samblaster/main'
 include { ALIGN_BAM_CON                                                 } from '../modules/local/umi_align_bam/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
+include { PRESEQ_CCURVE                                                 } from '../modules/local/preseq/ccurve/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
+include { PRESEQ_LCEXTRAP                                               } from '../modules/local/preseq/lcextrap/main'
 include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
 include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
+include { COLLECT_UMI_METRICS                                           } from '../modules/local/collect_umi_metrics/main'
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 include { SURVIVOR_SCAN_READS                                           } from '../modules/local/survivor/scanreads/main'
@@ -346,25 +349,25 @@ workflow MSTINN {
         //
         UMI_READ_COUNTS(ch_ubam, ch_bam_fcu, ch_bam_grouped, ch_consensus_bam, ch_bam_bai_final_fil, ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
         ch_versions = ch_versions.mix(UMI_READ_COUNTS.out.versions.first())
-    
-//    //
-//    // MODULE: Run SamTools View to count reads accross the BAM files
-//    //
-//    COLLECT_UMI_METRICS(ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
-//    ch_versions = ch_versions.mix(COLLECT_UMI_METRICS.out.versions.first())
-//    ch_cons_family_sizes = COLLECT_UMI_METRICS.out.cons_family_sizes
-//
-//    //
-//    // MODULE: Run Preseq CCurve
-//    //
-//    PRESEQ_CCURVE(ch_cons_family_sizes)
-//    ch_versions = ch_versions.mix(PRESEQ_CCURVE.out.versions.first())
-//
-//    //
-//    // MODULE: Run Preseq LCExtrap
-//    //
-//    PRESEQ_LCEXTRAP(ch_grouped_family_sizes)
-//    ch_versions = ch_versions.mix(PRESEQ_LCEXTRAP.out.versions.first())
+
+        //
+        // MODULE: Run SamTools View to count reads accross the BAM files
+        //
+        COLLECT_UMI_METRICS(ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
+        ch_versions = ch_versions.mix(COLLECT_UMI_METRICS.out.versions.first())
+        ch_cons_family_sizes = COLLECT_UMI_METRICS.out.cons_family_sizes
+
+        //
+        // MODULE: Run Preseq CCurve
+        //
+        PRESEQ_CCURVE(ch_cons_family_sizes)
+        ch_versions = ch_versions.mix(PRESEQ_CCURVE.out.versions.first())
+
+        //
+        // MODULE: Run Preseq LCExtrap
+        //
+        PRESEQ_LCEXTRAP(ch_grouped_family_sizes)
+        ch_versions = ch_versions.mix(PRESEQ_LCEXTRAP.out.versions.first())
 
 //        //
 //        // MODULE: Run ErrorRateByReadPosition in Final BAM
