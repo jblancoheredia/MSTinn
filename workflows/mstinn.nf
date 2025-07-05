@@ -14,6 +14,9 @@ include { paramsSummaryMap                                              } from '
 
 include { FASTQC                                                        } from '../modules/nf-core/fastqc/main'
 include { SPADES                                                        } from '../modules/local/spades/main'
+include { ASTAIR                        	                            } from '../modules/local/astair/main'
+include { PYMBIAS                                                       } from '../modules/local/pymbias/main'
+include { RASTAIR                       	                            } from '../modules/local/rastair/main'
 include { MULTIQC                                                       } from '../modules/nf-core/multiqc/main'
 include { BWAMEM2                                                       } from '../modules/local/bwamem2/main'
 include { BWA_METH                 	                                    } from '../modules/local/bwameth/main'
@@ -22,7 +25,9 @@ include { SAMBLASTER                                                    } from '
 include { ALIGN_BAM_CON                                                 } from '../modules/local/umi_align_bam/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 include { PRESEQ_CCURVE                                                 } from '../modules/local/preseq/ccurve/main'
+include { RASTAIR_MBIAS                 	                            } from '../modules/local/rastair/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
+include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 include { PRESEQ_LCEXTRAP                                               } from '../modules/local/preseq/lcextrap/main'
 include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
@@ -40,6 +45,7 @@ include { COLLECTHSMETRICS_SIM                                          } from '
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
 include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
+include { PREP_BEDTOOLS_INTERSECT       	                            } from '../modules/local/bedtools/prep_bedtools_intersect' 
 include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
@@ -49,18 +55,13 @@ include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '
 include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 
-// include { ASTAIR                        	                            } from '../modules/local/astair/main'
-// include { PYMBIAS                                                       } from '../modules/local/pymbias/main'
-// include { RASTAIR                       	                            } from '../modules/local/rastair/main'
-// include { RASTAIR_MBIAS                 	                            } from '../modules/local/rastair/main'
-// include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
+
 // include { RASTAIR_PERREAD               	                            } from '../modules/local/rastair/main'
 // include { RASTAIR_SUMMARY               	                            } from '../modules/local/rastair/main'
 // include { SENTIEON_BWAMEM                                               } from '../modules/nf-core/sentieon/bwamem/main'  
 // include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 // include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
-// include { GATK4_HAPLOTYPECALLER                                         } from '../modules/nf-core/gatk4/haplotypecaller/main'
-// include { PREP_BEDTOOLS_INTERSECT       	                            } from '../modules/local/bedtools/prep_bedtools_intersect' 
+// include { GATK4_HAPLOTYPECALLER                                      } from '../modules/nf-core/gatk4/haplotypecaller/main'
 // include { ASTAIR_BEDTOOLS_INTERSECT     	                            } from '../modules/local/bedtools/astair_bedtools_intersect' 
 // include { RASTAIR_BEDTOOLS_INTERSECT    	                            } from '../modules/local/bedtools/rastair_bedtools_intersect' 
 
@@ -455,26 +456,26 @@ workflow MSTINN {
         ch_bam_dedup = GATK4_MARKDUPLICATES.out.bam
 
     }
-//
-//    //
-//    // MODULE: Run BedTools with Intersect to subset bam file to the target region
-//    //
-//    PREP_BEDTOOLS_INTERSECT(ch_bam_dedup, ch_metbed, 'targeted')
-//    ch_versions = ch_versions.mix(PREP_BEDTOOLS_INTERSECT.out.versions.first())
-//    ch_bam_mapped_targeted = PREP_BEDTOOLS_INTERSECT.out.bam
-//
-//    //
-//    // MODULE: Run SamTools Index
-//    //
-//    SAMTOOLS_INDEX(ch_bam_mapped_targeted)
-//    ch_versions = ch_versions.mix(SAMTOOLS_INDEX.out.versions.first())
-//    ch_bam_mapped_targeted_indexed = PREP_BEDTOOLS_INTERSECT.out.bam.join(SAMTOOLS_INDEX.out.bai)
-//
-//    //
-//    // MODULE: Run rasTair in per-read mode
-//    //
-//    RASTAIR_MBIAS(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
-//    ch_versions = ch_versions.mix(RASTAIR_MBIAS.out.versions.first())
+
+        //
+        // MODULE: Run BedTools with Intersect to subset bam file to the target region
+        //
+        PREP_BEDTOOLS_INTERSECT(ch_bam_dedup, ch_metbed, 'targeted')
+        ch_versions = ch_versions.mix(PREP_BEDTOOLS_INTERSECT.out.versions.first())
+        ch_bam_mapped_targeted = PREP_BEDTOOLS_INTERSECT.out.bam
+
+        //
+        // MODULE: Run SamTools Index
+        //
+        SAMTOOLS_INDEX(ch_bam_mapped_targeted)
+        ch_versions = ch_versions.mix(SAMTOOLS_INDEX.out.versions.first())
+        ch_bam_mapped_targeted_indexed = PREP_BEDTOOLS_INTERSECT.out.bam.join(SAMTOOLS_INDEX.out.bai)
+
+        //
+        // MODULE: Run rasTair in per-read mode
+        //
+        RASTAIR_MBIAS(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
+        ch_versions = ch_versions.mix(RASTAIR_MBIAS.out.versions.first())
 //
 //    //
 //    // MODULE: Run PyMbias
