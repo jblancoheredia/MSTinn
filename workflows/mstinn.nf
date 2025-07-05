@@ -233,10 +233,10 @@ workflow MSTINN {
         //
         // MODULE: Run ErrorRateByReadPosition 
         //
-        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.intervals)
+        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
         ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
         ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
-//
+
 //        //
 //        // MODULE: Run Picard's Collect HS Metrics for raw BAM files
 //        //
@@ -277,7 +277,7 @@ workflow MSTINN {
 //        //
 //        // MODULE: Run fgbio CollectDuplexSeqMetrics
 //        //
-//        FGBIO_COLLECTDUPLEXSEQMETRICS(ch_bam_grouped, params.intervals)
+//        FGBIO_COLLECTDUPLEXSEQMETRICS(ch_bam_grouped, params.interval_list)
 //        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.metrics.map{it[1]}.collect())
 //        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.pdf.map{it[1]}.collect())   
 //        ch_versions = ch_versions.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.versions.first())
@@ -308,7 +308,7 @@ workflow MSTINN {
 //        //
 //        // MODULE: Run ErrorRateByReadPosition in Final BAM
 //        //
-//        FGBIO_ERRORRATEBYREADPOSITION_FIN(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.intervals)
+//        FGBIO_ERRORRATEBYREADPOSITION_FIN(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
 //        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_FIN.out.versions)
 //
 //        //
