@@ -25,6 +25,7 @@ include { SAMBLASTER                                                    } from '
 include { RASTAIR_FULL                 	                                } from '../modules/local/rastair/full/main'
 include { ALIGN_BAM_CON                                                 } from '../modules/local/umi_align_bam/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
+include { FGBIO_CLIPBAM                                                 } from '../modules/local/fgbio/clipbam/main'
 include { PRESEQ_CCURVE                                                 } from '../modules/local/preseq/ccurve/main'
 //include { RASTAIR_MBIAS                 	                            } from '../modules/local/rastair/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
@@ -61,9 +62,6 @@ include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '
 include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
-
-
-
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
