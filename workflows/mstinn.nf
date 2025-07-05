@@ -224,23 +224,23 @@ workflow MSTINN {
         //
         // MODULE: Run SamToools Sort & Index
         //
-        SAMTOOLS_SORT_INDEX_RAW(ch_bam_fcu, ch_fasta, params.fai)
+        SAMTOOLS_SORT_INDEX_RAW(ch_bam_fcu, ch_bwaref, params.bwafai)
         ch_versions = ch_versions.mix(SAMTOOLS_SORT_INDEX_RAW.out.versions.first())
         ch_bam_fcu_sort = SAMTOOLS_SORT_INDEX_RAW.out.bam
         ch_bam_fcu_indx = SAMTOOLS_SORT_INDEX_RAW.out.bai
         ch_bam_fcu_stix = SAMTOOLS_SORT_INDEX_RAW.out.bam_bai
 
-//        //
-//        // MODULE: Run ErrorRateByReadPosition 
-//        //
-//        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
-//        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
-//        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
+        //
+        // MODULE: Run ErrorRateByReadPosition 
+        //
+        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.intervals)
+        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
+        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
 //
 //        //
 //        // MODULE: Run Picard's Collect HS Metrics for raw BAM files
 //        //
-//        COLLECTHSMETRICS_RAW(ch_bam_fcu_sort, ch_bam_fcu_indx, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+//        COLLECTHSMETRICS_RAW(ch_bam_fcu_sort, ch_bam_fcu_indx, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
 //        ch_versions = ch_versions.mix(COLLECTHSMETRICS_RAW.out.versions.first())
 //        ch_coverage_raw  = COLLECTHSMETRICS_RAW.out.coverage
 //        ch_hsmetrics_raw = COLLECTHSMETRICS_RAW.out.hsmetrics
@@ -277,7 +277,7 @@ workflow MSTINN {
 //        //
 //        // MODULE: Run fgbio CollectDuplexSeqMetrics
 //        //
-//        FGBIO_COLLECTDUPLEXSEQMETRICS(ch_bam_grouped, params.interval_list)
+//        FGBIO_COLLECTDUPLEXSEQMETRICS(ch_bam_grouped, params.intervals)
 //        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.metrics.map{it[1]}.collect())
 //        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.pdf.map{it[1]}.collect())   
 //        ch_versions = ch_versions.mix(FGBIO_COLLECTDUPLEXSEQMETRICS.out.versions.first())
@@ -308,13 +308,13 @@ workflow MSTINN {
 //        //
 //        // MODULE: Run ErrorRateByReadPosition in Final BAM
 //        //
-//        FGBIO_ERRORRATEBYREADPOSITION_FIN(ch_bam_fin_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
+//        FGBIO_ERRORRATEBYREADPOSITION_FIN(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.intervals)
 //        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_FIN.out.versions)
 //
 //        //
 //        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
 //        //
-//        COLLECTHSMETRICS_CON(ch_bam_fin_stix, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+//        COLLECTHSMETRICS_CON(ch_bam_fin_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
 //        ch_versions = ch_versions.mix(COLLECTHSMETRICS_CON.out.versions.first())
 //        ch_coverage_con  = COLLECTHSMETRICS_CON.out.coverage
 //        ch_hsmetrics_con = COLLECTHSMETRICS_CON.out.hsmetrics
@@ -322,7 +322,7 @@ workflow MSTINN {
 //        //
 //        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
 //        //
-//        COLLECTHSMETRICS_DUP(ch_bam_dup_stix, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+//        COLLECTHSMETRICS_DUP(ch_bam_dup_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
 //        ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
 //        ch_coverage_con  = COLLECTHSMETRICS_DUP.out.coverage
 //        ch_hsmetrics_con = COLLECTHSMETRICS_DUP.out.hsmetrics
@@ -330,7 +330,7 @@ workflow MSTINN {
 //        //
 //        // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
 //        //
-//        COLLECTHSMETRICS_SIM(ch_bam_sim_stix, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+//        COLLECTHSMETRICS_SIM(ch_bam_sim_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
 //        ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
 //        ch_coverage_con  = COLLECTHSMETRICS_SIM.out.coverage
 //        ch_hsmetrics_con = COLLECTHSMETRICS_SIM.out.hsmetrics
@@ -338,7 +338,7 @@ workflow MSTINN {
 //        //
 //        // MODULE: Extract FastQ reads from BAM
 //        //
-//        SAMTOOLS_COLLATEFASTQ(ch_bam_bai_duplex_fil, ch_fasta, [])
+//        SAMTOOLS_COLLATEFASTQ(ch_bam_bai_duplex_fil, ch_bwaref, [])
 //        ch_versions = ch_versions.mix(SAMTOOLS_COLLATEFASTQ.out.versions)
 //        ch_consensus_reads = SAMTOOLS_COLLATEFASTQ.out.fastq
 //
@@ -461,7 +461,7 @@ workflow MSTINN {
 //    //
 //    // MODULE: Run FgBio ClipBAM 
 //    //
-//    FGBIO_CLIPBAM(ch_bam_dedup, ch_fasta, ch_fai)
+//    FGBIO_CLIPBAM(ch_bam_dedup, ch_bwaref, ch_bwafai)
 //    ch_versions = ch_versions.mix(FGBIO_CLIPBAM.out.versions)
 //    ch_bam_clipped = FGBIO_CLIPBAM.out.bam
 //    ch_txt = FGBIO_CLIPBAM.out.txt
@@ -470,7 +470,7 @@ workflow MSTINN {
 //    //
 //    // MODULE: Run GATK4 HAP
 //    //
-//    GATK4_HAPLOTYPECALLER(ch_bam_clipped, ch_fasta, ch_fai, ch_dict, ch_known_sites, ch_known_sites_tbi, ch_intervals)
+//    GATK4_HAPLOTYPECALLER(ch_bam_clipped, ch_bwaref, ch_bwafai, ch_bwadct, ch_known_sites, ch_known_sites_tbi, ch_intervals)
 //    ch_versions = ch_versions.mix(GATK4_HAPLOTYPECALLER.out.versions)
 
     //
