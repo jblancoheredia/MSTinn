@@ -489,7 +489,6 @@ workflow MSTINN {
     FGBIO_CLIPBAM(ch_bam_dedup, ch_bwaref, ch_bwafai)
     ch_versions = ch_versions.mix(FGBIO_CLIPBAM.out.versions)
     ch_bam_clipped = FGBIO_CLIPBAM.out.bam
-    ch_txt = FGBIO_CLIPBAM.out.txt
     
     //
     // MODULE: Run GATK4 HAP
