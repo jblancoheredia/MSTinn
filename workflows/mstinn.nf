@@ -19,6 +19,7 @@ include { BWA_METH                 	                                    } from '
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
+include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
@@ -38,7 +39,6 @@ include { GATK4_MARKDUPLICATES          	                            } from '../
 // include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
 // include { MSISENSORPRO_FIN                                              } from '../modules/local/msisensorpro/pro/main'
 // include { MSISENSORPRO_RAW                                              } from '../modules/local/msisensorpro/pro/main'
-// include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
 // include { SURVIVOR_SCAN_READS                                           } from '../modules/local/survivor/scanreads/main'
 // include { COLLECTHSMETRICS_DUP                                          } from '../modules/local/picard/collecthsmetrics/main'
 // include { COLLECTHSMETRICS_CON                                          } from '../modules/local/picard/collecthsmetrics/main'
@@ -213,14 +213,14 @@ workflow MSTINN {
         ch_raw_sort_bam = ALIGN_BAM_RAW.out.sort_bam
         ch_raw_sort_bai = ALIGN_BAM_RAW.out.sort_bai
 
-//        //
-//        // MODULE: Run fgbio correctumis
-//        //
-//        FGBIO_CORRECTUMIS(ch_raw_bam, params.correct_max_mismatch, params.correct_min_distance, params.correct_min_corrected)
-//        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_CORRECTUMIS.out.metrics)
-//        ch_versions = ch_versions.mix(FGBIO_CORRECTUMIS.out.versions.first())
-//        ch_bam_fcu = FGBIO_CORRECTUMIS.out.bam
-//
+        //
+        // MODULE: Run fgbio correctumis
+        //
+        FGBIO_CORRECTUMIS(ch_raw_bam, params.correct_max_mismatch, params.correct_min_distance, params.correct_min_corrected)
+        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_CORRECTUMIS.out.metrics)
+        ch_versions = ch_versions.mix(FGBIO_CORRECTUMIS.out.versions.first())
+        ch_bam_fcu = FGBIO_CORRECTUMIS.out.bam
+
 //        //
 //        // MODULE: Run ErrorRateByReadPosition 
 //        //
