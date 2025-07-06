@@ -14,7 +14,6 @@ process FGBIO_CLIPBAM {
 
     output:
     tuple val(meta), path("*_clipped.bam"), path("*_clipped.bai")   , emit: bam
-    tuple val(meta), path("normal_sample_name.txt")                 , emit: txt
     tuple val(meta), path("*.metrics.txt")                          , emit: metrics
     path "versions.yml"                                             , emit: versions
 
@@ -53,7 +52,7 @@ process FGBIO_CLIPBAM {
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    touch  ${prefix}.t.clipped.bam
+    touch  ${prefix}_clipped.bam
     touch  ${prefix}.metrics.txt
 
     cat <<-END_VERSIONS > versions.yml
