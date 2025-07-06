@@ -19,15 +19,15 @@
      inkscape:pageopacity="1"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="2.54"
-     inkscape:cx="275"
-     inkscape:cy="543.30709"
+     inkscape:zoom="1.56"
+     inkscape:cx="253.20513"
+     inkscape:cy="150.64103"
      inkscape:window-width="1936"
      inkscape:window-height="1303"
      inkscape:window-x="1743"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="Stop" />
+     inkscape:current-layer="g145" />
   <!-- Generator: Adobe Illustrator 29.6.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 207)  -->
   <defs
      id="defs57">
@@ -1160,62 +1160,81 @@
        points="345.5 281.7 355.7 291.8 347.1 291.8 336.9 281.7 347.1 271.5 355.7 271.5 345.5 281.7" />
     <g
        id="text34"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <g
          id="g200"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <g
            id="g199"
-           class="st15">
+           class="st15"
+           style="fill:#333333">
           <g
              id="text198"
-             class="st15">
+             class="st15"
+             style="fill:#333333">
             <g
                id="g268"
-               class="st15">
+               class="st15"
+               style="fill:#333333">
               <g
                  id="g267"
-                 class="st15">
+                 class="st15"
+                 style="fill:#333333">
                 <g
                    id="g266"
-                   class="st15">
+                   class="st15"
+                   style="fill:#333333">
                   <g
                      id="g265"
-                     class="st15">
+                     class="st15"
+                     style="fill:#333333">
                     <g
                        id="g264"
-                       class="st15">
+                       class="st15"
+                       style="fill:#333333">
                       <g
                          id="g263"
-                         class="st15">
+                         class="st15"
+                         style="fill:#333333">
                         <g
                            id="text262"
-                           class="st15">
+                           class="st15"
+                           style="fill:#333333">
                           <g
                              id="g47"
-                             class="st15">
+                             class="st15"
+                             style="fill:#333333">
                             <g
                                id="g46"
-                               class="st15">
+                               class="st15"
+                               style="fill:#333333">
                               <g
                                  id="g45"
-                                 class="st15">
+                                 class="st15"
+                                 style="fill:#333333">
                                 <g
                                    id="g44"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="g43"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="text43"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <text
                                    class="st17"
                                    transform="translate(350.1 163.8)"
-                                   id="text59"><tspan
+                                   id="text59"
+                                   style="fill:#333333"><tspan
                                    x="0"
                                    y="0"
-                                   id="tspan59">FastQC</tspan></text>
+                                   id="tspan59"
+                                   style="fill:#333333">FastQC</tspan></text>
                                 </g>
                                 </g>
                                 </g>
@@ -1234,59 +1253,77 @@
       </g>
       <g
          id="text196"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <g
            id="g201"
-           class="st15">
+           class="st15"
+           style="fill:#333333">
           <g
              id="text200"
-             class="st15">
+             class="st15"
+             style="fill:#333333">
             <g
                id="g274"
-               class="st15">
+               class="st15"
+               style="fill:#333333">
               <g
                  id="g273"
-                 class="st15">
+                 class="st15"
+                 style="fill:#333333">
                 <g
                    id="g272"
-                   class="st15">
+                   class="st15"
+                   style="fill:#333333">
                   <g
                      id="g271"
-                     class="st15">
+                     class="st15"
+                     style="fill:#333333">
                     <g
                        id="g270"
-                       class="st15">
+                       class="st15"
+                       style="fill:#333333">
                       <g
                          id="g269"
-                         class="st15">
+                         class="st15"
+                         style="fill:#333333">
                         <g
                            id="text268"
-                           class="st15">
+                           class="st15"
+                           style="fill:#333333">
                           <g
                              id="g52"
-                             class="st15">
+                             class="st15"
+                             style="fill:#333333">
                             <g
                                id="g51"
-                               class="st15">
+                               class="st15"
+                               style="fill:#333333">
                               <g
                                  id="g50"
-                                 class="st15">
+                                 class="st15"
+                                 style="fill:#333333">
                                 <g
                                    id="g49"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="g48"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="text47"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <text
                                    class="st11"
                                    transform="translate(349.3 178.2)"
-                                   id="text60"><tspan
+                                   id="text60"
+                                   style="fill:#333333"><tspan
                                    x="0"
                                    y="0"
-                                   id="tspan60">Original</tspan></text>
+                                   id="tspan60"
+                                   style="fill:#333333">Original</tspan></text>
                                 </g>
                                 </g>
                                 </g>
@@ -1306,62 +1343,81 @@
     </g>
     <g
        id="text40"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <g
          id="g203"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <g
            id="g202"
-           class="st15">
+           class="st15"
+           style="fill:#333333">
           <g
              id="text201"
-             class="st15">
+             class="st15"
+             style="fill:#333333">
             <g
                id="g280"
-               class="st15">
+               class="st15"
+               style="fill:#333333">
               <g
                  id="g279"
-                 class="st15">
+                 class="st15"
+                 style="fill:#333333">
                 <g
                    id="g278"
-                   class="st15">
+                   class="st15"
+                   style="fill:#333333">
                   <g
                      id="g277"
-                     class="st15">
+                     class="st15"
+                     style="fill:#333333">
                     <g
                        id="g276"
-                       class="st15">
+                       class="st15"
+                       style="fill:#333333">
                       <g
                          id="g275"
-                         class="st15">
+                         class="st15"
+                         style="fill:#333333">
                         <g
                            id="text274"
-                           class="st15">
+                           class="st15"
+                           style="fill:#333333">
                           <g
                              id="g57"
-                             class="st15">
+                             class="st15"
+                             style="fill:#333333">
                             <g
                                id="g56"
-                               class="st15">
+                               class="st15"
+                               style="fill:#333333">
                               <g
                                  id="g55"
-                                 class="st15">
+                                 class="st15"
+                                 style="fill:#333333">
                                 <g
                                    id="g54"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="g53"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="text52"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <text
                                    class="st11"
                                    transform="translate(399.3 276.6)"
-                                   id="text61"><tspan
+                                   id="text61"
+                                   style="fill:#333333"><tspan
                                    x="0"
                                    y="0"
-                                   id="tspan61">NumReads</tspan></text>
+                                   id="tspan61"
+                                   style="fill:#333333">NumReads</tspan></text>
                                 </g>
                                 </g>
                                 </g>
@@ -1380,59 +1436,77 @@
       </g>
       <g
          id="g205"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <g
            id="g204"
-           class="st15">
+           class="st15"
+           style="fill:#333333">
           <g
              id="text203"
-             class="st15">
+             class="st15"
+             style="fill:#333333">
             <g
                id="g286"
-               class="st15">
+               class="st15"
+               style="fill:#333333">
               <g
                  id="g285"
-                 class="st15">
+                 class="st15"
+                 style="fill:#333333">
                 <g
                    id="g284"
-                   class="st15">
+                   class="st15"
+                   style="fill:#333333">
                   <g
                      id="g283"
-                     class="st15">
+                     class="st15"
+                     style="fill:#333333">
                     <g
                        id="g282"
-                       class="st15">
+                       class="st15"
+                       style="fill:#333333">
                       <g
                          id="g281"
-                         class="st15">
+                         class="st15"
+                         style="fill:#333333">
                         <g
                            id="text280"
-                           class="st15">
+                           class="st15"
+                           style="fill:#333333">
                           <g
                              id="g63"
-                             class="st15">
+                             class="st15"
+                             style="fill:#333333">
                             <g
                                id="g61"
-                               class="st15">
+                               class="st15"
+                               style="fill:#333333">
                               <g
                                  id="g60"
-                                 class="st15">
+                                 class="st15"
+                                 style="fill:#333333">
                                 <g
                                    id="g59"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="g58"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="g62"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <text
                                    class="st11"
                                    transform="translate(399.8 291)"
-                                   id="text62"><tspan
+                                   id="text62"
+                                   style="fill:#333333"><tspan
                                    x="0"
                                    y="0"
-                                   id="tspan62">PreDefined</tspan></text>
+                                   id="tspan62"
+                                   style="fill:#333333">PreDefined</tspan></text>
                                 </g>
                                 </g>
                                 </g>
@@ -1452,62 +1526,81 @@
     </g>
     <g
        id="text67"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <g
          id="g226"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <g
            id="g225"
-           class="st15">
+           class="st15"
+           style="fill:#333333">
           <g
              id="text224"
-             class="st15">
+             class="st15"
+             style="fill:#333333">
             <g
                id="g366"
-               class="st15">
+               class="st15"
+               style="fill:#333333">
               <g
                  id="g365"
-                 class="st15">
+                 class="st15"
+                 style="fill:#333333">
                 <g
                    id="g364"
-                   class="st15">
+                   class="st15"
+                   style="fill:#333333">
                   <g
                      id="g363"
-                     class="st15">
+                     class="st15"
+                     style="fill:#333333">
                     <g
                        id="g362"
-                       class="st15">
+                       class="st15"
+                       style="fill:#333333">
                       <g
                          id="g361"
-                         class="st15">
+                         class="st15"
+                         style="fill:#333333">
                         <g
                            id="text360"
-                           class="st15">
+                           class="st15"
+                           style="fill:#333333">
                           <g
                              id="g74"
-                             class="st15">
+                             class="st15"
+                             style="fill:#333333">
                             <g
                                id="g73"
-                               class="st15">
+                               class="st15"
+                               style="fill:#333333">
                               <g
                                  id="g67"
-                                 class="st15">
+                                 class="st15"
+                                 style="fill:#333333">
                                 <g
                                    id="g66"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="g65"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <g
                                    id="g64"
-                                   class="st15">
+                                   class="st15"
+                                   style="fill:#333333">
                                 <text
                                    class="st17"
                                    transform="translate(219.3 523.9)"
-                                   id="text63"><tspan
+                                   id="text63"
+                                   style="fill:#333333"><tspan
                                    x="0"
                                    y="0"
-                                   id="tspan63">SAMblaster</tspan></text>
+                                   id="tspan63"
+                                   style="fill:#333333">SAMblaster</tspan></text>
                                 </g>
                                 </g>
                                 </g>
@@ -1527,235 +1620,293 @@
     </g>
     <g
        id="text72"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <text
          class="st17"
          transform="translate(325.4 402.7)"
-         id="text74"><tspan
+         id="text74"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan74">AlignUBAM*</tspan></text>
+           id="tspan74"
+           style="fill:#333333">AlignUBAM*</tspan></text>
     </g>
     <g
        id="g76"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <text
          class="st17"
          transform="translate(255.6 435.7)"
-         id="text75"><tspan
+         id="text75"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan75">fgbio</tspan></text>
+           id="tspan75"
+           style="fill:#333333">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(218.4 450.1)"
-         id="text76"><tspan
+         id="text76"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan76">CorrectUMIs</tspan></text>
+           id="tspan76"
+           style="fill:#333333">CorrectUMIs</tspan></text>
     </g>
     <g
        id="text80"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <text
          class="st17"
          transform="translate(325.4 321.2)"
-         id="text77"><tspan
+         id="text77"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan77">Seqtk</tspan></text>
+           id="tspan77"
+           style="fill:#333333">Seqtk</tspan></text>
       <text
          class="st11"
          transform="translate(325.4 335.6)"
-         id="text78"><tspan
+         id="text78"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan78">Sample</tspan></text>
+           id="tspan78"
+           style="fill:#333333">Sample</tspan></text>
     </g>
     <g
        id="text84"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <text
          class="st17"
          transform="translate(240.4 281.7)"
-         id="text79"><tspan
+         id="text79"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan79">Counts*</tspan></text>
+           id="tspan79"
+           style="fill:#333333">Counts*</tspan></text>
       <text
          class="st11"
          transform="translate(204.6 296.1)"
-         id="text81"><tspan
+         id="text81"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan80">Downsampling</tspan></text>
+           id="tspan80"
+           style="fill:#333333">Downsampling</tspan></text>
     </g>
     <g
        id="text88"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <text
          class="st17"
          transform="translate(325.4 474.7)"
-         id="text82"><tspan
+         id="text82"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan81">SAMtools</tspan></text>
+           id="tspan81"
+           style="fill:#333333">SAMtools</tspan></text>
       <text
          class="st11"
          transform="translate(325.4 489.1)"
-         id="text83"><tspan
+         id="text83"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan82">sort / index</tspan></text>
+           id="tspan82"
+           style="fill:#333333">sort / index</tspan></text>
     </g>
     <g
        id="text92"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <text
          class="st17"
          transform="translate(255.6 360.7)"
-         id="text85"><tspan
+         id="text85"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan83">fgbio</tspan></text>
+           id="tspan83"
+           style="fill:#333333">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(237.9 375.1)"
-         id="text86"><tspan
+         id="text86"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan85">FQ2BAM</tspan></text>
+           id="tspan85"
+           style="fill:#333333">FQ2BAM</tspan></text>
     </g>
     <g
        id="text96"
-       class="st15">
+       class="st15"
+       style="fill:#333333">
       <text
          class="st17"
          transform="translate(240.4 163.8)"
-         id="text87"><tspan
+         id="text87"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan86">cat</tspan></text>
+           id="tspan86"
+           style="fill:#333333">cat</tspan></text>
       <text
          class="st11"
          transform="translate(226.4 178.2)"
-         id="text89"><tspan
+         id="text89"
+         style="fill:#333333"><tspan
            x="0"
            y="0"
-           id="tspan87">FastQ</tspan></text>
+           id="tspan87"
+           style="fill:#333333">FastQ</tspan></text>
     </g>
     <g
        id="text100"
        class="st15"
-       style="fill:#000000">
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(325.4 554.7)"
          id="text90"
-         style="fill:#000000"><tspan
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
            id="tspan89"
-           style="fill:#000000">fgbio</tspan></text>
+           style="fill:#333333;stroke:none">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(325.4 569.1)"
          id="text91"
-         style="fill:#000000"><tspan
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
            id="tspan90"
-           style="fill:#000000">UMIsGroup + MDup</tspan></text>
+           style="fill:#333333;stroke:none">UMIsGroup + MDup</tspan></text>
     </g>
     <g
        id="text104"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(106.1 555.1)"
-         id="text93"><tspan
+         id="text93"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan91">fgbio</tspan></text>
+           id="tspan91"
+           style="fill:#333333;stroke:none">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(58.6 569.5)"
-         id="text94"><tspan
+         id="text94"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan93">DuplexMetrics</tspan></text>
+           id="tspan93"
+           style="fill:#333333;stroke:none">DuplexMetrics</tspan></text>
     </g>
     <g
        id="text108"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(255.6 594.5)"
-         id="text95"><tspan
+         id="text95"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan94">fgbio</tspan></text>
+           id="tspan94"
+           style="fill:#333333;stroke:none">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(200.9 608.9)"
-         id="text97"><tspan
+         id="text97"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan95">CallDuplexCons</tspan></text>
+           id="tspan95"
+           style="fill:#333333;stroke:none">CallDuplexCons</tspan></text>
     </g>
     <g
        id="text112"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(325.4 636.7)"
-         id="text98"><tspan
+         id="text98"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan97">fgbio</tspan></text>
+           id="tspan97"
+           style="fill:#333333;stroke:none">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(325.4 651.1)"
-         id="text99"><tspan
+         id="text99"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan98">FilterConsReads</tspan></text>
+           id="tspan98"
+           style="fill:#333333;stroke:none">FilterConsReads</tspan></text>
     </g>
     <g
        id="text116"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(325.4 684.2)"
-         id="text101"><tspan
+         id="text101"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan99">BWA</tspan></text>
+           id="tspan99"
+           style="fill:#333333;stroke:none">BWA</tspan></text>
       <text
          class="st11"
          transform="translate(325.4 698.6)"
-         id="text102"><tspan
+         id="text102"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan101">meth/mem2</tspan></text>
+           id="tspan101"
+           style="fill:#333333;stroke:none">meth/mem2</tspan></text>
     </g>
     <g
        id="text120"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(392.4 729.8)"
-         id="text103"><tspan
+         id="text103"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan102">BEDtools</tspan></text>
+           id="tspan102"
+           style="fill:#333333;stroke:none">BEDtools</tspan></text>
       <text
          class="st11"
          transform="translate(392.4 744.2)"
-         id="text105"><tspan
+         id="text105"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan103">Intersect</tspan></text>
+           id="tspan103"
+           style="fill:#333333;stroke:none">Intersect</tspan></text>
     </g>
     <path
        id="rect1251"
@@ -1825,75 +1976,95 @@
     </g>
     <g
        id="text132"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(107.6 457.8)"
-         id="text109"><tspan
+         id="text109"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan107">fgbio</tspan></text>
+           id="tspan107"
+           style="fill:#333333;stroke:none">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(78.7 472.2)"
-         id="text110"><tspan
+         id="text110"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan109">ErrorRates</tspan></text>
+           id="tspan109"
+           style="fill:#333333;stroke:none">ErrorRates</tspan></text>
     </g>
     <g
        id="text136"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(100 492.6)"
-         id="text111"><tspan
+         id="text111"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan110">Picard</tspan></text>
+           id="tspan110"
+           style="fill:#333333;stroke:none">Picard</tspan></text>
       <text
          class="st11"
          transform="translate(44.3 507)"
-         id="text113"><tspan
+         id="text113"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan111">CollectHSmetrics</tspan></text>
+           id="tspan111"
+           style="fill:#333333;stroke:none">CollectHSmetrics</tspan></text>
     </g>
     <g
        id="text148"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(107.8 662.9)"
-         id="text114"><tspan
+         id="text114"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan113">fgbio</tspan></text>
+           id="tspan113"
+           style="fill:#333333;stroke:none">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(78.9 677.3)"
-         id="text115"><tspan
+         id="text115"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan114">ErrorRates</tspan></text>
+           id="tspan114"
+           style="fill:#333333;stroke:none">ErrorRates</tspan></text>
     </g>
     <g
        id="text152"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(100.2 697.6)"
-         id="text117"><tspan
+         id="text117"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan115">Picard</tspan></text>
+           id="tspan115"
+           style="fill:#333333;stroke:none">Picard</tspan></text>
       <text
          class="st11"
          transform="translate(44.5 712)"
-         id="text118"><tspan
+         id="text118"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan117">CollectHSmetrics</tspan></text>
+           id="tspan117"
+           style="fill:#333333;stroke:none">CollectHSmetrics</tspan></text>
     </g>
     <path
        id="rect1252"
@@ -1913,39 +2084,49 @@
        d="M239.1,763.2h0c4.1,0,7.5,3.4,7.5,7.5h0c0,4.1-3.4,7.5-7.5,7.5h0c-4.1,0-7.5-3.4-7.5-7.5h0c0-4.1,3.4-7.5,7.5-7.5Z" />
     <g
        id="text167"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(187 729.8)"
-         id="text119"><tspan
+         id="text119"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan118">fgbio</tspan></text>
+           id="tspan118"
+           style="fill:#333333;stroke:none">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(171.5 744.2)"
-         id="text121"><tspan
+         id="text121"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan119">ClipBAM</tspan></text>
+           id="tspan119"
+           style="fill:#333333;stroke:none">ClipBAM</tspan></text>
     </g>
     <g
        id="text171"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(177.3 775.8)"
-         id="text122"><tspan
+         id="text122"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan121">GATK4</tspan></text>
+           id="tspan121"
+           style="fill:#333333;stroke:none">GATK4</tspan></text>
       <text
          class="st11"
          transform="translate(130 790.2)"
-         id="text125"><tspan
+         id="text125"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan122">HaplotypeCaller</tspan></text>
+           id="tspan122"
+           style="fill:#333333;stroke:none">HaplotypeCaller</tspan></text>
     </g>
     <g
        id="g172">
@@ -2120,14 +2301,17 @@
     </g>
     <g
        id="g128"
-       class="st15">
+       class="st15"
+       style="fill:#333333;stroke:none">
       <text
          class="st17"
          transform="translate(392.4 774.8)"
-         id="text128"><tspan
+         id="text128"
+         style="fill:#333333;stroke:none"><tspan
            x="0"
            y="0"
-           id="tspan127">rasTair</tspan></text>
+           id="tspan127"
+           style="fill:#333333;stroke:none">rasTair</tspan></text>
     </g>
     <path
        id="path142"
@@ -2161,115 +2345,146 @@
          d="M27.8,50.8h0c2.5,0,4.6-2,4.6-4.6h0c0-2.5-2-4.6-4.6-4.6h0c-2.5,0-4.6,2-4.6,4.6h0c0,2.5,2,4.6,4.6,4.6Z" />
       <g
          id="text142"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <text
            class="st12"
            transform="translate(38.9 68.7)"
-           id="text129"><tspan
+           id="text129"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan128">Downsampling</tspan></text>
+             id="tspan128"
+             style="fill:#333333">Downsampling</tspan></text>
       </g>
       <g
          id="text143"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <text
            class="st12"
            transform="translate(38.9 87.7)"
-           id="text130"><tspan
+           id="text130"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan129">UMI processing</tspan></text>
+             id="tspan129"
+             style="fill:#333333">UMI processing</tspan></text>
       </g>
       <g
          id="text144"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <text
            class="st12"
            transform="translate(38.9 144.8)"
-           id="text131"><tspan
+           id="text131"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan130">PostAnalysis</tspan></text>
+             id="tspan130"
+             style="fill:#333333">PostAnalysis</tspan></text>
       </g>
       <g
          id="text159"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <text
            class="st13"
            transform="translate(19.7 28)"
-           id="text133"><tspan
+           id="text133"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan131">M</tspan></text>
+             id="tspan131"
+             style="fill:#333333">M</tspan></text>
         <text
            class="st17"
            transform="translate(31.5 28)"
-           id="text134"><tspan
+           id="text134"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan133">ethylation</tspan></text>
+             id="tspan133"
+             style="fill:#333333">ethylation</tspan></text>
         <text
            class="st13"
            transform="translate(92.8 28)"
-           id="text135"><tspan
+           id="text135"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan134">S</tspan></text>
+             id="tspan134"
+             style="fill:#333333">S</tspan></text>
         <text
            class="st17"
            transform="translate(100.9 28)"
-           id="text137"><tspan
+           id="text137"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan135">equencing</tspan></text>
+             id="tspan135"
+             style="fill:#333333">equencing</tspan></text>
         <text
            class="st13"
            transform="translate(162.5 28)"
-           id="text138"><tspan
+           id="text138"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan137">T</tspan></text>
+             id="tspan137"
+             style="fill:#333333">T</tspan></text>
         <text
            class="st17"
            transform="translate(170.7 28)"
-           id="text139"><tspan
+           id="text139"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan138">APS</tspan></text>
+             id="tspan138"
+             style="fill:#333333">APS</tspan></text>
       </g>
       <g
          id="text177"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <text
            class="st12"
            transform="translate(38.9 106.8)"
-           id="text140"><tspan
+           id="text140"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan139">Methylation Calling</tspan></text>
+             id="tspan139"
+             style="fill:#333333">Methylation Calling</tspan></text>
       </g>
       <g
          id="text178"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <text
            class="st12"
            transform="translate(38.9 125.8)"
-           id="text141"><tspan
+           id="text141"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan140">Mutation Calling</tspan></text>
+             id="tspan140"
+             style="fill:#333333">Mutation Calling</tspan></text>
       </g>
       <g
          id="text179"
-         class="st15">
+         class="st15"
+         style="fill:#333333">
         <text
            class="st12"
            transform="translate(38.9 49.6)"
-           id="text145"><tspan
+           id="text145"
+           style="fill:#333333"><tspan
              x="0"
              y="0"
-             id="tspan141">Quality Control</tspan></text>
+             id="tspan141"
+             style="fill:#333333">Quality Control</tspan></text>
       </g>
     </g>
     <g
