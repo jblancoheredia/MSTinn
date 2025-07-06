@@ -1646,21 +1646,26 @@
     </g>
     <g
        id="text100"
-       class="st15">
+       class="st15"
+       style="fill:#000000">
       <text
          class="st17"
          transform="translate(325.4 554.7)"
-         id="text90"><tspan
+         id="text90"
+         style="fill:#000000"><tspan
            x="0"
            y="0"
-           id="tspan89">fgbio</tspan></text>
+           id="tspan89"
+           style="fill:#000000">fgbio</tspan></text>
       <text
          class="st11"
          transform="translate(325.4 569.1)"
-         id="text91"><tspan
+         id="text91"
+         style="fill:#000000"><tspan
            x="0"
            y="0"
-           id="tspan90">UMIsGroup + MDup</tspan></text>
+           id="tspan90"
+           style="fill:#000000">UMIsGroup + MDup</tspan></text>
     </g>
     <g
        id="text104"
