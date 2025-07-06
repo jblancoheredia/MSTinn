@@ -44,6 +44,7 @@ process GATK4_HAPLOTYPECALLER {
         --input $bam \\
         --output ${prefix}.vcf.gz \\
         --reference $fasta \\
+        --sequence-dictionary ${dict} \\
         --native-pair-hmm-threads ${task.cpus} \\
         $dbsnp_command \\
         $interval_command \\
