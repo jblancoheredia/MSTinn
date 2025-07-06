@@ -490,11 +490,11 @@ workflow MSTINN {
     ch_versions = ch_versions.mix(FGBIO_CLIPBAM.out.versions)
     ch_bam_clipped = FGBIO_CLIPBAM.out.bam
     
-//    //
-//    // MODULE: Run GATK4 HAP
-//    //
-//    GATK4_HAPLOTYPECALLER(ch_bam_clipped, ch_bwaref, ch_bwafai, ch_bwadct, ch_known_sites, ch_known_sites_tbi, ch_intervals)
-//    ch_versions = ch_versions.mix(GATK4_HAPLOTYPECALLER.out.versions)
+    //
+    // MODULE: Run GATK4 HAP
+    //
+    GATK4_HAPLOTYPECALLER(ch_bam_clipped, ch_bwaref, ch_bwafai, ch_bwadct, ch_known_sites, ch_known_sites_tbi, ch_intervals)
+    ch_versions = ch_versions.mix(GATK4_HAPLOTYPECALLER.out.versions)
 
     //
     // Collate and save software versions
