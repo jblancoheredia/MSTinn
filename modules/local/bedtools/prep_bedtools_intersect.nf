@@ -8,7 +8,7 @@ process PREP_BEDTOOLS_INTERSECT {
         'quay.io/biocontainers/bedtools:2.31.1--hf5e1c6e_0' }"
 
     input:
-    tuple val(meta), path(bam)
+    tuple val(meta),  path(bam), path(bai)
     tuple val(meta2), path(intervals)
     val affix
 
