@@ -8,7 +8,7 @@ process FGBIO_CLIPBAM {
         'blancojmskcc/umi_aligner:1.0.0' }"
 
     input:
-    tuple val(meta),  path(bam)
+    tuple val(meta),  path(bam), path(bai)
     tuple val(meta2), path(fasta)
     tuple val(meta3), path(fai)
 
