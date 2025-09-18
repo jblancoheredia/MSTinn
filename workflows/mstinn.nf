@@ -27,10 +27,10 @@ include { FGBIO_CLIPBAM                                                 } from '
 include { PRESEQ_CCURVE                                                 } from '../modules/local/preseq/ccurve/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
-include { FASTQ_CONSENSUS                                               } from '../modules/local/fastqc_consensus/main'
 include { PRESEQ_LCEXTRAP                                               } from '../modules/local/preseq/lcextrap/main'
 include { SENTIEON_BWAMEM                                               } from '../modules/nf-core/sentieon/bwamem/main'
 include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
+include { FASTQC_CONSENSUS                                              } from '../modules/local/fastqc_consensus/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
 include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
@@ -391,9 +391,9 @@ workflow MSTINN {
         //
         // MODULE: Run FastQC
         //
-        FASTQ_CONSENSUS(ch_consensus_reads)
-        ch_multiqc_files = ch_multiqc_files.mix(FASTQ_CONSENSUS.out.zip.collect{it[1]})
-        ch_versions = ch_versions.mix(FASTQ_CONSENSUS.out.versions)
+        FASTQC_CONSENSUS(ch_consensus_reads)
+        ch_multiqc_files = ch_multiqc_files.mix(FASTQC_CONSENSUS.out.zip.collect{it[1]})
+        ch_versions = ch_versions.mix(FASTQC_CONSENSUS.out.versions)
 
         // User aligner selection
         if (params.aligner == 'bwa-meth') {

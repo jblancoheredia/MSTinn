@@ -106,7 +106,7 @@ process ALIGN_BAM_CON {
         'blancojmskcc/umi_aligner:1.0.0' }"
 
     input:
-    tuple val(meta), path(bam), path(bai)
+    tuple val(meta),  path(bam), path(bai)
     tuple val(meta0), path(duplex_bam), path(duplex_bai)
     tuple val(meta1), path(simplex_bam), path(simplex_bai)
     tuple val(meta2), path(fasta)
