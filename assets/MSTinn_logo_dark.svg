@@ -31,17 +31,18 @@
         fill: #a6a6a6;
       }
 
-      .st8 {
-        font-size: 48px;
+      .st6 {
+        font-size: 47.3px;
       }
 
-      .st8, .st6 {
+      .st6, .st8 {
+        fill: #f0f0f0;
         font-family: MavenPro-Bold, 'Maven Pro';
         font-weight: 700;
       }
 
-      .st6 {
-        font-size: 47.3px;
+      .st8 {
+        font-size: 48px;
       }
     </style>
     <linearGradient id="linear-gradient" x1="164.2" y1="32" x2="187.5" y2="32" gradientUnits="userSpaceOnUse">

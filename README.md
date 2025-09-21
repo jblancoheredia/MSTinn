@@ -1,10 +1,3 @@
-<h1>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/MSTinn_logo_light.png">
-    <img alt="nf-core/mstinn" src="assets/MSTinn_logo_light.png">
-  </picture>
-</h1>
-
 [![Nextflow](https://img.shields.io/badge/version-%E2%89%A524.04.2-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
 [![nf-core template version](https://img.shields.io/badge/nf--core_template-3.3.1-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/3.3.1)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
@@ -13,9 +6,13 @@
 
 ## Introduction
 
-**cti/mstinn** MSTinn stands for Methylation Sequencing TAPS by Innovation Lab
+**CTI/MSTinn** Stands for CMO Technology Innovation Lab / Methylation Sequencing TAPS by Innovation
 
-## Pipeline
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/MSTinn_logo_dark.png">
+  <img alt="nf-core/mstinn" src="assets/MSTinn_logo_light.png">
+</picture>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/MSTinn_metro_dark.svg">
   <img alt="Metro" src="assets/MSTinn_metro_light.svg" width="1500">
