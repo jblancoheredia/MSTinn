@@ -451,7 +451,7 @@ workflow MSTINN {
     //
     // MODULE: Run BedTools with Intersect to subset bam file to the target region
     //
-    PREP_BEDTOOLS_INTERSECT(ch_metbed, ch_bam_dedup, 'targeted')
+    PREP_BEDTOOLS_INTERSECT(ch_bam_dedup, ch_metbed, 'targeted')
     ch_versions = ch_versions.mix(PREP_BEDTOOLS_INTERSECT.out.versions.first())
     ch_bam_mapped_targeted = PREP_BEDTOOLS_INTERSECT.out.bam
     
