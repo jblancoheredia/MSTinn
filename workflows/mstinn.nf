@@ -486,7 +486,7 @@ workflow MSTINN {
     //
     // MODULE: Run FgBio ClipBAM 
     //
-    FGBIO_CLIPBAM(ch_bam_dedup, ch_bwaref, ch_bwafai)
+    FGBIO_CLIPBAM(ch_bam_mapped_targeted_indexed, ch_bwaref, ch_bwafai)
     ch_versions = ch_versions.mix(FGBIO_CLIPBAM.out.versions)
     ch_bam_clipped = FGBIO_CLIPBAM.out.bam
     
