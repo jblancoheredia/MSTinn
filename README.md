@@ -15,7 +15,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/MSTinn_metro_dark.svg">
-  <img alt="Metro" src="assets/MSTinn_metro_light.svg" width="1500">
+  <img alt="Metro" src="assets/MSTinn_metro_light2.svg" width="1500">
 </picture>
 
 1. Merge FastQ files ([`cat`](http://www.linfo.org/cat.html))
