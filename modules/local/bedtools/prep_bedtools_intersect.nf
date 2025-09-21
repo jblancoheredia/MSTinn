@@ -8,8 +8,8 @@ process PREP_BEDTOOLS_INTERSECT {
         'quay.io/biocontainers/bedtools:2.31.1--hf5e1c6e_0' }"
 
     input:
-    tuple val(meta),  path(bam), path(bai)
-    tuple val(meta2), path(intervals)
+    tuple val(meta),  path(intervals)
+    tuple val(meta2), path(bam)
     val affix
 
     output:
@@ -38,7 +38,6 @@ process PREP_BEDTOOLS_INTERSECT {
         bedtools: \$(bedtools --version | sed -e "s/bedtools v//g")
     END_VERSIONS
     """
-
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     def suffix = "${affix}.bam"
