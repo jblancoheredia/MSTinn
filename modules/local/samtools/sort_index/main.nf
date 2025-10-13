@@ -162,11 +162,9 @@ process SAMTOOLS_SORT_INDEX_CON {
         'quay.io/biocontainers/samtools:1.21--h50ea8bc_0' }"
 
     input:
-    tuple val(meta) , path(bam)
-    tuple val(meta3), path(fai)
+    tuple val(meta) , path(bam), path(duplex_bam), path(simplex_bam)
     tuple val(meta2), path(fasta)
-    tuple val(meta0), path(duplex_bam)
-    tuple val(meta1), path(simplex_bam)
+    tuple val(meta3), path(fai)
 
     output:
     tuple val(meta), path("*_sort.bam")         , path("*_sort.bam.bai")        , emit: bam_bai
