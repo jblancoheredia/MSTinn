@@ -1,6 +1,6 @@
 process COLLECT_UMI_METRICS {
     tag "$meta.id"
-    label 'process_low'
+    label 'process_high'
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
@@ -8,9 +8,9 @@ process COLLECT_UMI_METRICS {
         'blancojmskcc/collect_umi_consensus_metrics:1.0.3' }"
 
     input:
-    tuple val(meta) , path(cnsns_bam), path{cnsns_bai}
-    tuple val(meta2), path(duplx_bam), path{duplx_bai}
-    tuple val(meta2), path(smplx_bam), path{smplx_bai}
+    tuple val(meta) , path(cnsns_bam), path{cnsns_bai},
+                      path(duplx_bam), path{duplx_bai},
+                      path(smplx_bam), path{smplx_bai}
 
     output:
     tuple val(meta), path("*.dup_umi_counts.txt")         , emit: dup_umi_counts
