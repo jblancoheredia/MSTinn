@@ -329,7 +329,7 @@ workflow MSTINN {
         //
         FGBIO_FILTERCONSENSUSREADS(ch_consensus_bam_sorted, params.bwaref, params.bwafai, params.filter_min_reads, params.filter_min_base_quality, params.filter_max_base_error_rate, params.filter_max_read_error_rate, params.filter_max_no_call_fraction)
         ch_versions = ch_versions.mix(FGBIO_FILTERCONSENSUSREADS.out.versions.first())
-        ch_bam_bai_final_fil = FGBIO_FILTERCONSENSUSREADS.out.suplex_bam_bai
+        ch_bam_bai_con_fil = FGBIO_FILTERCONSENSUSREADS.out.suplex_bam_bai
         ch_bam_bai_duplex_fil = FGBIO_FILTERCONSENSUSREADS.out.duplex_bam_bai
         ch_bam_bai_simplex_fil = FGBIO_FILTERCONSENSUSREADS.out.simplex_bam_bai
 
