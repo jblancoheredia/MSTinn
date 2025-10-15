@@ -62,10 +62,10 @@ include { softwareVersionsToYAML                                                
 workflow UMIPROCESSING {
 
     take:
-    ch_fai
+    ch_metfai
     ch_bwa2
     ch_dict
-    ch_fasta
+    ch_metref
     ch_msi_f
     ch_fastp_fastq
 
@@ -84,7 +84,7 @@ workflow UMIPROCESSING {
     // MODULE: Align with bwa mem but avoid sort
     //
     sort = false
-    ALIGN_BAM_RAW(ch_ubam, ch_fasta, ch_fai, ch_dict, ch_bwa2, sort)
+    ALIGN_BAM_RAW(ch_ubam, ch_metref, ch_metfai, ch_dict, ch_bwa2, sort)
     ch_versions = ch_versions.mix(ALIGN_BAM_RAW.out.versions.first())
     ch_raw_bam = ALIGN_BAM_RAW.out.bam
     ch_raw_sort_bam = ALIGN_BAM_RAW.out.sort_bam
@@ -110,13 +110,13 @@ workflow UMIPROCESSING {
     //
     // MODULE: Run Picard Tool CollectMultipleMetrics
     //
-    PICARD_COLLECTMULTIPLEMETRICS(ch_bam_fcu_stix, ch_fasta, ch_fai)
+    PICARD_COLLECTMULTIPLEMETRICS(ch_bam_fcu_stix, ch_fasta, ch_metfai)
     ch_versions = ch_versions.mix(PICARD_COLLECTMULTIPLEMETRICS.out.versions.first())
 
     //
     // MODULE: Run ErrorRateByReadPosition 
     //
-    FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
+    FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_fasta, ch_metfai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
     ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
 
     //
@@ -135,7 +135,7 @@ workflow UMIPROCESSING {
     //
     // MODULE: Run Picard's Collect HS Metrics for raw BAM files
     //
-    COLLECTHSMETRICS_RAW(ch_bam_fcu_stix, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+    COLLECTHSMETRICS_RAW(ch_bam_fcu_stix, ch_fasta, ch_metfai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
     ch_versions = ch_versions.mix(COLLECTHSMETRICS_RAW.out.versions.first())
     ch_coverage_raw  = COLLECTHSMETRICS_RAW.out.coverage
     ch_hsmetrics_raw = COLLECTHSMETRICS_RAW.out.hsmetrics
@@ -217,7 +217,7 @@ workflow UMIPROCESSING {
     //
     // MODULE: Align with BWA mem
     //
-    ALIGN_BAM_CON(ch_align_bam_con_in, ch_fasta, ch_fai, ch_dict, ch_bwa2)
+    ALIGN_BAM_CON(ch_align_bam_con_in, ch_fasta, ch_metfai, ch_dict, ch_bwa2)
     ch_versions = ch_versions.mix(ALIGN_BAM_CON.out.versions.first())
     ch_bam_fin = ALIGN_BAM_CON.out.bam
     ch_bam_duplex = ALIGN_BAM_CON.out.duplex_bam
@@ -231,7 +231,7 @@ workflow UMIPROCESSING {
     //
     // MODULE: Run SamToools Sort & Index
     //
-    SAMTOOLS_SORT_INDEX_CON(ch_sort_index_in, ch_fasta, ch_fai)
+    SAMTOOLS_SORT_INDEX_CON(ch_sort_index_in, ch_fasta, ch_metfai)
     ch_versions = ch_versions.mix(SAMTOOLS_SORT_INDEX_CON.out.versions)
     ch_bam_con_sort = SAMTOOLS_SORT_INDEX_CON.out.bam
     ch_bam_con_indx = SAMTOOLS_SORT_INDEX_CON.out.bai
@@ -302,20 +302,20 @@ workflow UMIPROCESSING {
     //
     // MODULE: Run MosDepth
     //
-    MOSDEPTH_SIM(ch_bam_sim_stix, ch_fasta, params.fai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+    MOSDEPTH_SIM(ch_bam_sim_stix, ch_metref, params.fai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
     ch_versions = ch_versions.mix(MOSDEPTH_SIM.out.versions.first())
     ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_SIM.out.summary_txt)
 
     //
     // MODULE: Run ErrorRateByReadPosition in Final BAM
     //
-    FGBIO_ERRORRATEBYREADPOSITION_CON(ch_bam_con_sort, ch_fasta, ch_fai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
+    FGBIO_ERRORRATEBYREADPOSITION_CON(ch_bam_con_sort, ch_metref, ch_metfai, ch_dict, params.known_sites, params.known_sites_tbi, params.interval_list)
     ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_CON.out.versions)
 
     //
     // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
     //
-    COLLECTHSMETRICS_CON(ch_bam_con_stix, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+    COLLECTHSMETRICS_CON(ch_bam_con_stix, ch_metref, ch_metfai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
     ch_versions = ch_versions.mix(COLLECTHSMETRICS_CON.out.versions.first())
     ch_coverage_con  = COLLECTHSMETRICS_CON.out.coverage
     ch_hsmetrics_con = COLLECTHSMETRICS_CON.out.hsmetrics
@@ -323,7 +323,7 @@ workflow UMIPROCESSING {
     //
     // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
     //
-    COLLECTHSMETRICS_DUP(ch_bam_dup_stix, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+    COLLECTHSMETRICS_DUP(ch_bam_dup_stix, ch_metref, ch_metfai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
     ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
     ch_coverage_con  = COLLECTHSMETRICS_DUP.out.coverage
     ch_hsmetrics_con = COLLECTHSMETRICS_DUP.out.hsmetrics
@@ -331,7 +331,7 @@ workflow UMIPROCESSING {
     //
     // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
     //
-    COLLECTHSMETRICS_SIM(ch_bam_sim_stix, ch_fasta, ch_fai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+    COLLECTHSMETRICS_SIM(ch_bam_sim_stix, ch_metref, ch_metfai, ch_dict, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
     ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
     ch_coverage_con  = COLLECTHSMETRICS_SIM.out.coverage
     ch_hsmetrics_con = COLLECTHSMETRICS_SIM.out.hsmetrics
@@ -348,7 +348,7 @@ workflow UMIPROCESSING {
     //
     // MODULE: Extract FastQ reads from BAM
     //
-    SAMTOOLS_COLLATEFASTQ(ch_bam_dup_stix, ch_fasta, [])
+    SAMTOOLS_COLLATEFASTQ(ch_bam_dup_stix, ch_metref, [])
     ch_versions = ch_versions.mix(SAMTOOLS_COLLATEFASTQ.out.versions)
     ch_consensus_reads = SAMTOOLS_COLLATEFASTQ.out.fastq
 
