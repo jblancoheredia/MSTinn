@@ -20,6 +20,10 @@ include { BWAMEM2                                                       } from '
 include { BWA_METH                 	                                    } from '../modules/local/bwameth/main'
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
 include { SAMBLASTER                                                    } from '../modules/local/samblaster/main'
+include { MOSDEPTH_DUP                                                  } from '../modules/local/mosdepth/main'
+include { MOSDEPTH_CON                                                  } from '../modules/local/mosdepth/main'
+include { MOSDEPTH_RAW                                                  } from '../modules/local/mosdepth/main'
+include { MOSDEPTH_SIM                                                  } from '../modules/local/mosdepth/main'
 include { RASTAIR_FULL                 	                                } from '../modules/local/rastair/full/main'
 include { ALIGN_BAM_CON                                                 } from '../modules/local/umi_align_bam/main'
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
@@ -33,11 +37,12 @@ include { UMI_READ_COUNTS                                               } from '
 include { FASTQC_CONSENSUS                                              } from '../modules/local/fastqc_consensus/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
+include { MSISENSORPRO_CON                                              } from '../../modules/local/msisensorpro/pro/main'
+include { MSISENSORPRO_RAW                                              } from '../../modules/local/msisensorpro/pro/main'
 include { FGBIO_CORRECTUMIS                                             } from '../modules/local/fgbio/correctumis/main'
 include { COLLECT_UMI_METRICS                                           } from '../modules/local/collect_umi_metrics/main'
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
-include { SURVIVOR_SCAN_READS                                           } from '../modules/local/survivor/scanreads/main'
 include { COLLECTHSMETRICS_DUP                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_CON                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
@@ -49,6 +54,8 @@ include { SAMTOOLS_COLLATEFASTQ                                         } from '
 include { PREP_BEDTOOLS_INTERSECT       	                            } from '../modules/local/bedtools/prep_bedtools_intersect' 
 include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
+include { SURVIVOR_SCAN_READS_CON                                       } from '../modules/local/survivor/scanreads/main'
+include { SURVIVOR_SCAN_READS_RAW                                       } from '../modules/local/survivor/scanreads/main'
 include { ASTAIR_BEDTOOLS_INTERSECT     	                            } from '../modules/local/bedtools/astair_bedtools_intersect' 
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
@@ -73,18 +80,22 @@ include { methodsDescriptionText                                        } from '
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-ch_metbed                                           = Channel.fromPath(params.metbed).map                   { it -> [[id:it.Name], it] }.collect()
-ch_metdct                                           = Channel.fromPath(params.metdct).map                   { it -> [[id:it.Name], it] }.collect()
-ch_metdir                                           = Channel.fromPath(params.metdir).map                   { it -> [[id:it.Name], it] }.collect()
-ch_metref                                           = Channel.fromPath(params.metref).map                   { it -> [[id:it.Name], it] }.collect()
-ch_metfai                                           = Channel.fromPath(params.metfai).map                   { it -> [[id:it.Name], it] }.collect()
-ch_bwadct                                           = Channel.fromPath(params.bwadct).map                   { it -> [[id:it.Name], it] }.collect()
-ch_bwadir                                           = Channel.fromPath(params.bwadir).map                   { it -> [[id:it.Name], it] }.collect()
-ch_bwaref                                           = Channel.fromPath(params.bwaref).map                   { it -> [[id:it.Name], it] }.collect()
-ch_bwafai                                           = Channel.fromPath(params.bwafai).map                   { it -> [[id:it.Name], it] }.collect()
-ch_intervals                                        = Channel.fromPath(params.intervals).map                { it -> [[id:it.Name], it] }.collect()
-ch_known_sites                                      = Channel.fromPath(params.known_sites).map              { it -> [[id:it.Name], it] }.collect()
-ch_known_sites_tbi                                  = Channel.fromPath(params.known_sites_tbi).map          { it -> [[id:it.Name], it] }.collect()
+ch_msi                                              = Channel.fromPath(params.msi).map                          { it -> [[id:it.Name], it] }.collect()
+ch_metbed                                           = Channel.fromPath(params.metbed).map                       { it -> [[id:it.Name], it] }.collect()
+ch_metdct                                           = Channel.fromPath(params.metdct).map                       { it -> [[id:it.Name], it] }.collect()
+ch_metdir                                           = Channel.fromPath(params.metdir).map                       { it -> [[id:it.Name], it] }.collect()
+ch_metref                                           = Channel.fromPath(params.metref).map                       { it -> [[id:it.Name], it] }.collect()
+ch_metfai                                           = Channel.fromPath(params.metfai).map                       { it -> [[id:it.Name], it] }.collect()
+ch_bwadct                                           = Channel.fromPath(params.bwadct).map                       { it -> [[id:it.Name], it] }.collect()
+ch_bwadir                                           = Channel.fromPath(params.bwadir).map                       { it -> [[id:it.Name], it] }.collect()
+ch_bwaref                                           = Channel.fromPath(params.bwaref).map                       { it -> [[id:it.Name], it] }.collect()
+ch_bwafai                                           = Channel.fromPath(params.bwafai).map                       { it -> [[id:it.Name], it] }.collect()
+ch_intervals                                        = Channel.fromPath(params.intervals).map                    { it -> [[id:it.Name], it] }.collect()
+ch_known_sites                                      = Channel.fromPath(params.known_sites).map                  { it -> [[id:it.Name], it] }.collect()
+ch_known_sites_tbi                                  = Channel.fromPath(params.known_sites_tbi).map              { it -> [[id:it.Name], it] }.collect()
+ch_intervals_gunzip                                 = Channel.fromPath(params.intervals_bed_gunzip).map         { it -> [[id:it.Name], it] }.collect()
+ch_intervals_gunzip_index                           = Channel.fromPath(params.intervals_bed_gunzip_index).map   { it -> [[id:it.Name], it] }.collect()
+
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,13 +229,6 @@ workflow MSTINN {
         ch_bam_fcu_stix = SAMTOOLS_SORT_INDEX_RAW.out.bam_bai
 
         //
-        // MODULE: Run ErrorRateByReadPosition 
-        //
-        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
-        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
-        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
-
-        //
         // MODULE: Run Picard Tool CollectMultipleMetrics
         //
         PICARD_COLLECTMULTIPLEMETRICS(ch_bam_fcu_stix, ch_bwaref, ch_bwafai)
@@ -232,18 +236,41 @@ workflow MSTINN {
         ch_versions = ch_versions.mix(PICARD_COLLECTMULTIPLEMETRICS.out.versions.first())
 
         //
+        // MODULE: Run ErrorRateByReadPosition 
+        //
+        FGBIO_ERRORRATEBYREADPOSITION_RAW(ch_bam_fcu_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
+        ch_multiqc_files = ch_multiqc_files.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.metrics.map{it[1]}.collect())
+        ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_RAW.out.versions.first())
+
+        //
+        // MODULE: Run MosDepth
+        //
+        MOSDEPTH_RAW(ch_bam_fcu_stix, ch_bwaref, ch_bwafai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        ch_versions = ch_versions.mix(MOSDEPTH_RAW.out.versions.first())
+        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_RAW.out.summary_txt)
+
+        //
         // MODULE: Run Survivor ScanReads to get Error Profiles
         //
-        SURVIVOR_SCAN_READS(ch_bam_fcu_sort, ch_bam_fcu_indx, params.read_length)
-        ch_versions = ch_versions.mix(SURVIVOR_SCAN_READS.out.versions.first())
+        SURVIVOR_SCAN_READS_RAW(ch_bam_fcu_stix, params.read_length)
+        ch_versions = ch_versions.mix(SURVIVOR_SCAN_READS_RAW.out.versions.first())
 
         //
         // MODULE: Run Picard's Collect HS Metrics for raw BAM files
         //
-        COLLECTHSMETRICS_RAW(ch_bam_fcu_sort, ch_bam_fcu_indx, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+        COLLECTHSMETRICS_RAW(ch_bam_fcu_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
         ch_versions = ch_versions.mix(COLLECTHSMETRICS_RAW.out.versions.first())
         ch_coverage_raw  = COLLECTHSMETRICS_RAW.out.coverage
         ch_hsmetrics_raw = COLLECTHSMETRICS_RAW.out.hsmetrics
+
+        //
+        // MODULE: Run MSI Sensor PRO
+        ///
+        MSISENSORPRO_RAW(ch_bam_fcu_stix, ch_msi_f)
+        ch_versions = ch_versions.mix(MSISENSORPRO_RAW.out.versions.first())
+        ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_RAW.out.summary.map{it[1]}.collect())
+        ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_RAW.out.msi_uns.map{it[1]}.collect())
+        ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_RAW.out.msi_all.map{it[1]}.collect())
 
         //
         // MODULE: Run SamBlaster
@@ -306,38 +333,69 @@ workflow MSTINN {
         ch_bam_bai_duplex_fil = FGBIO_FILTERCONSENSUSREADS.out.duplex_bam_bai
         ch_bam_bai_simplex_fil = FGBIO_FILTERCONSENSUSREADS.out.simplex_bam_bai
 
+        // Combine BAM fils by meta data
+	    ch_align_bam_con_in = ch_bam_bai_con_fil
+	        .join(ch_bam_bai_duplex_fil)
+	        .join(ch_bam_bai_simplex_fil)
+
         //
         // MODULE: Align with BWA mem
         //
-        ALIGN_BAM_CON(ch_bam_bai_final_fil, ch_bam_bai_duplex_fil, ch_bam_bai_simplex_fil, ch_bwaref, ch_bwafai, ch_bwadct, ch_bwadir)
+        ALIGN_BAM_CON(ch_align_bam_con_in, ch_bwaref, ch_bwafai, ch_bwadct, ch_bwadir)
         ch_versions = ch_versions.mix(ALIGN_BAM_CON.out.versions.first())
-        ch_bam_fin = ALIGN_BAM_CON.out.bam
+        ch_bam_con = ALIGN_BAM_CON.out.bam
         ch_bam_duplex = ALIGN_BAM_CON.out.duplex_bam
         ch_bam_simplex = ALIGN_BAM_CON.out.simplex_bam
+
+        // Combine BAM fils by meta data
+	    ch_sort_index_in = ch_bam_con
+	        .join(ch_bam_duplex)
+	        .join(ch_bam_simplex)
 
         //
         // MODULE: Run SamToools Sort & Index
         //
-        SAMTOOLS_SORT_INDEX_CON(ch_bam_fin, ch_bwafai, ch_bwaref, ch_bam_duplex, ch_bam_simplex)
+        SAMTOOLS_SORT_INDEX_CON(ch_sort_index_in, ch_bwaref, ch_bwafai)
         ch_versions = ch_versions.mix(SAMTOOLS_SORT_INDEX_CON.out.versions)
-        ch_bam_fin_sort = SAMTOOLS_SORT_INDEX_CON.out.bam
-        ch_bam_fin_indx = SAMTOOLS_SORT_INDEX_CON.out.bai
-        ch_bam_fin_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_bai
+        ch_bam_con_sort = SAMTOOLS_SORT_INDEX_CON.out.bam
+        ch_bam_con_indx = SAMTOOLS_SORT_INDEX_CON.out.bai
+        ch_bam_con_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_bai
         ch_bam_dup_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_duplex
         ch_bam_sim_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_simplex
 
         //
-        // MODULE: Run SamTools View to count reads accross the BAM files
+        // MODULE: Run Survivor ScanReads to get Error Profiles
         //
-        UMI_READ_COUNTS(ch_ubam, ch_bam_fcu, ch_bam_grouped, ch_consensus_bam, ch_bam_bai_final_fil, ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
-        ch_versions = ch_versions.mix(UMI_READ_COUNTS.out.versions.first())
+        SURVIVOR_SCAN_READS_CON(ch_bam_con_stix, params.read_length)
+        ch_versions = ch_versions.mix(SURVIVOR_SCAN_READS_CON.out.versions.first())
+
+        // Combine BAM fils by meta data
+    	ch_umi_metrics_in = ch_bam_con_stix
+    	    .join(ch_bam_dup_stix)
+    	    .join(ch_bam_sim_stix)
 
         //
         // MODULE: Run SamTools View to count reads accross the BAM files
         //
-        COLLECT_UMI_METRICS(ch_bam_fin_stix, ch_bam_dup_stix, ch_bam_sim_stix)
+        COLLECT_UMI_METRICS(ch_umi_metrics_in)
         ch_versions = ch_versions.mix(COLLECT_UMI_METRICS.out.versions.first())
         ch_cons_family_sizes = COLLECT_UMI_METRICS.out.cons_family_sizes
+
+        // Combine BAM fils by meta data
+    	ch_umi_read_counts_in = ch_ubam
+    	    .join(ch_bam_fcu)
+    	    .join(ch_bam_grouped)
+    	    .join(ch_bam_consensus)
+    	    .join(ch_bam_bai_con_fil)
+    	    .join(ch_bam_con_stix)
+    	    .join(ch_bam_dup_stix)
+    	    .join(ch_bam_sim_stix)
+
+        //
+        // MODULE: Run SamTools View to count reads accross the BAM files
+        //
+        UMI_READ_COUNTS(ch_umi_read_counts_in)
+        ch_versions = ch_versions.mix(UMI_READ_COUNTS.out.versions.first())
 
         //
         // MODULE: Run Preseq CCurve
@@ -352,15 +410,36 @@ workflow MSTINN {
         ch_versions = ch_versions.mix(PRESEQ_LCEXTRAP.out.versions.first())
 
         //
+        // MODULE: Run MosDepth
+        //
+        MOSDEPTH_CON(ch_bam_con_stix, ch_bwaref, params.fai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        ch_versions = ch_versions.mix(MOSDEPTH_CON.out.versions.first())
+        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_CON.out.summary_txt)
+
+        //
+        // MODULE: Run MosDepth
+        //
+        MOSDEPTH_DUP(ch_bam_dup_stix, ch_bwaref, params.fai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        ch_versions = ch_versions.mix(MOSDEPTH_DUP.out.versions.first())
+        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_DUP.out.summary_txt)
+
+        //
+        // MODULE: Run MosDepth
+        //
+        MOSDEPTH_SIM(ch_bam_sim_stix, ch_bwaref, params.fai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        ch_versions = ch_versions.mix(MOSDEPTH_SIM.out.versions.first())
+        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_SIM.out.summary_txt)
+
+        //
         // MODULE: Run ErrorRateByReadPosition in Final BAM
         //
-        FGBIO_ERRORRATEBYREADPOSITION_CON(ch_bam_fin_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
+        FGBIO_ERRORRATEBYREADPOSITION_CON(ch_bam_con_sort, ch_bwaref, ch_bwafai, ch_bwadct, params.known_sites, params.known_sites_tbi, params.interval_list)
         ch_versions = ch_versions.mix(FGBIO_ERRORRATEBYREADPOSITION_CON.out.versions)
 
         //
         // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
         //
-        COLLECTHSMETRICS_CON(ch_bam_fin_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+        COLLECTHSMETRICS_CON(ch_bam_con_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
         ch_versions = ch_versions.mix(COLLECTHSMETRICS_CON.out.versions.first())
         ch_coverage_con  = COLLECTHSMETRICS_CON.out.coverage
         ch_hsmetrics_con = COLLECTHSMETRICS_CON.out.hsmetrics
@@ -380,6 +459,15 @@ workflow MSTINN {
         ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
         ch_coverage_con  = COLLECTHSMETRICS_SIM.out.coverage
         ch_hsmetrics_con = COLLECTHSMETRICS_SIM.out.hsmetrics
+
+        //
+        // MODULE: Run MSI Sensor PRO
+        ///
+        MSISENSORPRO_CON(ch_bam_dup_stix, ch_msi)
+        ch_versions = ch_versions.mix(MSISENSORPRO_CON.out.versions.first())
+        ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_CON.out.summary.map{it[1]}.collect())
+        ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_CON.out.msi_uns.map{it[1]}.collect())
+        ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_CON.out.msi_all.map{it[1]}.collect())
 
         //
         // MODULE: Extract FastQ reads from BAM
