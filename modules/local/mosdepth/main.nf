@@ -94,8 +94,8 @@ process MOSDEPTH_RAW {
 
     input:
     tuple val(meta),  path(bam), path(bai)
-    tuple val(meta2), path(fasta)
-    path(fai)
+    tuple val(meta1), path(fasta)
+    tuple val(meta2), path(fai)
     path(bed)
     path(bed_index)
 
