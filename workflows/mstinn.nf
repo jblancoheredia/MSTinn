@@ -266,7 +266,7 @@ workflow MSTINN {
         //
         // MODULE: Run MSI Sensor PRO
         ///
-        MSISENSORPRO_RAW(ch_bam_fcu_stix, ch_msi_f)
+        MSISENSORPRO_RAW(ch_bam_fcu_stix, ch_msi)
         ch_versions = ch_versions.mix(MSISENSORPRO_RAW.out.versions.first())
         ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_RAW.out.summary.map{it[1]}.collect())
         ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_RAW.out.msi_uns.map{it[1]}.collect())
