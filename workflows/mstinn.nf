@@ -385,7 +385,7 @@ workflow MSTINN {
     	ch_umi_read_counts_in = ch_ubam
     	    .join(ch_bam_fcu)
     	    .join(ch_bam_grouped)
-    	    .join(ch_bam_consensus)
+    	    .join(ch_consensus_bam)
     	    .join(ch_bam_bai_con_fil)
     	    .join(ch_bam_con_stix)
     	    .join(ch_bam_dup_stix)
