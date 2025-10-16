@@ -54,8 +54,6 @@ include { SAMTOOLS_COLLATEFASTQ                                         } from '
 include { PREP_BEDTOOLS_INTERSECT       	                            } from '../modules/local/bedtools/prep_bedtools_intersect' 
 include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
-include { SURVIVOR_SCAN_READS_CON                                       } from '../modules/local/survivor/scanreads/main'
-include { SURVIVOR_SCAN_READS_RAW                                       } from '../modules/local/survivor/scanreads/main'
 include { ASTAIR_BEDTOOLS_INTERSECT     	                            } from '../modules/local/bedtools/astair_bedtools_intersect' 
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
@@ -250,12 +248,6 @@ workflow MSTINN {
         ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_RAW.out.summary_txt)
 
         //
-        // MODULE: Run Survivor ScanReads to get Error Profiles
-        //
-        SURVIVOR_SCAN_READS_RAW(ch_bam_fcu_stix, params.read_length)
-        ch_versions = ch_versions.mix(SURVIVOR_SCAN_READS_RAW.out.versions.first())
-
-        //
         // MODULE: Run Picard's Collect HS Metrics for raw BAM files
         //
         COLLECTHSMETRICS_RAW(ch_bam_fcu_stix, ch_bwaref, ch_bwafai, ch_bwadct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
@@ -362,12 +354,6 @@ workflow MSTINN {
         ch_bam_con_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_bai
         ch_bam_dup_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_duplex
         ch_bam_sim_stix = SAMTOOLS_SORT_INDEX_CON.out.bam_simplex
-
-        //
-        // MODULE: Run Survivor ScanReads to get Error Profiles
-        //
-        SURVIVOR_SCAN_READS_CON(ch_bam_con_stix, params.read_length)
-        ch_versions = ch_versions.mix(SURVIVOR_SCAN_READS_CON.out.versions.first())
 
         // Combine BAM fils by meta data
     	ch_umi_metrics_in = ch_bam_con_stix
