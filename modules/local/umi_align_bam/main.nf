@@ -4,16 +4,13 @@ process ALIGN_BAM_RAW {
 
     conda "bioconda::fgbio=2.4.0 bioconda::bwa-mem2=2.2.1 bioconda::samtools=1.9"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/umi_aligner:1.0.0' :
-        'blancojmskcc/umi_aligner:1.0.0' }"
+        'docker://blancojmskcc/umi_aligner_meth:1.0.0' :
+        'blancojmskcc/umi_aligner_meth:1.0.0' }"
 
     input:
     tuple val(meta),  path(unmapped_bam)
-    tuple val(meta2), path(fasta)
-    tuple val(meta3), path(fasta_fai)
-    tuple val(meta4), path(bwa_dict)
-    tuple val(meta5), path(bwa_dir)
-    val sort_type
+    tuple val(meta2), path(metref)
+    tuple val(meta5), path(metdir)
 
     output:
     tuple val(meta), path("*.mapped.bam")       , emit: bam
@@ -27,7 +24,6 @@ process ALIGN_BAM_RAW {
     script:
     def samtools_fastq_args = task.ext.samtools_fastq_args ?: ''
     def samtools_sort_args = task.ext.samtools_sort_args ?: ''
-    def bwa_args = task.ext.bwa_args ?: ''
     def fgbio_args = task.ext.fgbio_args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def fgbio_mem_gb = 4
@@ -51,17 +47,15 @@ process ALIGN_BAM_RAW {
     extra_command += " -"
 
     """
-    # The real path to the BWA index prefix`
-    BWA_INDEX_PREFIX=\$(find -L ./ -name "*.amb" | sed 's/.amb//')
 
     samtools fastq ${samtools_fastq_args} ${unmapped_bam} \\
-        | bwa-mem2 mem ${bwa_args} -t ${task.cpus} -p -B 3 -K 100000000 -Y -M -R ${meta.read_group} \$BWA_INDEX_PREFIX - \\
+        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -B 3 -K 100000000 -Y -M -R ${meta.read_group} - \\
         | fgbio -Xmx${fgbio_mem_gb}g \\
             --compression ${fgbio_zipper_bams_compression} \\
             --async-io=true \\
             ZipperBams \\
             --unmapped ${unmapped_bam} \\
-            --ref ${fasta} \\
+            --ref ${metref} \\
             --output ${fgbio_zipper_bams_output} \\
             --tags-to-reverse Consensus \\
             --tags-to-revcomp Consensus \\
@@ -102,15 +96,14 @@ process ALIGN_BAM_CON {
 
     conda "bioconda::fgbio=2.4.0 bioconda::bwa-mem2=2.2.1 bioconda::samtools=1.9"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/umi_aligner:1.0.0' :
-        'blancojmskcc/umi_aligner:1.0.0' }"
+        'docker://blancojmskcc/umi_aligner_meth:1.0.0' :
+        'blancojmskcc/umi_aligner_meth:1.0.0' }"
 
     input:
     tuple val(meta),  path(bam), path(bai), path(duplex_bam), path(duplex_bai), path(simplex_bam), path(simplex_bai)
-    tuple val(meta2), path(fasta)
-    tuple val(meta3), path(fasta_fai)
-    tuple val(meta4), path(dict)
-    tuple val(meta5), path(bwa_dir)
+    tuple val(meta2), path(metref)
+    tuple val(meta3), path(metfai)
+    tuple val(meta5), path(metdir)
 
     output:
     tuple val(meta), path("*.mapped.bam"),          emit: bam
@@ -144,39 +137,39 @@ process ALIGN_BAM_CON {
     BWA_INDEX_PREFIX=\$(find -L ./ -name "*.amb" | sed 's/.amb//')
 
     samtools fastq ${samtools_fastq_args} ${bam} \\
-        | bwa-mem2 mem ${bwa_args} -t ${task.cpus} -p -K 150000000 -Y \$BWA_INDEX_PREFIX - \\
+        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -K 150000000 -Y \\
         | fgbio -Xmx${fgbio_mem_gb}g \\
             --compression 1 \\
             --async-io=true \\
             ZipperBams \\
             --unmapped ${bam} \\
-            --ref ${fasta} \\
+            --ref ${metref} \\
             --output ${prefix}.mapped.bam \\
             --tags-to-reverse Consensus \\
             --tags-to-revcomp Consensus \\
             --sort TemplateCoordinate
 
     samtools fastq ${samtools_fastq_args} ${duplex_bam} \\
-        | bwa-mem2 mem ${bwa_args} -t ${task.cpus} -p -K 150000000 -Y \$BWA_INDEX_PREFIX - \\
+        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -K 150000000 -Y \\
         | fgbio -Xmx${fgbio_mem_gb}g \\
             --compression 1 \\
             --async-io=true \\
             ZipperBams \\
             --unmapped ${duplex_bam} \\
-            --ref ${fasta} \\
+            --ref ${metref} \\
             --output ${prefix}.mapped.duplex.bam \\
             --tags-to-reverse Consensus \\
             --tags-to-revcomp Consensus \\
             --sort TemplateCoordinate
 
     samtools fastq ${samtools_fastq_args} ${simplex_bam} \\
-        | bwa-mem2 mem ${bwa_args} -t ${task.cpus} -p -K 150000000 -Y \$BWA_INDEX_PREFIX - \\
+        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -K 150000000 -Y \\
         | fgbio -Xmx${fgbio_mem_gb}g \\
             --compression 1 \\
             --async-io=true \\
             ZipperBams \\
             --unmapped ${simplex_bam} \\
-            --ref ${fasta} \\
+            --ref ${metref} \\
             --output ${prefix}.mapped.simplex.bam \\
             --tags-to-reverse Consensus \\
             --tags-to-revcomp Consensus \\

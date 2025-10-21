@@ -8,65 +8,52 @@
                     "cat/fastq": {
                         "branch": "master",
                         "git_sha": "05954dab2ff481bcb999f24455da29a5828af08d",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     },
                     "fastqc": {
                         "branch": "master",
                         "git_sha": "08108058ea36a63f141c25c4e75f9f872a5b2296",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     },
                     "fgbio/callduplexconsensusreads": {
                         "branch": "master",
                         "git_sha": "6d6019016541f1e33efcdcd5f5fd731fef288bc2",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     },
                     "fgbio/fastqtobam": {
                         "branch": "master",
                         "git_sha": "6d6019016541f1e33efcdcd5f5fd731fef288bc2",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
+                    },
+                    "gatk4/variantfiltration": {
+                        "branch": "master",
+                        "git_sha": "ae8cd884f895585c6799ab4eb6a2c9f44df03336",
+                        "installed_by": ["modules"]
                     },
                     "multiqc": {
                         "branch": "master",
                         "git_sha": "f0719ae309075ae4a291533883847c3f7c441dad",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     },
                     "oncocnv": {
                         "branch": "master",
                         "git_sha": "e98df156bccbf1a63b93467021e701aa00213f15",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     },
                     "samtools/collatefastq": {
                         "branch": "master",
                         "git_sha": "9bcf33c7f6cda1c8d066cdef118baf5a276e59ab",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     },
                     "samtools/index": {
                         "branch": "master",
                         "git_sha": "d090922b1a4b80ba283186459ababf8e308abcbb",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     },
                     "sentieon/bwamem": {
                         "branch": "master",
                         "git_sha": "6b36f8e5427ec38911565398de57656ca3a2606a",
-                        "installed_by": [
-                            "modules"
-                        ]
+                        "installed_by": ["modules"]
                     }
                 }
             },
@@ -75,23 +62,17 @@
                     "utils_nextflow_pipeline": {
                         "branch": "master",
                         "git_sha": "c2b22d85f30a706a3073387f30380704fcae013b",
-                        "installed_by": [
-                            "subworkflows"
-                        ]
+                        "installed_by": ["subworkflows"]
                     },
                     "utils_nfcore_pipeline": {
                         "branch": "master",
                         "git_sha": "51ae5406a030d4da1e49e4dab49756844fdd6c7a",
-                        "installed_by": [
-                            "subworkflows"
-                        ]
+                        "installed_by": ["subworkflows"]
                     },
                     "utils_nfschema_plugin": {
                         "branch": "master",
                         "git_sha": "2fd2cd6d0e7b273747f32e465fdc6bcc3ae0814e",
-                        "installed_by": [
-                            "subworkflows"
-                        ]
+                        "installed_by": ["subworkflows"]
                     }
                 }
             }
