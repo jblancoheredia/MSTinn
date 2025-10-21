@@ -408,14 +408,12 @@ workflow MSTINN {
         //
         MOSDEPTH_DUP(ch_bam_dup_stix, ch_metref, params.metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
         ch_versions = ch_versions.mix(MOSDEPTH_DUP.out.versions.first())
-        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_DUP.out.summary_txt)
 
         //
         // MODULE: Run MosDepth
         //
         MOSDEPTH_SIM(ch_bam_sim_stix, ch_metref, params.metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
         ch_versions = ch_versions.mix(MOSDEPTH_SIM.out.versions.first())
-        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_SIM.out.summary_txt)
 
         //
         // MODULE: Run ErrorRateByReadPosition in Final BAM
