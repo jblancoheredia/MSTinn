@@ -576,12 +576,12 @@ workflow MSTINN {
         [meta, vcf, tbi]
     }
 
-#    //
-#    // MODULE: VariantFiltration from GATK4 (Filter variant calls based on certain criteria.)
-#    // 
-#    GATK4_VARIANTFILTRATION(ch_haplotypecaller_vcf_tbi, ch_fasta, ch_fai, ch_dict)
-#    ch_versions  = ch_versions.mix(GATK4_VARIANTFILTRATION.out.versions.ifEmpty(null))
-#    ch_final_vcf = GATK4_VARIANTFILTRATION.out.vcf
+    //
+    // MODULE: VariantFiltration from GATK4 (Filter variant calls based on certain criteria.)
+    // 
+    GATK4_VARIANTFILTRATION(ch_haplotypecaller_vcf_tbi, ch_fasta, ch_fai, ch_dict)
+    ch_versions  = ch_versions.mix(GATK4_VARIANTFILTRATION.out.versions.ifEmpty(null))
+    ch_final_vcf = GATK4_VARIANTFILTRATION.out.vcf
 
     //
     // Collate and save software versions
