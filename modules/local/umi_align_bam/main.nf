@@ -9,8 +9,9 @@ process ALIGN_BAM_RAW {
 
     input:
     tuple val(meta),  path(unmapped_bam)
-    tuple val(meta2), path(metref)
-    tuple val(meta5), path(metdir)
+    tuple val(meta1), path(metref)
+    tuple val(meta2), path(metdir)
+    tuple val(meta3), path(metdct)
 
     output:
     tuple val(meta), path("*.mapped.bam")       , emit: bam
@@ -102,7 +103,8 @@ process ALIGN_BAM_CON {
     tuple val(meta),  path(bam), path(bai), path(duplex_bam), path(duplex_bai), path(simplex_bam), path(simplex_bai)
     tuple val(meta2), path(metref)
     tuple val(meta3), path(metfai)
-    tuple val(meta5), path(metdir)
+    tuple val(meta4), path(metdir)
+    tuple val(meta5), path(metdct)
 
     output:
     tuple val(meta), path("*.mapped.bam"),          emit: bam
@@ -136,7 +138,7 @@ process ALIGN_BAM_CON {
     BWA_INDEX_PREFIX=\$(find -L ./ -name "*.amb" | sed 's/.amb//')
 
     samtools fastq ${samtools_fastq_args} ${bam} \\
-        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -K 150000000 -Y \\
+        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -K 150000000 -Y \\
         | fgbio -Xmx${fgbio_mem_gb}g \\
             --compression 1 \\
             --async-io=true \\
