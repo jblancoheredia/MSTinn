@@ -204,7 +204,7 @@ workflow MSTINN {
         // MODULE: Align with bwa mem but avoid sort
         //
         sort = false
-        ALIGN_BAM_RAW(ch_ubam, ch_metref, ch_metdir)
+        ALIGN_BAM_RAW(ch_ubam, ch_metref, ch_metdir, ch_metdct)
         ch_versions = ch_versions.mix(ALIGN_BAM_RAW.out.versions.first())
         ch_raw_bam = ALIGN_BAM_RAW.out.bam
         ch_raw_sort_bam = ALIGN_BAM_RAW.out.sort_bam
@@ -334,7 +334,7 @@ workflow MSTINN {
         //
         // MODULE: Align with BWA mem
         //
-        ALIGN_BAM_CON(ch_align_bam_con_in, ch_metref, ch_metfai, ch_metdir)
+        ALIGN_BAM_CON(ch_align_bam_con_in, ch_metref, ch_metfai, ch_metdir, ch_metdct)
         ch_versions = ch_versions.mix(ALIGN_BAM_CON.out.versions.first())
         ch_bam_con = ALIGN_BAM_CON.out.bam
         ch_bam_duplex = ALIGN_BAM_CON.out.duplex_bam
