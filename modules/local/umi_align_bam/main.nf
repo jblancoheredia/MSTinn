@@ -49,7 +49,7 @@ process ALIGN_BAM_RAW {
     """
 
     samtools fastq ${samtools_fastq_args} ${unmapped_bam} \\
-        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -B 3 -K 100000000 -Y -M -R ${meta.read_group} - \\
+        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} --read-group ${meta.read_group} -p -B 3 -K 100000000 -Y - \\
         | fgbio -Xmx${fgbio_mem_gb}g \\
             --compression ${fgbio_zipper_bams_compression} \\
             --async-io=true \\
@@ -59,7 +59,6 @@ process ALIGN_BAM_RAW {
             --output ${fgbio_zipper_bams_output} \\
             --tags-to-reverse Consensus \\
             --tags-to-revcomp Consensus \\
-            ${fgbio_args} \\
             ${extra_command};
 
     samtools sort  -@ ${task.cpus} ${prefix}.mapped.bam -o ${prefix}.sorted.bam
