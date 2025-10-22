@@ -53,7 +53,7 @@ process ALIGN_BAM_RAW {
       --threads 12 \\
       --reference ${metdir}/${metref} \\
       --read-group ${meta.read_group} \\
-      -p -B 3 -K 100000000 -Y \\
+      -p -B3 -K100000000 -Y \\
       R1.fq R2.fq \\
     | fgbio -Xmx4g \\
         --compression ${fgbio_zipper_bams_compression} \\
