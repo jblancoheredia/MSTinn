@@ -49,7 +49,7 @@ process ALIGN_BAM_RAW {
       ${unmapped_bam}
 
     bwameth.py \\
-      --threads 12 \\
+      --threads ${task.cpus} \\
       --reference ${metdir}/${metref} \\
       --read-group ${meta.read_group} \\
       -p -B3 -K100000000 -Y \\
@@ -139,47 +139,86 @@ process ALIGN_BAM_CON {
         }
     }
     """
-    # The real path to the BWA index prefix`
-    BWA_INDEX_PREFIX=\$(find -L ./ -name "*.amb" | sed 's/.amb//')
+    samtools fastq \\
+      -n \\
+      -0 /dev/null \\
+      -s /dev/null \\
+      -1 R1.fq \\
+      -2 R2.fq \\
+      ${bam}
 
-    samtools fastq ${samtools_fastq_args} ${bam} \\
-        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -K 150000000 -Y \\
-        | fgbio -Xmx${fgbio_mem_gb}g \\
-            --compression 1 \\
-            --async-io=true \\
-            ZipperBams \\
-            --unmapped ${bam} \\
-            --ref ${metref} \\
-            --output ${prefix}.mapped.bam \\
-            --tags-to-reverse Consensus \\
-            --tags-to-revcomp Consensus \\
-            --sort TemplateCoordinate
+    bwameth.py \\
+      --threads ${task.cpus} \\
+      --reference ${metdir}/${metref} \\
+      --read-group ${meta.read_group} \\
+      -p -K150000000 -Y \\
+      R1.fq R2.fq \\
+    | fgbio -Xmx4g \\
+        --compression ${fgbio_zipper_bams_compression} \\
+        --async-io=true \\
+        ZipperBams \\
+        --unmapped ${bam} \\
+        --ref ${metref} \\
+        --output ${prefix}.mapped.bam \\
+        --tags-to-reverse Consensus \\
+        --tags-to-revcomp Consensus \\
+        --sort TemplateCoordinate
 
-    samtools fastq ${samtools_fastq_args} ${duplex_bam} \\
-        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -K 150000000 -Y \\
-        | fgbio -Xmx${fgbio_mem_gb}g \\
-            --compression 1 \\
-            --async-io=true \\
-            ZipperBams \\
-            --unmapped ${duplex_bam} \\
-            --ref ${metref} \\
-            --output ${prefix}.mapped.duplex.bam \\
-            --tags-to-reverse Consensus \\
-            --tags-to-revcomp Consensus \\
-            --sort TemplateCoordinate
+    rm -f R1.fq R2.fq
 
-    samtools fastq ${samtools_fastq_args} ${simplex_bam} \\
-        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} -p -K 150000000 -Y \\
-        | fgbio -Xmx${fgbio_mem_gb}g \\
-            --compression 1 \\
-            --async-io=true \\
-            ZipperBams \\
-            --unmapped ${simplex_bam} \\
-            --ref ${metref} \\
-            --output ${prefix}.mapped.simplex.bam \\
-            --tags-to-reverse Consensus \\
-            --tags-to-revcomp Consensus \\
-            --sort TemplateCoordinate
+    samtools fastq \\
+      -n \\
+      -0 /dev/null \\
+      -s /dev/null \\
+      -1 R1.fq \\
+      -2 R2.fq \\
+      ${duplex_bam}
+
+    bwameth.py \\
+      --threads ${task.cpus} \\
+      --reference ${metdir}/${metref} \\
+      --read-group ${meta.read_group} \\
+      -p -K150000000 -Y \\
+      R1.fq R2.fq \\
+    | fgbio -Xmx4g \\
+        --compression ${fgbio_zipper_bams_compression} \\
+        --async-io=true \\
+        ZipperBams \\
+        --unmapped ${duplex_bam} \\
+        --ref ${metref} \\
+        --output ${prefix}.mapped.duplex.bam \\
+        --tags-to-reverse Consensus \\
+        --tags-to-revcomp Consensus \\
+        --sort TemplateCoordinate
+
+    rm -f R1.fq R2.fq
+
+    samtools fastq \\
+      -n \\
+      -0 /dev/null \\
+      -s /dev/null \\
+      -1 R1.fq \\
+      -2 R2.fq \\
+      ${simplex_bam}
+
+    bwameth.py \\
+      --threads ${task.cpus} \\
+      --reference ${metdir}/${metref} \\
+      --read-group ${meta.read_group} \\
+      -p -K150000000 -Y \\
+      R1.fq R2.fq \\
+    | fgbio -Xmx4g \\
+        --compression ${fgbio_zipper_bams_compression} \\
+        --async-io=true \\
+        ZipperBams \\
+        --unmapped ${simplex_bam} \\
+        --ref ${metref} \\
+        --output ${prefix}.mapped.simplex.bam \\
+        --tags-to-reverse Consensus \\
+        --tags-to-revcomp Consensus \\
+        --sort TemplateCoordinate
+
+    rm -f R1.fq R2.fq
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
