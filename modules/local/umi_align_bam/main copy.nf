@@ -28,6 +28,8 @@ process ALIGN_BAM_RAW {
     def fgbio_args = task.ext.fgbio_args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def fgbio_mem_gb = 4
+    def extra_command = ""
+
     if (!task.memory) {
         log.info '[fgbio ZipperBams] Available memory not known - defaulting to 4GB. Specify process memory requirements to change this.'
     } else if (fgbio_mem_gb > task.memory.giga) {
@@ -37,38 +39,30 @@ process ALIGN_BAM_RAW {
             fgbio_mem_gb = task.memory.giga - 1
         }
     }
+
     fgbio_zipper_bams_output = "/dev/stdout"
     fgbio_zipper_bams_compression = 0
+    extra_command = " | samtools sort -n"
+    extra_command += " --threads "+ task.cpus
+    extra_command += " -o " + prefix + ".mapped.bam "
+    extra_command += " -"
+
     """
-    mkfifo R1.fq R2.fq
 
-    samtools fastq \\
-      -n \\
-      -0 /dev/null \\
-      -s /dev/null \\
-      -1 R1.fq \\
-      -2 R2.fq \\
-      ${unmapped_bam} &
-    bwameth.py \\
-      --threads 12 \\
-      --reference ${metdir}/${metref} \\
-      --read-group ${meta.read_group} \\
-      -p -B 3 -K 100000000 -Y \\
-      R1.fq R2.fq \\
-    | fgbio -Xmx4g \\
-        --compression ${fgbio_zipper_bams_compression} \\
-        --async-io=true \\
-        ZipperBams \\
-        --unmapped ${unmapped_bam} \\
-        --ref ${metref} \\
-        --output ${fgbio_zipper_bams_output} \\
-        --tags-to-reverse Consensus \\
-        --tags-to-revcomp Consensus \\
-    | samtools sort -n --threads ${task.cpus} -o ${prefix}.mapped.bam -
+    samtools fastq ${samtools_fastq_args} ${unmapped_bam} \\
+        | bwameth.py -t ${task.cpus} --reference ${metdir}/${metref} --read-group ${meta.read_group} -p -B 3 -K 100000000 -Y - \\
+        | fgbio -Xmx${fgbio_mem_gb}g \\
+            --compression ${fgbio_zipper_bams_compression} \\
+            --async-io=true \\
+            ZipperBams \\
+            --unmapped ${unmapped_bam} \\
+            --ref ${metref} \\
+            --output ${fgbio_zipper_bams_output} \\
+            --tags-to-reverse Consensus \\
+            --tags-to-revcomp Consensus \\
+            ${extra_command};
 
-    rm -f R1.fq R2.fq
-
-    samtools sort -@ ${task.cpus} -o ${prefix}.sorted.bam ${prefix}.mapped.bam
+    samtools sort  -@ ${task.cpus} ${prefix}.mapped.bam -o ${prefix}.sorted.bam
     samtools index -@ ${task.cpus} ${prefix}.sorted.bam
 
     cat <<-END_VERSIONS > versions.yml
