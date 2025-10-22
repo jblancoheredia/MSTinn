@@ -15,7 +15,7 @@ process GATK4_VARIANTFILTRATION {
     tuple val(meta4), path(dict)
 
     output:
-    tuple val(meta), path("*.vcf.gz"), emit: vcf
+    tuple val(meta), path("*_filtered.vcf.gz"), emit: vcf
     tuple val(meta), path("*.tbi")   , emit: tbi
     path "versions.yml"		         , emit: versions
 
@@ -36,7 +36,7 @@ process GATK4_VARIANTFILTRATION {
     gatk --java-options "-Xmx${avail_mem}M -XX:-UsePerfData" \\
         VariantFiltration \\
         --variant $vcf \\
-        --output ${prefix}.vcf.gz \\
+        --output ${prefix}_filtered.vcf.gz \\
         --reference $fasta \\
         --tmp-dir . \\
         $args
