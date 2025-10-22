@@ -40,15 +40,14 @@ process ALIGN_BAM_RAW {
     fgbio_zipper_bams_output = "/dev/stdout"
     fgbio_zipper_bams_compression = 0
     """
-    mkfifo R1.fq R2.fq
-
     samtools fastq \\
       -n \\
       -0 /dev/null \\
       -s /dev/null \\
       -1 R1.fq \\
       -2 R2.fq \\
-      ${unmapped_bam} &
+      ${unmapped_bam}
+
     bwameth.py \\
       --threads 12 \\
       --reference ${metdir}/${metref} \\
