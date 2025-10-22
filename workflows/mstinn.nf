@@ -51,7 +51,7 @@ include { GATK4_MARKDUPLICATES          	                            } from '../
 include { FGBIO_GROUPREADSBYUMI                                         } from '../modules/local/fgbio/groupreadsbyumi/main'
 include { GATK4_HAPLOTYPECALLER                                         } from '../modules/local/gatk4/haplotypecaller/main'
 include { SAMTOOLS_COLLATEFASTQ                                         } from '../modules/nf-core/samtools/collatefastq/main'
-include { GATK4_VARIANTFILTRATION                                       } from '../modules/nf-core/gatk4/variantfiltration/main'
+include { GATK4_VARIANTFILTRATION                                       } from '../modules/local/gatk4/variantfiltration/main'
 include { PREP_BEDTOOLS_INTERSECT       	                            } from '../modules/local/bedtools/prep_bedtools_intersect' 
 include { SAMTOOLS_SORT_INDEX_CON                                       } from '../modules/local/samtools/sort_index/main'
 include { SAMTOOLS_SORT_INDEX_RAW                                       } from '../modules/local/samtools/sort_index/main'
@@ -579,7 +579,7 @@ workflow MSTINN {
     //
     // MODULE: VariantFiltration from GATK4 (Filter variant calls based on certain criteria.)
     // 
-    GATK4_VARIANTFILTRATION(ch_haplotypecaller_vcf_tbi, ch_metref, ch_metfai, ch_metdictgatk)
+    GATK4_VARIANTFILTRATION(ch_haplotypecaller_raw, ch_haplotypecaller_tbi, ch_metref, ch_metfai, ch_metdictgatk)
     ch_versions  = ch_versions.mix(GATK4_VARIANTFILTRATION.out.versions.ifEmpty(null))
     ch_final_vcf = GATK4_VARIANTFILTRATION.out.vcf
 
