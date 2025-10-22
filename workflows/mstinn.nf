@@ -91,10 +91,10 @@ ch_bwaref                                           = Channel.fromPath(params.bw
 ch_bwafai                                           = Channel.fromPath(params.bwafai).map                       { it -> [[id:it.Name], it] }.collect()
 ch_intervals                                        = Channel.fromPath(params.intervals).map                    { it -> [[id:it.Name], it] }.collect()
 ch_known_sites                                      = Channel.fromPath(params.known_sites).map                  { it -> [[id:it.Name], it] }.collect()
+ch_metdictgatk                                      = Channel.fromPath(params.metdictgatk).map                  { it -> [[id:it.Name], it] }.collect()
 ch_known_sites_tbi                                  = Channel.fromPath(params.known_sites_tbi).map              { it -> [[id:it.Name], it] }.collect()
 ch_intervals_gunzip                                 = Channel.fromPath(params.intervals_bed_gunzip).map         { it -> [[id:it.Name], it] }.collect()
 ch_intervals_gunzip_index                           = Channel.fromPath(params.intervals_bed_gunzip_index).map   { it -> [[id:it.Name], it] }.collect()
-
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -567,7 +567,7 @@ workflow MSTINN {
     // MODULE: HaplotypeCaller from GATK4 (Calls germline SNPs and indels via local re-assembly of haplotypes.)
     //
 
-    GATK4_HAPLOTYPECALLER(ch_metfai, ch_metdct, ch_known_sites, ch_metref, ch_known_sites_tbi, ch_intervals, ch_bam_clipped)
+    GATK4_HAPLOTYPECALLER(ch_metfai, ch_metdictgatk, ch_known_sites, ch_metref, ch_known_sites_tbi, ch_intervals, ch_bam_clipped)
     ch_versions  = ch_versions.mix(GATK4_HAPLOTYPECALLER.out.versions.ifEmpty(null))
     ch_haplotypecaller_raw = GATK4_HAPLOTYPECALLER.out.vcf
     ch_haplotypecaller_tbi = GATK4_HAPLOTYPECALLER.out.tbi
@@ -579,7 +579,7 @@ workflow MSTINN {
     //
     // MODULE: VariantFiltration from GATK4 (Filter variant calls based on certain criteria.)
     // 
-    GATK4_VARIANTFILTRATION(ch_haplotypecaller_vcf_tbi, ch_metref, ch_metfai, ch_metdct)
+    GATK4_VARIANTFILTRATION(ch_haplotypecaller_vcf_tbi, ch_metref, ch_metfai, ch_metdictgatk)
     ch_versions  = ch_versions.mix(GATK4_VARIANTFILTRATION.out.versions.ifEmpty(null))
     ch_final_vcf = GATK4_VARIANTFILTRATION.out.vcf
 
