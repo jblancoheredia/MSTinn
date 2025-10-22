@@ -246,7 +246,6 @@ workflow MSTINN {
         //
         MOSDEPTH_RAW(ch_bam_fcu_stix, ch_metref, ch_metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
         ch_versions = ch_versions.mix(MOSDEPTH_RAW.out.versions.first())
-        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_RAW.out.summary_txt)
 
         //
         // MODULE: Run Picard's Collect HS Metrics for raw BAM files
@@ -401,7 +400,6 @@ workflow MSTINN {
         //
         MOSDEPTH_CON(ch_bam_con_stix, ch_metref, params.metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
         ch_versions = ch_versions.mix(MOSDEPTH_CON.out.versions.first())
-        ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH_CON.out.summary_txt)
 
         //
         // MODULE: Run MosDepth
