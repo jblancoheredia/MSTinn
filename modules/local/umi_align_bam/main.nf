@@ -138,6 +138,7 @@ process ALIGN_BAM_CON {
             fgbio_mem_gb = task.memory.giga - 1
         }
     }
+    fgbio_zipper_bams_compression = 1
     """
     samtools fastq \\
       -n \\
