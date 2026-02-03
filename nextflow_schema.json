@@ -267,6 +267,7 @@
                 "metref": { "type": "string", "format": "file-path", "description": "Methylation reference file." },
                 "metbed": { "type": "string", "format": "file-path", "description": "Methylation BED file." },
                 "metfai": { "type": "string", "format": "file-path", "description": "Methylation FASTA index file." },
+                "metdictgatk": { "type": "string", "format": "file-path", "description": "Methylation GATK sequence dictionary file." },
                 "bwa": { "type": "string", "format": "directory-path", "description": "BWA reference directory." },
                 "fai": { "type": "string", "format": "file-path", "description": "Genome FASTA index file." },
                 "msi": { "type": "string", "format": "file-path", "description": "Genome FASTA msisensor scan file." },

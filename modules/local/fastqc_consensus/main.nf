@@ -26,8 +26,8 @@ process FASTQC_CONSENSUS {
     def rename_to = old_new_pairs*.join(' ').join(' ')
     def renamed_files = old_new_pairs.collect{ old_name, new_name -> new_name }.join(' ')
 
-    def memory_in_mb = MemoryUnit.of("${task.memory}").toUnit('MB')
-    // FastQC memory value allowed range (100 - 10000)
+    def task_memory = task.memory instanceof Closure ? task.memory.call() : task.memory
+    def memory_in_mb = task_memory ? (task_memory instanceof MemoryUnit ? task_memory.toUnit('MB') : MemoryUnit.of(task_memory.toString()).toUnit('MB')) : null
     def fastqc_memory = memory_in_mb > 10000 ? 10000 : (memory_in_mb < 100 ? 100 : memory_in_mb)
 
     """
