@@ -19,13 +19,6 @@
                             "modules"
                         ]
                     },
-                    "fgbio/callduplexconsensusreads": {
-                        "branch": "master",
-                        "git_sha": "6d6019016541f1e33efcdcd5f5fd731fef288bc2",
-                        "installed_by": [
-                            "modules"
-                        ]
-                    },
                     "fgbio/fastqtobam": {
                         "branch": "master",
                         "git_sha": "6d6019016541f1e33efcdcd5f5fd731fef288bc2",
