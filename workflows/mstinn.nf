@@ -213,7 +213,7 @@ workflow MSTINN {
         //
         // MODULE: Run fgbio correctumis
         //
-        FGBIO_CORRECTUMIS(ch_raw_bam, params.correct_max_mismatch, params.correct_min_distance, params.correct_min_corrected, params.correct_revcomp)
+        FGBIO_CORRECTUMIS(ch_raw_bam, params.correct_revcomp, params.correct_max_mismatch, params.correct_min_distance, params.correct_min_corrected)
         ch_multiqc_files = ch_multiqc_files.mix(FGBIO_CORRECTUMIS.out.metrics.map{it[1]}.collect())
         ch_versions = ch_versions.mix(FGBIO_CORRECTUMIS.out.versions.first())
         ch_bam_fcu = FGBIO_CORRECTUMIS.out.bam
