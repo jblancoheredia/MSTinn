@@ -9,6 +9,7 @@ process FGBIO_CORRECTUMIS {
 
     input:
     tuple val(meta), path(bam)
+    val(revcomp)
     val(max_mismatch)
     val(min_distance)
     val(min_corrected)
@@ -36,6 +37,7 @@ process FGBIO_CORRECTUMIS {
         --compression=1 \\
         CorrectUmis \\
         -i ${bam} \\
+        --revcomp=${revcomp} \\
         -o ${prefix}.mapped.fixedUMI.bam \\
         --max-mismatches=${max_mismatch} \\
         --min-distance=${min_distance} \\
