@@ -59,7 +59,7 @@ include { ASTAIR_BEDTOOLS_INTERSECT     	                            } from '../
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
 include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '../modules/local/picard/collectmultiplemetrics/main'
-include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/nf-core/fgbio/callduplexconsensusreads/main'
+include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/local/fgbio/callduplexconsensusreads/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 
