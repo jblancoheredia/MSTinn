@@ -307,7 +307,7 @@
                 "f2b_read_structure": { "type": "string", "description": "Read structure (default: 3M2S+T 3M2S+T)" },
                 "correct_max_mismatch": { "type": "integer", "description": "Maximum mismatches allowed for correction (default: 1)" },
                 "correct_min_distance": { "type": "integer", "description": "Minimum distance for correction (default: 1)" },
-                "correct_min_corrected": { "type": "integer", "description": "Minimum fraction corrected (default: 0.5)" },
+                "correct_min_corrected": { "type": "number", "description": "Minimum fraction corrected (default: 0.5)" },
                 "correct_revcomp": { "type": "boolean", "description": "Reverse complement the UMIs in the BAM file prior to correcting (default: false)" },
                 "group_edits": { "type": "integer", "description": "Number of edits for grouping (default: 0)" },
                 "group_strategy": { "type": "string", "description": "Grouping strategy (default: paired)" },
