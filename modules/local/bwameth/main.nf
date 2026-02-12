@@ -12,8 +12,8 @@ process BWA_METH {
     tuple val(meta3), path(fasta)
 
     output:
-    tuple val(meta), path("*.bam"), emit: bam
-    path  "versions.yml"          , emit: versions
+    tuple val(meta), path("*.bam"), path("*.bai"), emit: bam
+    path  "versions.yml"                         , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -30,6 +30,8 @@ process BWA_METH {
         $reads \\
         | samtools sort $args2 -@ ${task.cpus-1} -o ${prefix}_sorted.bam -
 
+    samtools index ${prefix}_sorted.bam
+
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         bwameth: \$(bwameth.py --version | cut -f2 -d" ")
@@ -40,6 +42,7 @@ process BWA_METH {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     touch ${prefix}_sorted.bam
+    touch ${prefix}_sorted.bai
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
