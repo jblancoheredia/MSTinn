@@ -34,6 +34,7 @@ include { SAMTOOLS_INDEX                	                            } from '../
 include { PRESEQ_LCEXTRAP                                               } from '../modules/local/preseq/lcextrap/main'
 include { SENTIEON_BWAMEM                                               } from '../modules/nf-core/sentieon/bwamem/main'
 include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
+include { COLLECTHSMETRICS                                              } from '../modules/local/picard/collecthsmetrics/main'
 include { FASTQC_CONSENSUS                                              } from '../modules/local/fastqc_consensus/main'
 include { FGBIO_FASTQTOBAM                                              } from '../modules/nf-core/fgbio/fastqtobam/main'
 include { FGBIO_SORTCONBAM                                              } from '../modules/local/fgbio/sortconbam/main.nf'
@@ -43,7 +44,6 @@ include { FGBIO_CORRECTUMIS                                             } from '
 include { COLLECT_UMI_METRICS                                           } from '../modules/local/collect_umi_metrics/main'
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
-include { COLLECTHSMETRICS_DUP                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_CON                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_SIM                                          } from '../modules/local/picard/collecthsmetrics/main'
@@ -439,7 +439,7 @@ workflow MSTINN {
         // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
         //
         COLLECTHSMETRICS_SIM(ch_bam_sim_stix, ch_metref, ch_metfai, ch_metdct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
-        ch_versions = ch_versions.mix(COLLECTHSMETRICS_DUP.out.versions.first())
+        ch_versions = ch_versions.mix(COLLECTHSMETRICS_SIM.out.versions.first())
         ch_coverage_con  = COLLECTHSMETRICS_SIM.out.coverage
         ch_hsmetrics_con = COLLECTHSMETRICS_SIM.out.hsmetrics
 
@@ -533,6 +533,21 @@ workflow MSTINN {
     ch_versions = ch_versions.mix(SAMTOOLS_INDEX.out.versions.first())
     ch_bam_mapped_targeted_indexed = PREP_BEDTOOLS_INTERSECT.out.bam.join(SAMTOOLS_INDEX.out.bai)
     
+    //
+    // MODULE: Run Picard Tool CollectMultipleMetrics
+    //
+    PICARD_COLLECTMULTIPLEMETRICS(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
+    ch_multiqc_files = ch_multiqc_files.mix(PICARD_COLLECTMULTIPLEMETRICS.out.metrics.map{it[1]}.collect())
+    ch_versions = ch_versions.mix(PICARD_COLLECTMULTIPLEMETRICS.out.versions.first())
+
+    //
+    // MODULE: Run Picard's Collect HS Metrics for consensus BAM files
+    //
+    COLLECTHSMETRICS(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_metdct, params.hsmetrics_baits, params.hsmetrics_trgts, params.seq_library)
+    ch_versions = ch_versions.mix(COLLECTHSMETRICS.out.versions.first())
+    ch_coverage_con  = COLLECTHSMETRICS.out.coverage
+    ch_hsmetrics_con = COLLECTHSMETRICS.out.hsmetrics
+
     //
     // MODULE: Run rasTair
     //
