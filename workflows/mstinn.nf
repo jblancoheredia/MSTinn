@@ -45,6 +45,7 @@ include { COLLECT_UMI_METRICS                                           } from '
 include { DOWNSAMPLINGS_COUNT                                           } from '../modules/local/downsamplings/count'
 include { DOWNSAMPLINGS_SEQTK                                           } from '../modules/local/downsamplings/seqtk'
 include { COLLECTHSMETRICS_CON                                          } from '../modules/local/picard/collecthsmetrics/main'
+include { COLLECTHSMETRICS_DUP                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_RAW                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { COLLECTHSMETRICS_SIM                                          } from '../modules/local/picard/collecthsmetrics/main'
 include { GATK4_MARKDUPLICATES          	                            } from '../modules/local/gatk4/markduplicates/main'
@@ -446,7 +447,7 @@ workflow MSTINN {
         //
         // MODULE: Run MSI Sensor PRO
         ///
-        MSISENSORPRO_CON(ch_bam_dup_stix, ch_msi)
+        MSISENSORPRO_CON(ch_bam_con_stix, ch_msi)
         ch_versions = ch_versions.mix(MSISENSORPRO_CON.out.versions.first())
         ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_CON.out.summary.map{it[1]}.collect())
         ch_multiqc_files = ch_multiqc_files.mix(MSISENSORPRO_CON.out.msi_uns.map{it[1]}.collect())
