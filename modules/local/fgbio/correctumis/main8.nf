@@ -2,13 +2,14 @@ process FGBIO_CORRECTUMIS {
     tag "$meta.id"
     label 'process_high'
 
-    conda "bioconda::fgbio=2.2.1"
+    conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/fgbio:2.2.1--hdfd78af_0' :
-        'quay.io/biocontainers/fgbio:2.2.1--hdfd78af_0' }"
+        'https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/fe/fe9479adc5e6e0a1c125d346fdfa0dd313834249e9c55c40e8d44ec3a48c6559/data' :
+        'community.wave.seqera.io/library/fgbio:3.1.1--6c9a88faf1d62b6c' }"
 
     input:
     tuple val(meta), path(bam)
+    val(revcomp)
     val(max_mismatch)
     val(min_distance)
     val(min_corrected)
@@ -36,6 +37,7 @@ process FGBIO_CORRECTUMIS {
         --compression=1 \\
         CorrectUmis \\
         -i ${bam} \\
+        --revcomp=${revcomp} \\
         -o ${prefix}.mapped.fixedUMI.bam \\
         --max-mismatches=${max_mismatch} \\
         --min-distance=${min_distance} \\
