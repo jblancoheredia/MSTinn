@@ -60,6 +60,7 @@ include { ASTAIR_BEDTOOLS_INTERSECT     	                            } from '../
 include { FGBIO_FILTERCONSENSUSREADS                                    } from '../modules/local/fgbio/filterconsensusreads/main'
 include { FGBIO_COLLECTDUPLEXSEQMETRICS                                 } from '../modules/local/fgbio/collectduplexseqmetrics/main'
 include { PICARD_COLLECTMULTIPLEMETRICS                                 } from '../modules/local/picard/collectmultiplemetrics/main'
+include { PICARD_COLLECTMULTIPLEMETRICS as COLLECTMULTIPLEMETRICS       } from '../modules/local/picard/collectmultiplemetrics/main'
 include { FGBIO_CALLDUPLEXCONSENSUSREADS                                } from '../modules/local/fgbio/callduplexconsensusreads/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_CON                             } from '../modules/local/fgbio/errorratebyreadposition/main'
 include { FGBIO_ERRORRATEBYREADPOSITION_RAW                             } from '../modules/local/fgbio/errorratebyreadposition/main'
@@ -231,9 +232,9 @@ workflow MSTINN {
         //
         // MODULE: Run Picard Tool CollectMultipleMetrics
         //
-        PICARD_COLLECTMULTIPLEMETRICS(ch_bam_fcu_stix, ch_metref, ch_metfai)
-        ch_multiqc_files = ch_multiqc_files.mix(PICARD_COLLECTMULTIPLEMETRICS.out.metrics.map{it[1]}.collect())
-        ch_versions = ch_versions.mix(PICARD_COLLECTMULTIPLEMETRICS.out.versions.first())
+        COLLECTMULTIPLEMETRICS(ch_bam_fcu_stix, ch_metref, ch_metfai)
+        ch_multiqc_files = ch_multiqc_files.mix(COLLECTMULTIPLEMETRICS.out.metrics.map{it[1]}.collect())
+        ch_versions = ch_versions.mix(COLLECTMULTIPLEMETRICS.out.versions.first())
 
         //
         // MODULE: Run ErrorRateByReadPosition 
