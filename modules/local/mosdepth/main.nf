@@ -16,6 +16,7 @@ process MOSDEPTH {
     path(bed_index)
 
     output:
+    tuple val(meta), path('*.tsv')                  , emit: tsv
     tuple val(meta), path('*.global.dist.txt')      , emit: global_txt
     tuple val(meta), path('*.summary.txt')          , emit: summary_txt
     tuple val(meta), path('*.region.dist.txt')      , optional:true, emit: regions_txt
@@ -53,6 +54,8 @@ process MOSDEPTH {
         $args \\
         $prefix \\
         $bam
+
+    run_normalize_wgs_coverage.sh ${prefix}.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -138,6 +141,8 @@ process MOSDEPTH_RAW {
         ${prefix}.raw \\
         ${bam}
 
+    run_normalize_wgs_coverage.sh ${prefix}.raw.mosdepth.summary.txt
+
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         mosdepth: \$(mosdepth --version 2>&1 | sed 's/^.*mosdepth //; s/ .*\$//')
@@ -219,8 +224,10 @@ process MOSDEPTH_CON {
         ${interval} \\
         ${reference} \\
         ${args} \\
-        ${prefix}.final \\
+        ${prefix}.con \\
         ${bam}
+
+    run_normalize_wgs_coverage.sh ${prefix}.con.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -231,18 +238,18 @@ process MOSDEPTH_CON {
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    touch ${prefix}.final.global.dist.txt
-    touch ${prefix}.final.region.dist.txt
-    touch ${prefix}.final.summary.txt
-    touch ${prefix}.final.per-base.d4
-    echo "" | gzip > ${prefix}.final.per-base.bed.gz
-    touch ${prefix}.final.per-base.bed.gz.csi
-    echo "" | gzip > ${prefix}.final.regions.bed.gz
-    touch ${prefix}.final.regions.bed.gz.csi
-    echo "" | gzip > ${prefix}.final.quantized.bed.gz
-    touch ${prefix}.final.quantized.bed.gz.csi
-    echo "" | gzip > ${prefix}.final.thresholds.bed.gz
-    touch ${prefix}.final.thresholds.bed.gz.csi
+    touch ${prefix}.con.global.dist.txt
+    touch ${prefix}.con.region.dist.txt
+    touch ${prefix}.con.summary.txt
+    touch ${prefix}.con.per-base.d4
+    echo "" | gzip > ${prefix}.con.per-base.bed.gz
+    touch ${prefix}.con.per-base.bed.gz.csi
+    echo "" | gzip > ${prefix}.con.regions.bed.gz
+    touch ${prefix}.con.regions.bed.gz.csi
+    echo "" | gzip > ${prefix}.con.quantized.bed.gz
+    touch ${prefix}.con.quantized.bed.gz.csi
+    echo "" | gzip > ${prefix}.con.thresholds.bed.gz
+    touch ${prefix}.con.thresholds.bed.gz.csi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -303,8 +310,10 @@ process MOSDEPTH_DUP {
         ${interval} \\
         ${reference} \\
         ${args} \\
-        ${prefix}.duplex \\
+        ${prefix}.dup \\
         ${bam}
+
+    run_normalize_wgs_coverage.sh ${prefix}.dup.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -315,18 +324,18 @@ process MOSDEPTH_DUP {
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    touch ${prefix}.duplex.global.dist.txt
-    touch ${prefix}.duplex.region.dist.txt
-    touch ${prefix}.duplex.summary.txt
-    touch ${prefix}.duplex.per-base.d4
-    echo "" | gzip > ${prefix}.duplex.per-base.bed.gz
-    touch ${prefix}.duplex.per-base.bed.gz.csi
-    echo "" | gzip > ${prefix}.duplex.regions.bed.gz
-    touch ${prefix}.duplex.regions.bed.gz.csi
-    echo "" | gzip > ${prefix}.duplex.quantized.bed.gz
-    touch ${prefix}.duplex.quantized.bed.gz.csi
-    echo "" | gzip > ${prefix}.duplex.thresholds.bed.gz
-    touch ${prefix}.duplex.thresholds.bed.gz.csi
+    touch ${prefix}.dup.global.dist.txt
+    touch ${prefix}.dup.region.dist.txt
+    touch ${prefix}.dup.summary.txt
+    touch ${prefix}.dup.per-base.d4
+    echo "" | gzip > ${prefix}.dup.per-base.bed.gz
+    touch ${prefix}.dup.per-base.bed.gz.csi
+    echo "" | gzip > ${prefix}.dup.regions.bed.gz
+    touch ${prefix}.dup.regions.bed.gz.csi
+    echo "" | gzip > ${prefix}.dup.quantized.bed.gz
+    touch ${prefix}.dup.quantized.bed.gz.csi
+    echo "" | gzip > ${prefix}.dup.thresholds.bed.gz
+    touch ${prefix}.dup.thresholds.bed.gz.csi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -387,8 +396,10 @@ process MOSDEPTH_SIM {
         ${interval} \\
         ${reference} \\
         ${args} \\
-        ${prefix}.simplex \\
+        ${prefix}.sim \\
         ${bam}
+
+    run_normalize_wgs_coverage.sh ${prefix}.sim.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -399,18 +410,18 @@ process MOSDEPTH_SIM {
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    touch ${prefix}.simplex.global.dist.txt
-    touch ${prefix}.simplex.region.dist.txt
-    touch ${prefix}.simplex.summary.txt
-    touch ${prefix}.simplex.per-base.d4
-    echo "" | gzip > ${prefix}.simplex.per-base.bed.gz
-    touch ${prefix}.simplex.per-base.bed.gz.csi
-    echo "" | gzip > ${prefix}.simplex.regions.bed.gz
-    touch ${prefix}.simplex.regions.bed.gz.csi
-    echo "" | gzip > ${prefix}.simplex.quantized.bed.gz
-    touch ${prefix}.simplex.quantized.bed.gz.csi
-    echo "" | gzip > ${prefix}.simplex.thresholds.bed.gz
-    touch ${prefix}.simplex.thresholds.bed.gz.csi
+    touch ${prefix}.sim.global.dist.txt
+    touch ${prefix}.sim.region.dist.txt
+    touch ${prefix}.sim.summary.txt
+    touch ${prefix}.sim.per-base.d4
+    echo "" | gzip > ${prefix}.sim.per-base.bed.gz
+    touch ${prefix}.sim.per-base.bed.gz.csi
+    echo "" | gzip > ${prefix}.sim.regions.bed.gz
+    touch ${prefix}.sim.regions.bed.gz.csi
+    echo "" | gzip > ${prefix}.sim.quantized.bed.gz
+    touch ${prefix}.sim.quantized.bed.gz.csi
+    echo "" | gzip > ${prefix}.sim.thresholds.bed.gz
+    touch ${prefix}.sim.thresholds.bed.gz.csi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -473,6 +484,8 @@ process MOSDEPTH_DR {
         $args \\
         $prefix \\
         $bam
+
+    run_normalize_wgs_coverage.sh ${prefix}.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
