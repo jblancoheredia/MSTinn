@@ -248,7 +248,7 @@ workflow MSTINN {
         //
         // MODULE: Run MosDepth
         //
-        MOSDEPTH_RAW(ch_bam_fcu_stix, ch_metref, ch_metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        MOSDEPTH_RAW(ch_bam_fcu_stix, ch_metref, ch_metfai, params.intervals_bed_gunzip_index, params.intervals_bed_gunzip)
         ch_versions = ch_versions.mix(MOSDEPTH_RAW.out.versions.first())
 
         //
@@ -402,19 +402,19 @@ workflow MSTINN {
         //
         // MODULE: Run MosDepth
         //
-        MOSDEPTH_CON(ch_bam_con_stix, ch_metref, params.metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        MOSDEPTH_CON(ch_bam_con_stix, ch_metref, ch_metfai, params.intervals_bed_gunzip_index, params.intervals_bed_gunzip)
         ch_versions = ch_versions.mix(MOSDEPTH_CON.out.versions.first())
 
         //
         // MODULE: Run MosDepth
         //
-        MOSDEPTH_DUP(ch_bam_dup_stix, ch_metref, params.metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        MOSDEPTH_DUP(ch_bam_dup_stix, ch_metref, ch_metfai, params.intervals_bed_gunzip_index, params.intervals_bed_gunzip)
         ch_versions = ch_versions.mix(MOSDEPTH_DUP.out.versions.first())
 
         //
         // MODULE: Run MosDepth
         //
-        MOSDEPTH_SIM(ch_bam_sim_stix, ch_metref, params.metfai, params.intervals_bed_gunzip, params.intervals_bed_gunzip_index)
+        MOSDEPTH_SIM(ch_bam_sim_stix, ch_metref, ch_metfai, params.intervals_bed_gunzip_index, params.intervals_bed_gunzip)
         ch_versions = ch_versions.mix(MOSDEPTH_SIM.out.versions.first())
 
         //
@@ -551,9 +551,7 @@ workflow MSTINN {
     //
     // MODULE: Run MosDepth
     //
-    ch_bam_raw_mosdepth = ch_bam_mapped_targeted_indexed.map { meta, bam, bai -> tuple(meta, bam) }
-    ch_bai_raw_mosdepth = ch_bam_mapped_targeted_indexed.map { meta, bam, bai -> tuple(meta, bai) }
-    MOSDEPTH(ch_bam_raw_mosdepth, ch_bai_raw_mosdepth, ch_fasta, params.metfai, params.mosdepth_canonical_exomes)
+    MOSDEPTH(ch_bam_mapped_targeted_indexed, ch_fasta, ch_fai, params.mosdepth_canonical_exomes, params.mosdepth_canonical_exomes_index)
     ch_versions = ch_versions.mix(MOSDEPTH.out.versions.first())
     ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH.out.summary_txt)
 
