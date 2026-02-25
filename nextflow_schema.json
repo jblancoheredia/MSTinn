@@ -293,6 +293,7 @@
                 "intervals_bed_gunzip": { "type": "string", "format": "file-path", "description": "Intervals BED gzipped file." },
                 "normal_uncollapsed_bam": { "type": "string", "format": "file-path", "description": "Normal uncollapsed BAM file." },
                 "normal_uncollapsed_bai": { "type": "string", "format": "file-path", "description": "Normal uncollapsed BAI file." },
+                "mosdepth_canonical_exomes": { "type": "string", "format": "file-path", "description": "MANE canonical exons file." },
                 "intervals_bed_gunzip_index": { "type": "string", "format": "file-path", "description": "Intervals BED gzipped index file." }
             }
         },

@@ -18,6 +18,7 @@ include { ASTAIR                        	                            } from '../
 include { MULTIQC                                                       } from '../modules/nf-core/multiqc/main'
 include { BWAMEM2                                                       } from '../modules/local/bwamem2/main'
 include { BWA_METH                 	                                    } from '../modules/local/bwameth/main'
+include { MOSDEPTH                                                      } from '../modules/local/mosdepth/main'
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
 include { SAMBLASTER                                                    } from '../modules/local/samblaster/main'
 include { MOSDEPTH_DUP                                                  } from '../modules/local/mosdepth/main'
@@ -31,6 +32,7 @@ include { FGBIO_CLIPBAM                                                 } from '
 include { PRESEQ_CCURVE                                                 } from '../modules/local/preseq/ccurve/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
+include { SAMTOOLS_STATS                                                } from '../modules/local/samtools/stats/main'
 include { PRESEQ_LCEXTRAP                                               } from '../modules/local/preseq/lcextrap/main'
 include { SENTIEON_BWAMEM                                               } from '../modules/nf-core/sentieon/bwamem/main'
 include { UMI_READ_COUNTS                                               } from '../modules/local/umi_read_counts/main'
@@ -535,6 +537,22 @@ workflow MSTINN {
     ch_versions = ch_versions.mix(SAMTOOLS_INDEX.out.versions.first())
     ch_bam_mapped_targeted_indexed = PREP_BEDTOOLS_INTERSECT.out.bam.join(SAMTOOLS_INDEX.out.bai)
     
+    //
+    // MODULE: Run SAMtools Stats
+    //
+    SAMTOOLS_STATS(ch_bam_mapped_targeted_indexed, ch_fasta)
+    ch_multiqc_files = ch_multiqc_files.mix(SAMTOOLS_STATS.out.stats)
+    ch_versions = ch_versions.mix(SAMTOOLS_STATS.out.versions.first())
+
+    //
+    // MODULE: Run MosDepth
+    //
+    ch_bam_raw_mosdepth = ch_bam_mapped_targeted_indexed.map { meta, bam, bai -> tuple(meta, bam) }
+    ch_bai_raw_mosdepth = ch_bam_mapped_targeted_indexed.map { meta, bam, bai -> tuple(meta, bai) }
+    MOSDEPTH(ch_bam_raw_mosdepth, ch_bai_raw_mosdepth, ch_fasta, params.fai, params.mosdepth_canonical_exomes)
+    ch_versions = ch_versions.mix(MOSDEPTH.out.versions.first())
+    ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH.out.summary_txt)
+
     //
     // MODULE: Run Picard Tool CollectMultipleMetrics
     //
