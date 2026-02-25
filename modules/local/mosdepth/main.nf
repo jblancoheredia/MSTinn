@@ -54,7 +54,7 @@ process MOSDEPTH {
         $prefix \\
         $bam
 
-    run_normalize_wgs_coverage.sh ${prefix}.mosdepth.summary.txt
+    # run_normalize_wgs_coverage.sh ${prefix}.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
