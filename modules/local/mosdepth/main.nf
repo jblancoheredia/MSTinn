@@ -35,23 +35,12 @@ process MOSDEPTH {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
-    def reference = fasta ? "--fasta ${fasta}" : ""
-    def interval = bed ? "--by ${bed}" : ""
-    if (bed && args.contains("--by")) {
-        error "'--by' can only be specified once when running mosdepth! Either remove input BED file definition or remove '--by' from 'ext.args' definition"
-    }
-    if (!bed && args.contains("--thresholds")) {
-        error "'--thresholds' can only be specified in conjunction with '--by'"
-    }
-
     """
     mosdepth \\
-        --threads $task.cpus \\
-        $interval \\
-        $reference \\
-        $args \\
-        $prefix \\
-        $bam
+        --threads ${task.cpus} \\
+        --by ${bed} \\
+        ${prefix} \\
+        ${bam}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -63,17 +52,7 @@ process MOSDEPTH {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     touch ${prefix}.global.dist.txt
-    touch ${prefix}.region.dist.txt
     touch ${prefix}.summary.txt
-    touch ${prefix}.per-base.d4
-    echo "" | gzip > ${prefix}.per-base.bed.gz
-    touch ${prefix}.per-base.bed.gz.csi
-    echo "" | gzip > ${prefix}.regions.bed.gz
-    touch ${prefix}.regions.bed.gz.csi
-    echo "" | gzip > ${prefix}.quantized.bed.gz
-    touch ${prefix}.quantized.bed.gz.csi
-    echo "" | gzip > ${prefix}.thresholds.bed.gz
-    touch ${prefix}.thresholds.bed.gz.csi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
