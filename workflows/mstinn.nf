@@ -553,7 +553,7 @@ workflow MSTINN {
     //
     ch_bam_raw_mosdepth = ch_bam_mapped_targeted_indexed.map { meta, bam, bai -> tuple(meta, bam) }
     ch_bai_raw_mosdepth = ch_bam_mapped_targeted_indexed.map { meta, bam, bai -> tuple(meta, bai) }
-    MOSDEPTH(ch_bam_raw_mosdepth, ch_bai_raw_mosdepth, ch_fasta, params.fai, params.mosdepth_canonical_exomes)
+    MOSDEPTH(ch_bam_raw_mosdepth, ch_bai_raw_mosdepth, ch_fasta, params.metfai, params.mosdepth_canonical_exomes)
     ch_versions = ch_versions.mix(MOSDEPTH.out.versions.first())
     ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH.out.summary_txt)
 
