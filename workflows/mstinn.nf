@@ -500,6 +500,8 @@ workflow MSTINN {
             BWA_METH(ch_fastqs, ch_metdir, ch_metref)
             ch_versions = ch_versions.mix(BWA_METH.out.versions.first())
             ch_bam_mapped = BWA_METH.out.bam
+            ch_fasta = ch_metref
+            ch_fai = ch_metfai
         } else if (params.aligner == 'bwa-mem2') {
             //
             // MODULE: Run BWA-MEM2
@@ -508,6 +510,8 @@ workflow MSTINN {
             BWAMEM2(ch_fastqs, ch_bwadir, ch_bwaref, ch_bwafai, sort_bam)
             ch_versions = ch_versions.mix(BWAMEM2.out.versions.first())
             ch_bam_mapped = BWAMEM2.out.bam
+            ch_fasta = ch_bwaref
+            ch_fai = ch_bwafai
         } else {
             error "Invalid aligner selected: ${params.aligner}. Please choose either 'bwa-meth' or 'bwa-mem2'"
         }
