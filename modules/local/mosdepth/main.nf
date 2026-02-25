@@ -8,13 +8,14 @@ process MOSDEPTH {
         'quay.io/biocontainers/mosdepth:0.3.8--hd299d5a_0'}"
 
     input:
-    tuple val(meta),  path(bam)
-    tuple val(meta1), path(bai)
+    tuple val(meta) , path(bam), path(bai)
     tuple val(meta2), path(fasta)
-    path(fai)
+    tuple val(meta3), path(fai)
+    path(bed_index)
     path(bed)
 
     output:
+    tuple val(meta), path('*.tsv')                  , emit: tsv
     tuple val(meta), path('*.global.dist.txt')      , emit: global_txt
     tuple val(meta), path('*.summary.txt')          , emit: summary_txt
     tuple val(meta), path('*.region.dist.txt')      , optional:true, emit: regions_txt
@@ -52,6 +53,8 @@ process MOSDEPTH {
         $args \\
         $prefix \\
         $bam
+
+    run_normalize_wgs_coverage.sh ${prefix}.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -92,9 +95,10 @@ process MOSDEPTH_RAW {
         'quay.io/biocontainers/mosdepth:0.3.8--hd299d5a_0'}"
 
     input:
-    tuple val(meta),  path(bam), path(bai)
+    tuple val(meta) , path(bam), path(bai)
     tuple val(meta2), path(fasta)
-    path(fai)
+    tuple val(meta3), path(fai)
+    path(bed_index)
     path(bed)
 
     output:
@@ -175,9 +179,10 @@ process MOSDEPTH_CON {
         'quay.io/biocontainers/mosdepth:0.3.8--hd299d5a_0'}"
 
     input:
-    tuple val(meta),  path(bam), path(bai)
+    tuple val(meta) , path(bam), path(bai)
     tuple val(meta2), path(fasta)
-    path(fai)
+    tuple val(meta3), path(fai)
+    path(bed_index)
     path(bed)
 
     output:
@@ -258,9 +263,10 @@ process MOSDEPTH_DUP {
         'quay.io/biocontainers/mosdepth:0.3.8--hd299d5a_0'}"
 
     input:
-    tuple val(meta),  path(bam), path(bai)
+    tuple val(meta) , path(bam), path(bai)
     tuple val(meta2), path(fasta)
-    path(fai)
+    tuple val(meta3), path(fai)
+    path(bed_index)
     path(bed)
 
     output:
@@ -341,9 +347,10 @@ process MOSDEPTH_SIM {
         'quay.io/biocontainers/mosdepth:0.3.8--hd299d5a_0'}"
 
     input:
-    tuple val(meta),  path(bam), path(bai)
+    tuple val(meta) , path(bam), path(bai)
     tuple val(meta2), path(fasta)
-    path(fai)
+    tuple val(meta3), path(fai)
+    path(bed_index)
     path(bed)
 
     output:
