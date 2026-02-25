@@ -294,7 +294,8 @@
                 "normal_uncollapsed_bam": { "type": "string", "format": "file-path", "description": "Normal uncollapsed BAM file." },
                 "normal_uncollapsed_bai": { "type": "string", "format": "file-path", "description": "Normal uncollapsed BAI file." },
                 "mosdepth_canonical_exomes": { "type": "string", "format": "file-path", "description": "MANE canonical exons file." },
-                "intervals_bed_gunzip_index": { "type": "string", "format": "file-path", "description": "Intervals BED gzipped index file." }
+                "intervals_bed_gunzip_index": { "type": "string", "format": "file-path", "description": "Intervals BED gzipped index file." },
+                "mosdepth_canonical_exomes_index": { "type": "string", "format": "file-path", "description": "MANE canonical exons index file." }
             }
         },
         "fgbio_umi_parameters": {
