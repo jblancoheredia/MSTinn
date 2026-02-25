@@ -15,7 +15,6 @@ process MOSDEPTH {
     path(bed)
 
     output:
-    tuple val(meta), path('*.tsv')                  , emit: tsv
     tuple val(meta), path('*.global.dist.txt')      , emit: global_txt
     tuple val(meta), path('*.summary.txt')          , emit: summary_txt
     tuple val(meta), path('*.region.dist.txt')      , optional:true, emit: regions_txt
@@ -53,8 +52,6 @@ process MOSDEPTH {
         $args \\
         $prefix \\
         $bam
-
-    # run_normalize_wgs_coverage.sh ${prefix}.mosdepth.summary.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
