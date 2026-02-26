@@ -545,7 +545,6 @@ workflow MSTINN {
     // MODULE: Run SAMtools Stats
     //
     SAMTOOLS_STATS(ch_bam_mapped_targeted_indexed, ch_fasta)
-    ch_multiqc_files = ch_multiqc_files.mix(SAMTOOLS_STATS.out.stats)
     ch_versions = ch_versions.mix(SAMTOOLS_STATS.out.versions.first())
 
     //
@@ -553,7 +552,6 @@ workflow MSTINN {
     //
     MOSDEPTH(ch_bam_mapped_targeted_indexed, ch_fasta, ch_fai, params.mosdepth_canonical_exomes_index, params.mosdepth_canonical_exomes)
     ch_versions = ch_versions.mix(MOSDEPTH.out.versions.first())
-    ch_multiqc_files = ch_multiqc_files.mix(MOSDEPTH.out.summary_txt)
 
     //
     // MODULE: Run Picard Tool CollectMultipleMetrics
