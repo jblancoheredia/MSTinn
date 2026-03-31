@@ -4,11 +4,11 @@ process COLLECTHSMETRICS {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/picard:3.3.0--hdfd78af_0' :
-        'quay.io/biocontainers/picard:3.3.0--hdfd78af_0' }"
+        'https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/08/0861295baa7c01fc593a9da94e82b44a729dcaf8da92be8e565da109aa549b25/data' :
+        'community.wave.seqera.io/library/picard:3.4.0--e9963040df0a9bf6'}"
 
     input:
-    tuple val(meta), path(bam), path(bai)
+    tuple val(meta) , path(bam), path(bai)
     tuple val(meta2), path(fasta)
     tuple val(meta3), path(fai)
     tuple val(meta4), path(dict)
@@ -53,8 +53,9 @@ process COLLECTHSMETRICS {
 
     """
 
-    $bait_intervallist_cmd
-    $target_intervallist_cmd
+    ${bait_intervallist_cmd}
+    
+    ${target_intervallist_cmd}
 
     picard \\
         -Xmx${avail_mem}M \\

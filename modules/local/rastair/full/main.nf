@@ -4,8 +4,8 @@ process RASTAIR_FULL {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/mstinn_rastair:2.0.0':
-        'blancojmskcc/mstinn_rastair:2.0.0' }"
+        'docker://blancojmskcc/mstinn_rastair:2.1.0':
+        'blancojmskcc/mstinn_rastair:2.1.0' }"
 
     input:
     tuple val(meta) , path(bam), path(bai)
@@ -21,6 +21,7 @@ process RASTAIR_FULL {
     tuple val(meta), path("*.pdf")  , optional:true , emit: pdf
     tuple val(meta), path("*.svg")  , optional:true , emit: svg
     tuple val(meta), path("*.jpeg") , optional:true , emit: jpeg
+    tuple val(meta), path("*.html")                 , emit: html
     tuple val(meta), path("*.mods")                 , emit: mods
     tuple val(meta), path("*.mbias")                , emit: mbias
     tuple val(meta), path("*_output.mods.summary")  , emit: summary
@@ -40,6 +41,12 @@ process RASTAIR_FULL {
         --fasta-file ${fasta} \\
         ${bam} \\
         >> ${prefix}_rastair_output.mbias
+
+    rastair \\
+        mbias \\
+        --fasta-file ${fasta} \\
+        --output-prefix ${prefix} \\
+        ${bam}
 
     cutoffs=\$(PyMbias \\
         -p ${prefix} \\
