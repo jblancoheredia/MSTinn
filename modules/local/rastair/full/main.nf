@@ -38,15 +38,15 @@ process RASTAIR_FULL {
     """
     rastair \\
         mbias \\
-        --fasta-file ${fasta} \\
-        ${bam} \\
+        --reference ${fasta} \\
+        --bam ${bam} \\
         >> ${prefix}_rastair_output.mbias
 
     rastair \\
         mbias \\
-        --fasta-file ${fasta} \\
+        --reference ${fasta} \\
         --output-prefix ${prefix} \\
-        ${bam}
+        --bam ${bam}
 
     cutoffs=\$(PyMbias \\
         -p ${prefix} \\
