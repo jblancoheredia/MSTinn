@@ -1,6 +1,6 @@
 process RASTAIR_FULL {
     tag "$meta.id"
-    label 'process_medium'
+    label 'process_high'
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
@@ -36,17 +36,20 @@ process RASTAIR_FULL {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
+    cp ${bam} input.bam
+    cp ${bai} input.bam.bai
+
     rastair \\
         mbias \\
         --reference ${fasta} \\
-        --bam ${bam} \\
+        --bam input.bam \\
         >> ${prefix}_rastair_output.mbias
 
     rastair \\
         mbias \\
         --reference ${fasta} \\
         --output-prefix ${prefix} \\
-        --bam ${bam}
+        --bam input.bam
 
     cutoffs=\$(PyMbias \\
         -p ${prefix} \\
@@ -62,8 +65,8 @@ process RASTAIR_FULL {
         -@ ${task.cpus} \\
         --nOT \$not \\
         --nOB \$nob \\
-        --fasta-file ${fasta} \\
-        ${bam} \\
+        --reference ${fasta} \\
+        input.bam \\
         >> ${prefix}_rastair_output.mods
 
     Summarize \\
@@ -85,8 +88,8 @@ process RASTAIR_FULL {
     rastair \\
         per-read \\
         -@ ${task.cpus} \\
-        --fasta-file ${fasta} \\
-        ${bam} \\
+        --reference ${fasta} \\
+        input.bam \\
         >> ${prefix}_rastair_output_perread.mods
 
     cat <<-END_VERSIONS > versions.yml
@@ -100,6 +103,7 @@ process RASTAIR_FULL {
     """
     touch ${prefix}.bam
     touch ${prefix}_cutoffs.tsv
+    touch ${prefix}_rastair_output.html
     touch ${prefix}_rastair_output.mods
     touch ${prefix}_rastair_output.mbias
     touch ${prefix}_rastair_output.mods.summary
