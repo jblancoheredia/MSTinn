@@ -39,6 +39,8 @@ process RASTAIR_FULL {
     cp ${bam} input.bam
     cp ${bai} input.bam.bai
 
+    mkdir -p ${prefix}
+
     rastair \\
         mbias \\
         --reference ${fasta} \\
