@@ -30,6 +30,7 @@ include { ALIGN_BAM_CON                                                 } from '
 include { ALIGN_BAM_RAW                                                 } from '../modules/local/umi_align_bam/main'
 include { FGBIO_CLIPBAM                                                 } from '../modules/local/fgbio/clipbam/main'
 include { PRESEQ_CCURVE                                                 } from '../modules/local/preseq/ccurve/main'
+include { RASTAIR_MBIAS                 	                            } from '../modules/local/rastair/mbias/main'
 include { FILTER_CONTIGS                                                } from '../modules/local/filter_contigs/main'
 include { SAMTOOLS_INDEX                	                            } from '../modules/nf-core/samtools/index/main'
 include { SAMTOOLS_STATS                                                } from '../modules/local/samtools/stats/main'
@@ -569,9 +570,18 @@ workflow MSTINN {
     ch_hsmetrics_con = COLLECTHSMETRICS.out.hsmetrics
 
     //
+    // MODULE: Run rasTair mBias
+    //
+    RASTAIR_MBIAS(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
+    ch_versions = ch_versions.mix(RASTAIR_MBIAS.out.versions.first())
+    ch_rastair_mbias = RASTAIR_MBIAS.out.mbias
+
+    //
     // MODULE: Run rasTair
     //
-    RASTAIR_FULL(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai, ch_metbed, params.pymbias_plot_type, params.pymbias_plot_ax_x, params.pymbias_plot_ax_y)
+    ch_rastair_full_input = ch_bam_mapped_targeted_indexed
+                            .join(ch_rastair_mbias)
+    RASTAIR_FULL(ch_rastair_full_input, ch_metref, ch_metfai, ch_metbed, params.pymbias_plot_type, params.pymbias_plot_ax_x, params.pymbias_plot_ax_y)
     ch_versions = ch_versions.mix(RASTAIR_FULL.out.versions.first())
     ch_rastair_mods = RASTAIR_FULL.out.mods
     

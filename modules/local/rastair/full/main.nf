@@ -8,7 +8,7 @@ process RASTAIR_FULL {
         'blancojmskcc/mstinn_rastair:2.1.0' }"
 
     input:
-    tuple val(meta) , path(bam), path(bai)
+    tuple val(meta) , path(bam), path(bai), path(mbias)
     tuple val(meta1), path(fasta)
     tuple val(meta2), path(fasta_fai)
     tuple val(meta3), path(intervals)
@@ -23,7 +23,6 @@ process RASTAIR_FULL {
     tuple val(meta), path("*.jpeg") , optional:true , emit: jpeg
     tuple val(meta), path("*.html")                 , emit: html
     tuple val(meta), path("*.mods")                 , emit: mods
-    tuple val(meta), path("*.mbias")                , emit: mbias
     tuple val(meta), path("*_output.mods.summary")  , emit: summary
     tuple val(meta), path("*_output_perread.mods")  , emit: perread
     tuple val(meta), path("*.targeted.mods.summary"), emit: targeted_summary
@@ -44,12 +43,6 @@ process RASTAIR_FULL {
     rastair \\
         mbias \\
         --reference ${fasta} \\
-        --bam input.bam \\
-        >> ${prefix}_rastair_output.mbias
-
-    rastair \\
-        mbias \\
-        --reference ${fasta} \\
         --output-prefix ${prefix} \\
         --bam input.bam
 
@@ -58,7 +51,7 @@ process RASTAIR_FULL {
         -s ${plot_type} \\
         -x ${plot_ax_x} \\
         -y ${plot_ax_y} \\
-        ${prefix}_rastair_output.mbias)
+        ${mbias})
 
     eval "\$cutoffs"
 
