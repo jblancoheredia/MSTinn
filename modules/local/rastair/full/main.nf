@@ -65,8 +65,8 @@ process RASTAIR_FULL {
         >> ${prefix}_rastair_output.mods
 
     Summarize \\
-        --rastair_in  ${prefix}_rastair_output.mods \\
-        --summary_out ${prefix}_rastair_output.mods.summary
+        -i ${prefix}_rastair_output.mods \\
+        -o ${prefix}_rastair_output.mods.summary
 
     bedtools \\
         intersect \\
@@ -77,8 +77,8 @@ process RASTAIR_FULL {
         > ${prefix}_rastair_output.targeted.mods
 
     Summarize \\
-        --rastair_in  ${prefix}_rastair_output.targeted.mods \\
-        --summary_out ${prefix}_rastair_output.targeted.mods.summary
+        -i ${prefix}_rastair_output.targeted.mods \\
+        -o ${prefix}_rastair_output.targeted.mods.summary
 
     rastair \\
         per-read \\
