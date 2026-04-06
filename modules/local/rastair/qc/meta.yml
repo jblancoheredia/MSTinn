@@ -1,0 +1,60 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/modules/meta-schema.json
+name: "rastair_qc"
+description: Produce a QC report in html format including Mbias, Vbias & CG-Coverage
+keywords:
+  - qc
+  - methylation
+  - taps
+tools:
+  - "rastair":
+      description: "Rastair is a command-line tool that allows the simultaneous detection of genetic variants and methylated positions from short-read sequencing data that was generated using a 'mod-C→T' method, such as TAPS or Illumina's 5Base technology."
+      homepage: "https://www.rastair.com/"
+      documentation: "https://www.rastair.com/installation.html"
+      tool_dev_url: "https://bitbucket.org/bsblabludwig/rastair.git"
+      doi: "https://doi.org/10.64898/2026.03.19.712983"
+      licence: 
+      identifier:
+
+input:
+  - - meta:
+        type: map
+        description: |
+          Groovy Map containing sample information
+          e.g. `[ id:'sample1' ]`
+    - bam:
+        type: file
+        description: Sorted BAM file
+        pattern: "*.bam"
+        ontologies:
+          - edam: "http://edamontology.org/format_2572"
+    - bai:
+        type: file
+        description: Index BAM file
+        pattern: "*.bai"
+        ontologies:
+          - edam: "http://edamontology.org/format_2572"
+
+output:
+  - html:
+      - meta:
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'sample1' ]`
+      - "*.html":
+          type: file
+          description: QC report file
+          pattern: "*.html"
+          ontologies:
+            - edam: "http://edamontology.org/format_2572" # TODO
+  - versions:
+      - "versions.yml":
+          type: file
+          description: File containing software versions
+          pattern: "versions.yml"
+
+authors:
+  - "@jblancoheredia"
+maintainers:
+  - "@jblancoheredia"

@@ -1,14 +1,14 @@
 process RASTAIR_FULL {
     tag "$meta.id"
-    label 'process_high'
+    label 'process_medium'
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/mstinn_rastair:2.1.0':
-        'blancojmskcc/mstinn_rastair:2.1.0' }"
+        'docker://blancojmskcc/mstinn_rastair:2.0.0':
+        'blancojmskcc/mstinn_rastair:2.0.0' }"
 
     input:
-    tuple val(meta) , path(bam), path(bai), path(mbias)
+    tuple val(meta) , path(bam), path(bai)
     tuple val(meta1), path(fasta)
     tuple val(meta2), path(fasta_fai)
     tuple val(meta3), path(intervals)
@@ -21,8 +21,8 @@ process RASTAIR_FULL {
     tuple val(meta), path("*.pdf")  , optional:true , emit: pdf
     tuple val(meta), path("*.svg")  , optional:true , emit: svg
     tuple val(meta), path("*.jpeg") , optional:true , emit: jpeg
-    tuple val(meta), path("*.html")                 , emit: html
     tuple val(meta), path("*.mods")                 , emit: mods
+    tuple val(meta), path("*.mbias")                , emit: mbias
     tuple val(meta), path("*_output.mods.summary")  , emit: summary
     tuple val(meta), path("*_output_perread.mods")  , emit: perread
     tuple val(meta), path("*.targeted.mods.summary"), emit: targeted_summary
@@ -35,23 +35,18 @@ process RASTAIR_FULL {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    cp ${bam} input.bam
-    cp ${bai} input.bam.bai
-
-    mkdir -p ${prefix}
-
     rastair \\
         mbias \\
-        --reference ${fasta} \\
-        --output-prefix ${prefix} \\
-        --bam input.bam
+        --fasta-file ${fasta} \\
+        ${bam} \\
+        >> ${prefix}_rastair_output.mbias
 
     cutoffs=\$(PyMbias \\
         -p ${prefix} \\
         -s ${plot_type} \\
         -x ${plot_ax_x} \\
         -y ${plot_ax_y} \\
-        ${mbias})
+        ${prefix}_rastair_output.mbias)
 
     eval "\$cutoffs"
 
@@ -61,12 +56,12 @@ process RASTAIR_FULL {
         --nOT \$not \\
         --nOB \$nob \\
         --fasta-file ${fasta} \\
-        input.bam \\
+        ${bam} \\
         >> ${prefix}_rastair_output.mods
 
     Summarize \\
-        -i ${prefix}_rastair_output.mods \\
-        -o ${prefix}_rastair_output.mods.summary
+        --rastair_in  ${prefix}_rastair_output.mods \\
+        --summary_out ${prefix}_rastair_output.mods.summary
 
     bedtools \\
         intersect \\
@@ -77,14 +72,14 @@ process RASTAIR_FULL {
         > ${prefix}_rastair_output.targeted.mods
 
     Summarize \\
-        -i ${prefix}_rastair_output.targeted.mods \\
-        -o ${prefix}_rastair_output.targeted.mods.summary
+        --rastair_in  ${prefix}_rastair_output.targeted.mods \\
+        --summary_out ${prefix}_rastair_output.targeted.mods.summary
 
     rastair \\
         per-read \\
         -@ ${task.cpus} \\
         --fasta-file ${fasta} \\
-        input.bam \\
+        ${bam} \\
         >> ${prefix}_rastair_output_perread.mods
 
     cat <<-END_VERSIONS > versions.yml
@@ -98,7 +93,6 @@ process RASTAIR_FULL {
     """
     touch ${prefix}.bam
     touch ${prefix}_cutoffs.tsv
-    touch ${prefix}_rastair_output.html
     touch ${prefix}_rastair_output.mods
     touch ${prefix}_rastair_output.mbias
     touch ${prefix}_rastair_output.mods.summary
