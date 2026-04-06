@@ -573,7 +573,7 @@ workflow MSTINN {
     // MODULE: Run rasTair 2.1.0 QC
     //
     RASTAIR_QC(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
-    ch_versions = ch_versions.mix(RASTAIR.out.versions.first())
+    ch_versions = ch_versions.mix(RASTAIR_QC.out.versions.first())
 
     //
     // MODULE: Run rasTair
