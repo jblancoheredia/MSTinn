@@ -28,8 +28,8 @@ process RASTAIR_MBIAS {
 
     rastair \\
         mbias \\
-        --reference ${fasta} \\
-        --bam input.bam \\
+        --fasta-file ${fasta} \\
+        ${bam} \\
         >> ${prefix}_rastair_output.mbias
 
     cat <<-END_VERSIONS > versions.yml
