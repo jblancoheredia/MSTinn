@@ -18,6 +18,8 @@ process RASTAIR_FULL {
 
     output:
     tuple val(meta), path("*.pdf")  , optional:true , emit: pdf
+    tuple val(meta), path("*.png")  , optional:true , emit: png
+    tuple val(meta), path("*.tsv")  , optional:true , emit: tsv
     tuple val(meta), path("*.svg")  , optional:true , emit: svg
     tuple val(meta), path("*.jpeg") , optional:true , emit: jpeg
     tuple val(meta), path("*.mods")                 , emit: mods
