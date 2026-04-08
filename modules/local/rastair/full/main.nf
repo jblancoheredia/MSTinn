@@ -25,9 +25,9 @@ process RASTAIR_FULL {
     tuple val(meta), path("*.mods")                 , emit: mods
     tuple val(meta), path("*.mbias")                , emit: mbias
     tuple val(meta), path("*cutoffs.tsv")           , emit: cutoffs
-    tuple val(meta), path("*_output.mods.summary")  , emit: summary
+    tuple val(meta), path("*_output.summary")       , emit: summary
+    tuple val(meta), path("*.targeted.summary")     , emit: targeted_summary
     tuple val(meta), path("*_output_perread.mods")  , emit: perread
-    tuple val(meta), path("*.targeted.mods.summary"), emit: targeted_summary
     path "versions.yml"                             , emit: versions
 
     when:
