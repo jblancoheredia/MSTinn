@@ -17,12 +17,12 @@ process RASTAIR_FULL {
     val(plot_ax_y)
 
     output:
-    tuple val(meta), path("*.tsv")                  , emit: cutoffs
     tuple val(meta), path("*.pdf")  , optional:true , emit: pdf
     tuple val(meta), path("*.svg")  , optional:true , emit: svg
     tuple val(meta), path("*.jpeg") , optional:true , emit: jpeg
     tuple val(meta), path("*.mods")                 , emit: mods
     tuple val(meta), path("*.mbias")                , emit: mbias
+    tuple val(meta), path("*cutoffs.tsv")           , emit: cutoffs
     tuple val(meta), path("*_output.mods.summary")  , emit: summary
     tuple val(meta), path("*_output_perread.mods")  , emit: perread
     tuple val(meta), path("*.targeted.mods.summary"), emit: targeted_summary
@@ -81,6 +81,26 @@ process RASTAIR_FULL {
         --fasta-file ${fasta} \\
         ${bam} \\
         >> ${prefix}_rastair_output_perread.mods
+
+    PyVbias \\
+        -i ${prefix}_rastair_output_perread.mods \\
+        -o . \\
+        -p ${prefix} \\
+        --export-vdata
+
+    PyGCbias \\
+        -m ${prefix}_rastair_output.mods \\
+        -r ${fasta} \\
+        -o . \\
+        -p ${prefix} \\
+        --export-beta-table
+
+    PyCpGbias \\
+        -m ${prefix}_rastair_output.mods \\
+        -r ${fasta} \\
+        -o . \\
+        -p ${prefix} \\
+        --export-beta-table
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
