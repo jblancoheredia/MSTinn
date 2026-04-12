@@ -65,6 +65,20 @@ process RASTAIR_FULL {
         --input-file ${prefix}_rastair_output.mods \\
         --output-dir .
 
+    PyGCbias \\
+        -m ${prefix}_rastair_output.mods \\
+        -r ${fasta} \\
+        -o . \\
+        -p ${prefix} \\
+        --export-beta-table
+
+    PyCpGbias \\
+        -m ${prefix}_rastair_output.mods \\
+        -r ${fasta} \\
+        -o . \\
+        -p ${prefix} \\
+        --export-beta-table
+
     bedtools \\
         intersect \\
         -header \\
@@ -89,20 +103,6 @@ process RASTAIR_FULL {
         -o . \\
         -p ${prefix} \\
         --export-vdata
-
-    PyGCbias \\
-        -m ${prefix}_rastair_output.mods \\
-        -r ${fasta} \\
-        -o . \\
-        -p ${prefix} \\
-        --export-beta-table
-
-    PyCpGbias \\
-        -m ${prefix}_rastair_output.mods \\
-        -r ${fasta} \\
-        -o . \\
-        -p ${prefix} \\
-        --export-beta-table
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
