@@ -48,7 +48,7 @@ process RASTAIR_FULL {
         -s ${plot_type} \\
         -x ${plot_ax_x} \\
         -y ${plot_ax_y} \\
-        ${prefix}_rastair_output.mbias)
+        -i ${prefix}_rastair_output.mbias)
 
     eval "\$cutoffs"
 
