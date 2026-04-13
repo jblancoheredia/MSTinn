@@ -37,6 +37,8 @@ process RASTAIR_FULL {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
+    export MPLCONFIGDIR=\$(mktemp -d)
+
     rastair \\
         mbias \\
         --fasta-file ${fasta} \\
