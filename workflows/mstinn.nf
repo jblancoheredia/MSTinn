@@ -20,7 +20,6 @@ include { BWAMEM2                                                       } from '
 include { BWA_METH                 	                                    } from '../modules/local/bwameth/main'
 include { MOSDEPTH                                                      } from '../modules/local/mosdepth/main'
 include { CAT_FASTQ                     	                            } from '../modules/nf-core/cat/fastq/main'
-include { RASTAIR_QC                 	                                } from '../modules/local/rastair/qc/main'
 include { SAMBLASTER                                                    } from '../modules/local/samblaster/main'
 include { MOSDEPTH_DUP                                                  } from '../modules/local/mosdepth/main'
 include { MOSDEPTH_CON                                                  } from '../modules/local/mosdepth/main'
@@ -568,12 +567,6 @@ workflow MSTINN {
     ch_versions = ch_versions.mix(COLLECTHSMETRICS.out.versions.first())
     ch_coverage_con  = COLLECTHSMETRICS.out.coverage
     ch_hsmetrics_con = COLLECTHSMETRICS.out.hsmetrics
-
-    //
-    // MODULE: Run rasTair 2.1.0 QC
-    //
-    RASTAIR_QC(ch_bam_mapped_targeted_indexed, ch_metref, ch_metfai)
-    ch_versions = ch_versions.mix(RASTAIR_QC.out.versions.first())
 
     //
     // MODULE: Run rasTair
