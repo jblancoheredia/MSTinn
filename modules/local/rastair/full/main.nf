@@ -4,8 +4,8 @@ process RASTAIR_FULL {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/mstinn_rastair:2.0.0':
-        'blancojmskcc/mstinn_rastair:2.0.0' }"
+        'docker://blancojmskcc/mstinn_rastair:2.0.1':
+        'blancojmskcc/mstinn_rastair:2.0.1' }"
 
     input:
     tuple val(meta) , path(bam), path(bai)
@@ -78,8 +78,7 @@ process RASTAIR_FULL {
         -m ${prefix}_rastair_output.mods \\
         -r ${fasta} \\
         -o . \\
-        -p ${prefix} \\
-        --export-beta-table
+        -p ${prefix}
 
     bedtools \\
         intersect \\
