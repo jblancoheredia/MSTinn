@@ -78,7 +78,8 @@ process RASTAIR_FULL {
         -m ${prefix}_rastair_output.mods \\
         -r ${fasta} \\
         -o . \\
-        -p ${prefix}
+        -p ${prefix} \\
+        --export-beta-table
 
     bedtools \\
         intersect \\
