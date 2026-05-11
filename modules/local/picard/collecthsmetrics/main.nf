@@ -60,13 +60,13 @@ process COLLECTHSMETRICS {
     picard \\
         -Xmx${avail_mem}M \\
         CollectHsMetrics \\
-        $args \\
         $reference \\
         --BAIT_INTERVALS $bait_interval_list \\
         --TARGET_INTERVALS $target_interval_list \\
         --INPUT $bam \\
         --OUTPUT ${prefix}.HSmetrics.txt \\
-        --PER_TARGET_COVERAGE ${prefix}.target_${library}.covg
+        --PER_TARGET_COVERAGE ${prefix}.target_${library}.covg \\
+        $args
 
 
     cat <<-END_VERSIONS > versions.yml
@@ -149,13 +149,13 @@ process COLLECTHSMETRICS_CON {
     picard \\
         -Xmx${avail_mem}M \\
         CollectHsMetrics \\
-        $args \\
         $reference \\
         --BAIT_INTERVALS $bait_interval_list \\
         --TARGET_INTERVALS $target_interval_list \\
         --INPUT $bam \\
         --OUTPUT ${prefix}.con.HSmetrics.txt \\
-        --PER_TARGET_COVERAGE ${prefix}.con.target_${library}.covg
+        --PER_TARGET_COVERAGE ${prefix}.con.target_${library}.covg \\
+        $args
 
 
     cat <<-END_VERSIONS > versions.yml
@@ -238,13 +238,13 @@ process COLLECTHSMETRICS_RAW {
     picard \\
         -Xmx${avail_mem}M \\
         CollectHsMetrics \\
-        $args \\
         $reference \\
         --BAIT_INTERVALS $bait_interval_list \\
         --TARGET_INTERVALS $target_interval_list \\
         --INPUT $bam \\
         --OUTPUT ${prefix}.raw.HSmetrics.txt \\
-        --PER_TARGET_COVERAGE ${prefix}.raw.target_${library}.covg
+        --PER_TARGET_COVERAGE ${prefix}.raw.target_${library}.covg \\
+        $args
 
 
     cat <<-END_VERSIONS > versions.yml
@@ -327,13 +327,13 @@ process COLLECTHSMETRICS_DUP {
     picard \\
         -Xmx${avail_mem}M \\
         CollectHsMetrics \\
-        $args \\
         $reference \\
         --BAIT_INTERVALS $bait_interval_list \\
         --TARGET_INTERVALS $target_interval_list \\
         --INPUT $bam \\
         --OUTPUT ${prefix}.dup.HSmetrics.txt \\
-        --PER_TARGET_COVERAGE ${prefix}.dup.target_${library}.covg
+        --PER_TARGET_COVERAGE ${prefix}.dup.target_${library}.covg \\
+        $args
 
 
     cat <<-END_VERSIONS > versions.yml
@@ -415,13 +415,13 @@ process COLLECTHSMETRICS_SIM {
     picard \\
         -Xmx${avail_mem}M \\
         CollectHsMetrics \\
-        $args \\
         $reference \\
         --BAIT_INTERVALS $bait_interval_list \\
         --TARGET_INTERVALS $target_interval_list \\
         --INPUT $bam \\
         --OUTPUT ${prefix}.sim.HSmetrics.txt \\
-        --PER_TARGET_COVERAGE ${prefix}.sim.target_${library}.covg
+        --PER_TARGET_COVERAGE ${prefix}.sim.target_${library}.covg \\
+        $args
 
 
     cat <<-END_VERSIONS > versions.yml
